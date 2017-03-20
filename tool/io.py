@@ -8,9 +8,16 @@ import os
 from bs4 import BeautifulSoup
 from kitchen.text.converters import to_str
 
-from tool.attributes import ORIGINAL_ATT_LIST, MOVE_ATT_LIST, \
-    PLACEMENT_ATT_LIST, PLAY_ATT_LIST, PLAYER_ATT
+# from tool.attributes import ORIGINAL_ATT_LIST, MOVE_ATT_LIST, \
+#     PLAY_ATT_LIST, PLAYER_ATT_LIST
+from tool.experiment import QUERY_LIST, DIRECTORY, ALGORITHM, \
+    QUERY, ALGORITHM_LIST, get_id
+from tool.attributes import TS_ATT, get_original_attribute_list, \
+    get_move_attribute_list, get_play_attribute_list, \
+    get_player_attribute_list
 
+# Register dialect for CSV files
+csv.register_dialect('table', delimiter='|', skipinitialspace=True)
 
 # =============================================================================
 # URL
@@ -24,10 +31,10 @@ JSON_DATA_URL = 'http://data.huffingtonpost.com/2014/world-cup/matches/%s.json'
 HTML_DATA_URL = 'http://data.huffingtonpost.com/2014/world-cup/matches/%s'
 
 # =============================================================================
-# DIRECTORIES
+# Directories for imported data
 # =============================================================================
 # Imported data directory
-IMPORTED_DATA_DIR = 'wc_data'
+IMPORTED_DATA_DIR = 'data'
 # Main directory for JSON files
 JSON_DIR = IMPORTED_DATA_DIR + os.sep + 'json'
 # Directory for original data
@@ -39,9 +46,26 @@ PLACEMENT_MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'placement'
 # Directory for play data
 PLAY_MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'play'
 # Directories list
-DIR_LIST = [IMPORTED_DATA_DIR, JSON_DIR, MATCH_DIR,
-            MOVE_MATCH_DIR, PLACEMENT_MATCH_DIR, PLAY_MATCH_DIR]
+IMPORT_DIR_LIST = [IMPORTED_DATA_DIR, JSON_DIR, MATCH_DIR,
+                   MOVE_MATCH_DIR, PLACEMENT_MATCH_DIR, PLAY_MATCH_DIR]
 
+# =============================================================================
+# Generic directories and files for experiments
+# =============================================================================
+QUERY_DIR = 'queries'
+ENV_DIR = 'env'
+OUT_DIR = 'out'
+DETAIL_DIR = 'details'
+SUMMARY_DIR = 'summary'
+RESULT_DIR = 'result'
+EXPERIMENT_DIR_LIST = [QUERY_DIR, ENV_DIR, OUT_DIR,
+                       DETAIL_DIR, SUMMARY_DIR, RESULT_DIR]
+
+# =============================================================================
+# Main directories
+# =============================================================================
+# Main directory for experiments with SEQ operator
+SEQ_MAIN_DIR = 'seq_experiments'
 
 # =============================================================================
 # Files
@@ -116,14 +140,66 @@ def write_csv_file(record_list, filename, attribute_list):
     out_file.close()
 
 
-def create_directories():
+def _create_directories(directory_list):
     '''
-    Create default directories if they do not exists
+    Create a list of directories if they do not exists
     '''
     print 'Creating directories'
-    for directory in DIR_LIST:
+    for directory in directory_list:
         if not os.path.exists(directory):
             os.mkdir(directory)
+
+
+def create_import_directory():
+    '''
+    Create directories for data importing
+    '''
+    _create_directories(IMPORT_DIR_LIST)
+
+
+def create_experiment_directories(configuration, experiment_list):
+    '''
+    Create directories for experiments
+    '''
+    # Get main directory
+    main_dir = configuration[DIRECTORY]
+    # Get list of queries
+    query_list = configuration[QUERY_LIST]
+    # Add main directory to directory list
+    dir_list = [main_dir]
+    # For every query
+    for query in query_list:
+        # Add "main_dir"/"query" to list
+        dir_list.append(main_dir + os.sep + query)
+        # For every sub_dir in experiment list
+        for subdir in EXPERIMENT_DIR_LIST:
+            # Add "main_dir"/"query"/"sub_dir" to list
+            direc = main_dir + os.sep + query + os.sep + subdir
+            dir_list.append(direc)
+        # Create environment, query, detail and output directories
+        for alg in configuration[ALGORITHM_LIST]:
+            # Add "main_dir"/"query"/"env_dir"/"algorithm" to list
+            direc = main_dir + os.sep + query + os.sep + ENV_DIR + os.sep + alg
+            dir_list.append(direc)
+            # Add "main_dir"/"query"/"out_dir"/"algorithm" to list
+            direc = main_dir + os.sep + query + os.sep + OUT_DIR + os.sep + alg
+            dir_list.append(direc)
+            # Add "main_dir"/"query"/"detail_dir"/"algorithm" to list
+            direc = \
+                main_dir + os.sep + query + os.sep + DETAIL_DIR + os.sep + alg
+            dir_list.append(direc)
+            # Add "main_dir"/"query"/"query_dir"/"algorithm" to list
+            direc = \
+                main_dir + os.sep + query + os.sep + QUERY_DIR + os.sep + alg
+            dir_list.append(direc)
+            # Add sub_dir for queries
+            for exp in experiment_list:
+                exp_id = get_id(exp)
+                # Add "main_dir"/"query"/"query_dir"/"algorithm"/"exp_id"
+                direc = main_dir + os.sep + query + os.sep + QUERY_DIR + \
+                    os.sep + alg + os.sep + exp_id
+                dir_list.append(direc)
+    _create_directories(dir_list)
 
 
 def store_match_list(match_id_list):
@@ -152,9 +228,9 @@ def get_match_id_list_from_file():
         return None
 
 
-def get_match_id_list():
+def get_match_list():
     '''
-    Return a list of identifiers to matches
+    Return the list of matches
     '''
     print 'Getting list of matches'
     # Try to read the match list from file
@@ -281,40 +357,191 @@ def get_match_players_json(match_id):
     return None
 
 
+def get_full_data_file(match_id):
+    '''
+    Get file name of original data
+    '''
+    return MATCH_DIR + os.sep + match_id + '.csv'
+
+
 def store_full_data(match_id, record_list):
     '''
     Store full match data
     '''
-    filename = MATCH_DIR + os.sep + match_id + '.csv'
-    write_csv_file(record_list, filename, ORIGINAL_ATT_LIST)
+    filename = get_full_data_file(match_id)
+    att_list = get_original_attribute_list(timestamp=True)
+    write_csv_file(record_list, filename, att_list)
 
 
-def store_move_data(match_id, record_list):
+def get_play_data_file(match_id):
     '''
-    Store match moves
+    Get file name of original data
     '''
-    filename = MOVE_MATCH_DIR + os.sep + match_id + '.csv'
-    write_csv_file(record_list, filename, MOVE_ATT_LIST)
-
-
-def store_placement_data(match_id, record_list):
-    '''
-    Store match placements
-    '''
-    filename = PLACEMENT_MATCH_DIR + os.sep + match_id + '.csv'
-    write_csv_file(record_list, filename, PLACEMENT_ATT_LIST)
+    return PLAY_MATCH_DIR + os.sep + match_id + '.csv'
 
 
 def store_play_data(match_id, record_list):
     '''
     Store match plays
     '''
-    filename = PLAY_MATCH_DIR + os.sep + match_id + '.csv'
-    write_csv_file(record_list, filename, PLAY_ATT_LIST)
+    filename = get_play_data_file(match_id)
+    att_list = get_play_attribute_list(timestamp=True)
+    write_csv_file(record_list, filename, att_list)
+
+
+def get_move_data_file(match_id):
+    '''
+    Get file name of original data
+    '''
+    return MOVE_MATCH_DIR + os.sep + match_id + '.csv'
+
+
+def store_move_data(match_id, record_list):
+    '''
+    Store match moves
+    '''
+    filename = get_move_data_file(match_id)
+    att_list = get_move_attribute_list(timestamp=True)
+    write_csv_file(record_list, filename, att_list)
 
 
 def store_players(record_list):
     '''
     Store player data
     '''
-    write_csv_file(record_list, PLAYER_FILE, PLAYER_ATT)
+    att_list = get_player_attribute_list(timestamp=True, flag=True)
+    write_csv_file(record_list, PLAYER_FILE, att_list)
+
+
+def write_to_txt(filename, text):
+    '''
+    Store record list into a CSV file
+    '''
+    # Check if file does not exists
+    if not os.path.isfile(filename):
+        # Store data to file
+        out_file = open(filename, 'w')
+        out_file.write(text)
+        out_file.close()
+
+
+def get_query_dir(configuration, experiment_conf):
+    '''
+    Return query directory
+    '''
+    exp_id = get_id(experiment_conf)
+    return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
+        os.sep + QUERY_DIR + os.sep + experiment_conf[ALGORITHM] + \
+        os.sep + exp_id
+
+
+def get_out_file(configuration, experiment_conf):
+    '''
+    Return query directory
+    '''
+    exp_id = get_id(experiment_conf)
+    return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
+        os.sep + OUT_DIR + os.sep + experiment_conf[ALGORITHM] + \
+        os.sep + exp_id + '.csv'
+
+
+def get_env_file(configuration, experiment_conf):
+    '''
+    Return query directory
+    '''
+    exp_id = get_id(experiment_conf)
+    return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
+        os.sep + ENV_DIR + os.sep + experiment_conf[ALGORITHM] + \
+        os.sep + exp_id + '.env'
+
+
+def get_summary_file(configuration, query, summary, parameter):
+    '''
+    Return query directory
+    '''
+    return configuration[DIRECTORY] + os.sep + query + os.sep + \
+        SUMMARY_DIR + os.sep + summary + '_' + parameter + '.csv'
+
+
+def get_result_file(configuration, query, summary, parameter):
+    '''
+    Return query directory
+    '''
+    return configuration[DIRECTORY] + os.sep + query + os.sep + \
+        RESULT_DIR + os.sep + os.sep + summary + '_' + parameter + '.csv'
+
+
+def get_detail_file(configuration, experiment_conf, count):
+    '''
+    Return query directory
+    '''
+    exp_id = get_id(experiment_conf)
+    return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
+        os.sep + DETAIL_DIR + os.sep + experiment_conf[ALGORITHM] + \
+        os.sep + exp_id + ':' + str(count) + '.csv'
+
+
+def write_result_file(filename, record_list, key_field):
+    '''
+    Write to a result file
+    '''
+    # Check if there exists records to be stored
+    if len(record_list):
+        # Get the field list
+        field_list = [field for field in record_list[0].keys()
+                      if field != key_field]
+        # Sort the field list
+        field_list.sort()
+        # Put key field in the beginning of field list
+        field_list.insert(0, key_field)
+        write_to_csv(filename, field_list, record_list)
+
+
+def write_to_csv(filename, attribute_list, record_list):
+    '''
+    Store record list into a CSV file
+    '''
+    # Check if file does not exists
+    if not os.path.isfile(filename):
+        # Store data to file
+        data_file = open(filename, 'w')
+        writer = csv.DictWriter(data_file, attribute_list)
+        writer.writeheader()
+        writer.writerows(record_list)
+        data_file.close()
+
+
+def read_from_csv(filename, attribute_list):
+    '''
+    Read data from a CSV file
+    '''
+    data_file = open(filename, 'r')
+    reader = csv.DictReader(data_file, attribute_list, dialect='table')
+    # Skip header
+    reader.next()
+    rec_list = []
+    for rec in reader:
+        rec_list.append(rec)
+    return rec_list
+
+
+def get_max_play_ts(match_id):
+    '''
+    Return the maximum timestamp from a play stream
+    '''
+    filename = get_play_data_file(match_id)
+    att_list = get_play_attribute_list(timestamp=True)
+    rec_list = read_from_csv(filename, att_list)
+    last_rec = rec_list[-1]
+    return int(last_rec[TS_ATT])
+
+
+def get_max_move_ts(match_id):
+    '''
+    Return a record list from move data file
+    '''
+    filename = get_move_data_file(match_id)
+    att_list = get_move_attribute_list(timestamp=True)
+    rec_list = read_from_csv(filename, att_list)
+    last_rec = rec_list[-1]
+    return int(last_rec[TS_ATT])

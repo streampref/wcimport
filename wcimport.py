@@ -6,12 +6,13 @@ Module to import data of soccer world cup of 2014 from
 http://data.huffingtonpost.com
 '''
 
-from tool.attributes import TS, MINUTE, SECOND, PLAYER_ID, X, Y, TYPE, \
-    OUTCOME, PID, PLACE, TEAM_BALL, MOVE, PLAY, FL, PLAYER_ATT, \
-    ORIGINAL_ATT_LIST
-from tool.io import create_directories, get_match_json, \
-    decode_object, get_match_players_json, get_match_id_list, store_full_data,\
-    store_move_data, store_placement_data, store_play_data, store_players
+from tool.attributes import TS_ATT, MINUTE, SECOND, PLAYER_ID, X, Y, TYPE, \
+    OUTCOME, PID, PLACE, TEAM_BALL, MOVE, PLAY, FL_ATT, \
+    get_original_attribute_list,\
+    get_player_attribute_list
+from tool.io import create_import_directory, get_match_json, \
+    decode_object, get_match_players_json, get_match_list, store_full_data,\
+    store_move_data, store_play_data, store_players
 
 
 def get_all_matches(match_id_list):
@@ -59,13 +60,13 @@ def get_all_players(match_id_list):
     # For every player
     for player in player_dict.values():
         new_player = {}
-        for att in PLAYER_ATT[2:]:
+        for att in get_player_attribute_list():
             if att in player:
                 new_player[att] = player[att]
             else:
                 new_player[att] = ''
-        new_player[TS] = 0
-        new_player[FL] = '+'
+        new_player[TS_ATT] = 0
+        new_player[FL_ATT] = '+'
         player_list.append(new_player)
     return player_list
 
@@ -82,7 +83,8 @@ def calculate_move_stream(event_list):
         if player_id not in player_event_dict:
             # Create a list for this player
             player_event_dict[player_id] = []
-        p_event = {TS: event[TS], PID: player_id, X: event[X], Y: event[Y]}
+        p_event = {TS_ATT: event[TS_ATT], PID: player_id,
+                   X: event[X], Y: event[Y]}
         # Position
         if event[X] < 20:
             p_event[PLACE] = 'da'
@@ -102,12 +104,12 @@ def calculate_move_stream(event_list):
     for player_id in player_event_dict:
         # Sort player events by timestamp
         p_event_list = sorted(player_event_dict[player_id],
-                              key=lambda k: k[TS])
+                              key=lambda k: k[TS_ATT])
         prev_event = p_event_list.pop(0)
         while len(p_event_list):
             cur_event = p_event_list.pop(0)
             # Final event
-            new_event = {TS: cur_event[TS], PID: player_id,
+            new_event = {TS_ATT: cur_event[TS_ATT], PID: player_id,
                          PLACE: cur_event[PLACE],
                          TEAM_BALL: cur_event[TEAM_BALL]}
             # Calculate move
@@ -121,7 +123,7 @@ def calculate_move_stream(event_list):
                 new_event[MOVE] = 'rw'
             new_event_list.append(new_event)
     # Sort all events by timestamp
-    return sorted(new_event_list, key=lambda k: k[TS])
+    return sorted(new_event_list, key=lambda k: k[TS_ATT])
 
 
 def calculate_placement_stream(event_list):
@@ -130,7 +132,7 @@ def calculate_placement_stream(event_list):
     '''
     new_event_list = []
     for event in event_list:
-        new_event = {TS: event[TS], PID: event[PLAYER_ID]}
+        new_event = {TS_ATT: event[TS_ATT], PID: event[PLAYER_ID]}
         # Position
         if event[X] < 20:
             new_event[PLACE] = 'da'
@@ -153,7 +155,7 @@ def calculate_play_stream(event_list):  # IGNORE:too-many-branches
     '''
     new_event_list = []
     for event in event_list:
-        new_event = {TS: event[TS], PID: event[PLAYER_ID]}
+        new_event = {TS_ATT: event[TS_ATT], PID: event[PLAYER_ID]}
         # Position
         if event[X] < 20:
             new_event[PLACE] = 'da'
@@ -200,12 +202,12 @@ def get_match_events(match_data):
     new_event_list = []
     for event in event_list:
         new_event = {}
-        for att in ORIGINAL_ATT_LIST[1:]:
+        for att in get_original_attribute_list():
             new_event[att] = event[att]
         timestamp = new_event[MINUTE] * 60 + new_event[SECOND]
-        new_event[TS] = timestamp
+        new_event[TS_ATT] = timestamp
         new_event_list.append(new_event)
-    return sorted(new_event_list, key=lambda k: k[TS])
+    return sorted(new_event_list, key=lambda k: k[TS_ATT])
 
 
 def store_match_events_csv(match_dict):
@@ -222,9 +224,6 @@ def store_match_events_csv(match_dict):
         # Move stream
         new_rec_list = calculate_move_stream(rec_list)
         store_move_data(match_id, new_rec_list)
-        # Placement stream
-        new_rec_list = calculate_placement_stream(rec_list)
-        store_placement_data(match_id, new_rec_list)
         # Play stream
         new_rec_list = calculate_play_stream(rec_list)
         store_play_data(match_id, new_rec_list)
@@ -235,9 +234,9 @@ def main():
     Main routine
     '''
     # Create directories
-    create_directories()
+    create_import_directory()
     # Get list of matches
-    match_id_list = get_match_id_list()
+    match_id_list = get_match_list()
     # Get matches data
     match_dict = get_all_matches(match_id_list)
     # Store match events into csv files
