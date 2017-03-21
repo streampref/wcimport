@@ -24,7 +24,7 @@ SELECT SEQUENCE IDENTIFIED BY pid
 # CQL Equivalent Queries
 # =============================================================================
 # RPOS (_pos attribute with original timestamp)
-CQL_RPOS = 'SELECT _ts AS _pos, * FROM s[RANGE 1 SECOND];'
+CQL_RPOS = 'SELECT _ts AS _pos, * FROM s[RANGE 1 SECOND, SLIDE 1 SECOND];'
 # SPOS (convert RPOS back to stream format)
 CQL_SPOS = 'SELECT RSTREAM FROM rpos;'
 # W (Window of tuples from SPOS)
@@ -45,6 +45,10 @@ CQL_PI = '''
 SELECT MIN(_pos) AS _pos, pid FROM w{pos}
 GROUP BY pid;
 '''
+CQL_PI_FINAL = '''
+    SELECT {pos} AS _pos, {att} FROM p{pos}, w
+    WHERE p{pos}.pid = w.pid AND p{pos}._pos = w._pos
+    '''
 
 
 def gen_seq_query(configuration, experiment_conf):
@@ -111,7 +115,7 @@ def gen_cql_equiv_query(query_dir, experiment_conf):
     # List of final position queries
     pos_query_list = []
     for position in range(1, experiment_conf[RAN] + 1):
-        pos_query = CQL_PI.format(pos=position, att=att_str)
+        pos_query = CQL_PI_FINAL.format(pos=position, att=att_str)
         pos_query_list.append(pos_query)
     # Equivalent is the union of final positions
     query = '\nUNION\n'.join(pos_query_list) + ';'

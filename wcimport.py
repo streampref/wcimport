@@ -71,6 +71,27 @@ def get_all_players(match_id_list):
     return player_list
 
 
+def remove_duplicates(record_list):
+    '''
+    Return a new record list without duplicated PID per instant
+    '''
+    # Create new record list
+    rec_list = []
+    # Create set of processed
+    processed_set = set()
+    # For every input record
+    for rec in record_list:
+        # Convert record to tuple
+        tup = (TS_ATT, rec[TS_ATT], PID, rec[PID])
+        # Check if tuple was already processed
+        if tup not in processed_set:
+            # Add to processed
+            processed_set.add(tup)
+            # Add to result list
+            rec_list.append(rec)
+    return rec_list
+
+
 def calculate_move_stream(event_list):
     '''
     Calculate move stream
@@ -122,31 +143,12 @@ def calculate_move_stream(event_list):
             else:
                 new_event[MOVE] = 'rw'
             new_event_list.append(new_event)
+    # Remove duplicated
+    print len(new_event_list)
+    new_event_list = remove_duplicates(new_event_list)
+    print len(new_event_list)
     # Sort all events by timestamp
     return sorted(new_event_list, key=lambda k: k[TS_ATT])
-
-
-def calculate_placement_stream(event_list):
-    '''
-    Calculate placement stream
-    '''
-    new_event_list = []
-    for event in event_list:
-        new_event = {TS_ATT: event[TS_ATT], PID: event[PLAYER_ID]}
-        # Position
-        if event[X] < 20:
-            new_event[PLACE] = 'da'
-        elif event[X] < 35:
-            new_event[PLACE] = 'di'
-        elif event[X] < 65:
-            new_event[PLACE] = 'mf'
-        elif event[X] < 80:
-            new_event[PLACE] = 'oi'
-        else:
-            new_event[PLACE] = 'oa'
-        new_event[TEAM_BALL] = event[OUTCOME]
-        new_event_list.append(new_event)
-    return new_event_list
 
 
 def calculate_play_stream(event_list):  # IGNORE:too-many-branches
@@ -191,7 +193,10 @@ def calculate_play_stream(event_list):  # IGNORE:too-many-branches
         elif event[TYPE] == '100':
             new_event[PLAY] = 're'
         new_event_list.append(new_event)
-    return new_event_list
+    # Remove duplicated
+    new_event_list = remove_duplicates(new_event_list)
+    # Sort all events by timestamp
+    return sorted(new_event_list, key=lambda k: k[TS_ATT])
 
 
 def get_match_events(match_data):

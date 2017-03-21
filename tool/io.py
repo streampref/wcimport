@@ -40,13 +40,11 @@ JSON_DIR = IMPORTED_DATA_DIR + os.sep + 'json'
 MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'match_full'
 # Directory for move data
 MOVE_MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'move'
-# Directory for placement data
-PLACEMENT_MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'placement'
 # Directory for play data
 PLAY_MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'play'
 # Directories list
 IMPORT_DIR_LIST = [IMPORTED_DATA_DIR, JSON_DIR, MATCH_DIR,
-                   MOVE_MATCH_DIR, PLACEMENT_MATCH_DIR, PLAY_MATCH_DIR]
+                   MOVE_MATCH_DIR, PLAY_MATCH_DIR]
 
 # =============================================================================
 # Generic directories and files for experiments
