@@ -136,32 +136,11 @@ def get_id(experiment_conf):
     return id_str
 
 
-# def get_data_id(experiment_conf):
-#     '''
-#     Return experiment identifier for data
-#     '''
-#     id_str = ''
-#     for par in DATA_PAR_LIST:
-#         id_str += par + str(experiment_conf[par])
-#     return id_str
-
-
 def get_max_data_timestamp(parameter_conf):
     '''
     Return the maximum timstamp for a generated data stream
     '''
     return max(parameter_conf[RAN][VAR]) + max(parameter_conf[SLI][VAR])
-
-
-# def get_varied_parameters(parameter_conf):
-#     '''
-#     Return a list of parameters having variation
-#     '''
-#     par_list = []
-#     for par in parameter_conf:
-#         if VAR in parameter_conf[par]:
-#             par_list.append(par)
-#     return par_list
 
 
 def get_default_experiment(parameter_conf):

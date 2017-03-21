@@ -5,12 +5,11 @@ Queries for experiments with SEQ operator
 
 import os
 
+from tool.attributes import get_play_attribute_list, get_move_attribute_list
 from tool.experiment import SLI, RAN, ALGORITHM, \
-    CQL_ALG, QUERY, Q_PLAY, Q_MOVE, MATCH
-from tool.io import get_query_dir, write_to_txt, get_out_file, get_env_file,\
-    get_play_data_file, get_move_data_file
-from tool.attributes import get_play_attribute_list, get_move_attribute_list,\
-    get_play_attributes_and_types, get_move_attributes_and_types
+    CQL_ALG, QUERY, Q_PLAY, Q_MOVE
+from tool.io import get_query_dir, write_to_txt, get_out_file, get_env_file
+from tool.query.stream import get_register_stream, REG_Q_OUTPUT_STR, REG_Q_STR
 
 
 # =============================================================================
@@ -46,16 +45,6 @@ CQL_PI = '''
 SELECT MIN(_pos) AS _pos, pid FROM w{pos}
 GROUP BY pid;
 '''
-
-# =============================================================================
-# Strings for registration in environment file
-# =============================================================================
-REG_STREAM_STR = "REGISTER STREAM s ({atts}) \nINPUT '{dfile}';"
-REG_Q_STR = "\n\nREGISTER QUERY {qname} \nINPUT '{qfile}';"
-REG_Q_OUTPUT_STR = \
-    "\n\nREGISTER QUERY {qname} \nINPUT '{qfile}' \nOUTPUT '{ofile}';"
-# Strings for registration in environment file
-REG_STREAM_STR = "REGISTER STREAM s ({atts}) \nINPUT '{dfile}';"
 
 
 def gen_seq_query(configuration, experiment_conf):
@@ -160,26 +149,6 @@ def gen_all_queries(configuration, experiment_list):
             gen_cql_queries(configuration, exp_conf)
         else:
             gen_seq_query(configuration, exp_conf)
-
-
-def get_register_stream(experiment_conf):
-    '''
-    Get register steam string
-    '''
-    query = experiment_conf[QUERY]
-    match = experiment_conf[MATCH]
-    if query == Q_PLAY:
-        att_list = get_play_attributes_and_types()
-        filename = get_play_data_file(match)
-    elif query == Q_MOVE:
-        att_list = get_move_attributes_and_types()
-        filename = get_move_data_file(match)
-    # Get attribute list
-    att_str = ', '.join(att_list)
-    # Register stream
-    text = REG_STREAM_STR.format(atts=att_str, dfile=filename)
-    text += '\n\n' + '#' * 80 + '\n\n'
-    return text
 
 
 def gen_seq_env(configuration, experiment_conf, output):

@@ -148,35 +148,3 @@ def get_move_attributes_and_types():
     att_list = zip(MOVE_ATT_LIST, MOVE_TYPE_LIST)
     att_list = [att + ' ' + att_type for (att, att_type) in att_list]
     return att_list
-
-# def get_attribute_list(query_id, prefix='', include_timestamp=False):
-#     '''
-#     Return a list of attributes
-#     '''
-#     # Select attribute list
-#     if query_id == Q1:
-#         att_list = PLAY_ATT_LIST[:]
-#     elif query_id == Q2:
-#         att_list = MOVE_ATT_LIST[:]
-#     if prefix != '':
-#         att_list = [prefix + att for att in att_list]
-#     # Include timestamp attribute at beginning
-#     if include_timestamp:
-#         att_list.insert(0, TS)
-#     return att_list
-#
-#
-# def get_attributes_and_types(query_id):
-#     '''
-#     Return attributes and types from lists of attributes and types
-#     '''
-#     # Select attribute list
-#     if query_id == Q1:
-#         att_list = PLAY_ATT_LIST[:]
-#         type_list = PLAY_TYPE_LIST[:]
-#     elif query_id == Q2:
-#         att_list = MOVE_ATT_LIST[:]
-#     att_str_list = []
-#     for index, att in enumerate(att_list):
-#         att_str_list.append(att + ' ' + type_list[index])
-#     return att_str_list

@@ -8,13 +8,12 @@ import os
 from bs4 import BeautifulSoup
 from kitchen.text.converters import to_str
 
-# from tool.attributes import ORIGINAL_ATT_LIST, MOVE_ATT_LIST, \
-#     PLAY_ATT_LIST, PLAYER_ATT_LIST
-from tool.experiment import QUERY_LIST, DIRECTORY, ALGORITHM, \
-    QUERY, ALGORITHM_LIST, get_id
 from tool.attributes import TS_ATT, get_original_attribute_list, \
     get_move_attribute_list, get_play_attribute_list, \
     get_player_attribute_list
+from tool.experiment import QUERY_LIST, DIRECTORY, ALGORITHM, \
+    QUERY, ALGORITHM_LIST, get_id
+
 
 # Register dialect for CSV files
 csv.register_dialect('table', delimiter='|', skipinitialspace=True)
@@ -65,7 +64,9 @@ EXPERIMENT_DIR_LIST = [QUERY_DIR, ENV_DIR, OUT_DIR,
 # Main directories
 # =============================================================================
 # Main directory for experiments with SEQ operator
-SEQ_MAIN_DIR = 'seq_experiments'
+SEQ_MAIN_DIR = 'exp_seq'
+# Main directory for experimentos with temporal preference oprators
+TPREF_MAIN_DIR = 'exp_tpref'
 
 # =============================================================================
 # Files
@@ -479,6 +480,13 @@ def get_detail_file(configuration, experiment_conf, count):
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
         os.sep + DETAIL_DIR + os.sep + experiment_conf[ALGORITHM] + \
         os.sep + exp_id + ':' + str(count) + '.csv'
+
+
+def get_tup_file(query):
+    '''
+    Get the TUP fienale for a query
+    '''
+    return IMPORTED_DATA_DIR + os.sep + 'tup_' + query + '.csv'
 
 
 def write_result_file(filename, record_list, key_field):
