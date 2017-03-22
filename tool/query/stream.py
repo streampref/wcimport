@@ -12,7 +12,7 @@ from tool.io import get_play_data_file, get_move_data_file, get_tup_file
 # Strings for registration in environment file
 # =============================================================================
 REG_STREAM_STR = "REGISTER STREAM s ({atts}) \nINPUT '{dfile}';"
-REG_TUP_STR = "REGISTER STREAM tup ({atts}) \nINPUT '{dfile}';"
+REG_TUP_STR = "\n\nREGISTER TABLE tup ({atts}) \nINPUT '{dfile}';"
 REG_Q_STR = "\n\nREGISTER QUERY {qname} \nINPUT '{qfile}';"
 REG_Q_OUTPUT_STR = \
     "\n\nREGISTER QUERY {qname} \nINPUT '{qfile}' \nOUTPUT '{ofile}';"
@@ -38,6 +38,9 @@ def get_register_stream(experiment_conf, tup=False):
     # Register stream
     text = REG_STREAM_STR.format(atts=att_str, dfile=filename)
     if tup:
+        # Do not consider PID for TUP
+        att_list = att_list[1:]
+        att_str = ', '.join(att_list)
         text += REG_TUP_STR.format(atts=att_str, dfile=tup_filename)
     text += '\n\n' + '#' * 80 + '\n\n'
     return text

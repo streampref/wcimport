@@ -15,9 +15,6 @@ from tool.experiment import QUERY_LIST, DIRECTORY, ALGORITHM, \
     QUERY, ALGORITHM_LIST, get_id
 
 
-# Register dialect for CSV files
-csv.register_dialect('table', delimiter='|', skipinitialspace=True)
-
 # =============================================================================
 # URL
 # =============================================================================
@@ -80,8 +77,13 @@ PLAYER_FILE = IMPORTED_DATA_DIR + os.sep + 'players.csv'
 # Number of retries to get an URL
 URL_RETRY = 10
 
-# Register dialect for CSV files
-csv.register_dialect('table', delimiter='|', skipinitialspace=True)
+
+def initialize():
+    '''
+    Initialize IO
+    '''
+    # Register dialect for CSV files
+    csv.register_dialect('table', delimiter='|', skipinitialspace=True)
 
 
 def read_url(url):
@@ -467,7 +469,7 @@ def get_result_file(configuration, query, summary, parameter):
     Return query directory
     '''
     return configuration[DIRECTORY] + os.sep + query + os.sep + \
-        RESULT_DIR + os.sep + os.sep + summary + '_' + parameter + '.csv'
+        RESULT_DIR + os.sep + summary + '_' + parameter + '.csv'
 
 
 def get_detail_file(configuration, experiment_conf, count):
@@ -511,7 +513,7 @@ def write_to_csv(filename, attribute_list, record_list):
     if not os.path.isfile(filename):
         # Store data to file
         data_file = open(filename, 'w')
-        writer = csv.DictWriter(data_file, attribute_list)
+        writer = csv.DictWriter(data_file, attribute_list, dialect='table')
         writer.writeheader()
         writer.writerows(record_list)
         data_file.close()
