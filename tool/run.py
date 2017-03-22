@@ -21,7 +21,7 @@ SIMPLE_RUN_COMMAND = "streampref -r'|' -e {env} -d {det} -m {max}"
 # Command for experiment run with temporal preference algorithm option
 TPREF_RUN_COMMAND = "streampref -r'|' -e {env} -d {det} -m {max} -t {alg}"
 # Command for calculation of confidence interval
-CONFINTERVAL_COMMAND = "confinterval -i {inf} -o {outf} -k {keyf}"
+CONFINTERVAL_COMMAND = "confinterval -d'|' -i {inf} -o {outf} -k {keyf}"
 
 # Dictionary of run commands
 RUN_DICT = {}
