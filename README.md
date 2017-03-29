@@ -6,7 +6,7 @@
 
 # Introduction
 
-WCImport is a tool for importation of data of soccer world cup 2014 and prepare this data for experiments with StreamPref DSMS.
+WCImport is a tool for importation of data of 2014 Soccer World Cup and prepare this data for experiments with StreamPref DSMS.
 
 # Data Importing
 
