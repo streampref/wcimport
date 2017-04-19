@@ -144,9 +144,7 @@ def calculate_move_stream(event_list):
                 new_event[MOVE] = 'rw'
             new_event_list.append(new_event)
     # Remove duplicated
-    print len(new_event_list)
     new_event_list = remove_duplicates(new_event_list)
-    print len(new_event_list)
     # Sort all events by timestamp
     return sorted(new_event_list, key=lambda k: k[TS_ATT])
 
