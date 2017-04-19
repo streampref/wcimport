@@ -61,6 +61,14 @@ INC_PARTITION_SEQTREE_PRUNING_ALG = 'inc_partition_seqtree_pruning'
 INC_PARTITIONLIST_SEQTREE_ALG = 'inc_partitionlist_seqtree'
 # Incremental partition list sequence tree (with pruning)
 INC_PARTITIONLIST_SEQTREE_PRUNING_ALG = 'inc_partitionlist_seqtree_pruning'
+# =============================================================================
+# Algorithms for subsequence operators
+NAIVE_SUBSEQ_ALG = "naive"
+INC_SUBSEQ_ALG = "incremental"
+# =============================================================================
+# Algorithms for MINSEQ and MAXSEQ operator
+MINSEQ_ALG = "minseq"
+MAXSEQ_ALG = "minseq"
 
 # =============================================================================
 # Experiment measures
