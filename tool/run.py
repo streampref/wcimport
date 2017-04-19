@@ -13,13 +13,16 @@ from tool.experiment import ALGORITHM, PARAMETER, VAR, CQL_ALG, \
     INC_PARTITION_SEQTREE_ALG, INC_PARTITIONLIST_SEQTREE_ALG, \
     INC_PARTITION_SEQTREE_PRUNING_ALG, INC_PARTITIONLIST_SEQTREE_PRUNING_ALG, \
     get_default_experiment, PARAMETER_VARIATION, MATCH, QUERY, QUERY_LIST,\
-    Q_PLAY, Q_MOVE, ALGORITHM_LIST
+    Q_PLAY, Q_MOVE, ALGORITHM_LIST, NAIVE_SUBSEQ_ALG, INC_SUBSEQ_ALG, \
+    MINSEQ_ALG, MAXSEQ_ALG
 
 
 # Command for experiment run
 SIMPLE_RUN_COMMAND = "streampref -r'|' -e {env} -d {det} -m {max}"
 # Command for experiment run with temporal preference algorithm option
 TPREF_RUN_COMMAND = "streampref -r'|' -e {env} -d {det} -m {max} -t {alg}"
+# Command for experiment run with subsequence algorithm option
+SUBSEQ_RUN_COMMAND = "streampref -r'|' -e {env} -d {det} -m {max} -s {alg}"
 # Command for calculation of confidence interval
 CONFINTERVAL_COMMAND = "confinterval -d'|' -i {inf} -o {outf} -k {keyf}"
 
@@ -32,6 +35,12 @@ RUN_DICT[INC_PARTITION_SEQTREE_ALG] = TPREF_RUN_COMMAND
 RUN_DICT[INC_PARTITIONLIST_SEQTREE_ALG] = TPREF_RUN_COMMAND
 RUN_DICT[INC_PARTITION_SEQTREE_PRUNING_ALG] = TPREF_RUN_COMMAND
 RUN_DICT[INC_PARTITIONLIST_SEQTREE_PRUNING_ALG] = TPREF_RUN_COMMAND
+# Subsequence run commands
+RUN_DICT[NAIVE_SUBSEQ_ALG] = SUBSEQ_RUN_COMMAND
+RUN_DICT[INC_SUBSEQ_ALG] = SUBSEQ_RUN_COMMAND
+# Filter by length run commands
+RUN_DICT[MINSEQ_ALG] = SIMPLE_RUN_COMMAND
+RUN_DICT[MAXSEQ_ALG] = SIMPLE_RUN_COMMAND
 
 
 def get_iterations(experiment_conf):
@@ -59,7 +68,7 @@ def run(configuration, experiment_conf, count):
         if command == SIMPLE_RUN_COMMAND:
             command = command.format(env=env_file, det=detail_file,
                                      max=iterations)
-        elif command == TPREF_RUN_COMMAND:
+        elif command in [TPREF_RUN_COMMAND, SUBSEQ_RUN_COMMAND]:
             command = command.format(env=env_file, det=detail_file,
                                      max=iterations,
                                      alg=experiment_conf[ALGORITHM])
