@@ -62,7 +62,7 @@ EXPERIMENT_DIR_LIST = [QUERY_DIR, ENV_DIR, OUT_DIR, OUT_AUX_DIR,
 # Main directory for experiments with SEQ operator
 SEQ_MAIN_DIR = 'exp_seq'
 # Main directory for experimentos with temporal preference oprators
-TPREF_MAIN_DIR = 'exp_tpref'
+TPREF_MAIN_DIR = 'exp_bestseq'
 
 # =============================================================================
 # Files

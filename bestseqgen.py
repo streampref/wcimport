@@ -14,7 +14,7 @@ from tool.experiment import RAN, VAR, SLI, DEF, CQL_ALG, \
 from tool.io import TPREF_MAIN_DIR, get_match_list, \
     create_experiment_directories
 from tool.run import run_experiments, summarize_all, confidence_interval_all
-from tool.query.tpref import gen_all_queries, gen_all_env
+from tool.query.bestseq import gen_all_queries, gen_all_env
 
 # =============================================================================
 # Experiment execution
