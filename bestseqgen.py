@@ -22,7 +22,7 @@ from tool.query.bestseq import gen_all_queries, gen_all_env
 # Number of experiment runs
 RUN_COUNT = 3
 # Match count
-MATCH_COUNT = 4
+MATCH_COUNT = 1
 
 # Parameters configuration
 TPREF_PAR = {

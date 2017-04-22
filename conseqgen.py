@@ -21,7 +21,7 @@ from tool.run import run_experiments, summarize_all, confidence_interval_all
 # Number of experiment runs
 RUN_COUNT = 3
 # Match count
-MATCH_COUNT = 4
+MATCH_COUNT = 1
 
 # Parameters configuration
 CONSEQ_PAR = {
