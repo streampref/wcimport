@@ -22,6 +22,11 @@ RAN = 'ran'
 # Slide
 SLI = 'sli'
 
+# Minimum size of sequences
+MIN = 'min'
+# Maximum size of sequences
+MAX = 'max'
+
 # Query
 QUERY = 'q'
 # Algorithm
