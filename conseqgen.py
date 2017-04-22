@@ -19,7 +19,7 @@ from tool.run import run_experiments, summarize_all, confidence_interval_all
 # Experiment execution
 # =============================================================================
 # Number of experiment runs
-RUN_COUNT = 2
+RUN_COUNT = 3
 # Match count
 MATCH_COUNT = 4
 
@@ -54,7 +54,7 @@ def get_arguments(print_help=False):
     Get arguments
     '''
     import argparse
-    parser = argparse.ArgumentParser('WC-CONSEQ-Gen')
+    parser = argparse.ArgumentParser('CONSEQGen')
     parser.add_argument('-g', '--gen', action="store_true",
                         default=False,
                         help='Generate files')

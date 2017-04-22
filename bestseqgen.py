@@ -20,7 +20,7 @@ from tool.query.bestseq import gen_all_queries, gen_all_env
 # Experiment execution
 # =============================================================================
 # Number of experiment runs
-RUN_COUNT = 2
+RUN_COUNT = 3
 # Match count
 MATCH_COUNT = 4
 
@@ -58,7 +58,7 @@ def get_arguments(print_help=False):
     Get arguments
     '''
     import argparse
-    parser = argparse.ArgumentParser('WC-TPrefGen')
+    parser = argparse.ArgumentParser('BESTSEQGen')
     parser.add_argument('-g', '--gen', action="store_true",
                         default=False,
                         help='Generate files')
