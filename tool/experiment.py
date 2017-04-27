@@ -47,6 +47,8 @@ DIRECTORY = 'direc'
 PARAMETER = 'dir'
 # List of queries
 QUERY_LIST = 'query_list'
+# List of operators
+OPERATOR_LIST = 'operator_list'
 
 # =============================================================================
 # Algorithms
@@ -56,7 +58,7 @@ CQL_ALG = 'cql'
 # SEQ operator
 SEQ_ALG = 'seq'
 # =============================================================================
-# TPref BNL search
+# BNL search
 BNL_SEARCH = 'bnl_search'
 # Incremental partition sequence tree
 INC_PARTITION_SEQTREE_ALG = 'inc_partition_seqtree'
@@ -84,6 +86,43 @@ MEMORY = 'memory'
 # Summary measures
 SUM_RUN = 'run'
 SUM_MEM = 'mem'
+
+# =============================================================================
+# Operators
+# =============================================================================
+SEQ = 'SEQ'
+CONSEQ = 'CONSEQ'
+ENDSEQ = 'ENDSEQ'
+MINSEQ = 'MINSEQ'
+MAXSEQ = 'MAXSEQ'
+BESTSEQ = 'BESTSEQ'
+
+# =============================================================================
+# Query for statistics experiments
+# =============================================================================
+Q_SEQ = [SEQ]
+Q_SEQ_CONSEQ = [SEQ, CONSEQ]
+Q_SEQ_ENDSEQ = [SEQ, ENDSEQ]
+Q_SEQ_CONSEQ_ENDSEQ = [SEQ, CONSEQ, ENDSEQ]
+Q_SEQ_MINSEQ = [SEQ, MINSEQ]
+Q_SEQ_MAXSEQ = [SEQ, MAXSEQ]
+Q_SEQ_MINSEQ_MAXSEQ = [SEQ, MINSEQ, MAXSEQ]
+Q_SEQ_CONSEQ_MINSEQ = [SEQ, CONSEQ, MINSEQ]
+Q_SEQ_CONSEQ_MAXSEQ = [SEQ, CONSEQ, MAXSEQ]
+Q_SEQ_CONSEQ_MINSEQ_MAXSEQ = [SEQ, CONSEQ, MINSEQ, MAXSEQ]
+Q_SEQ_ENDSEQ_MINSEQ = [SEQ, ENDSEQ, MINSEQ]
+Q_SEQ_ENDSEQ_MAXSEQ = [SEQ, ENDSEQ, MAXSEQ]
+Q_SEQ_ENDSEQ_MINSEQ_MAXSEQ = [SEQ, ENDSEQ, MINSEQ, MAXSEQ]
+Q_SEQ_CONSEQ_ENDSEQ_MINSEQ = [SEQ, CONSEQ, ENDSEQ, MINSEQ]
+Q_SEQ_CONSEQ_ENDSEQ_MAXSEQ = [SEQ, CONSEQ, ENDSEQ, MAXSEQ]
+Q_SEQ_CONSEQ_ENDSEQ_MINSEQ_MAXSEQ = [SEQ, CONSEQ, ENDSEQ, MINSEQ, MAXSEQ]
+Q_STATS_LIST = [Q_SEQ, Q_SEQ_CONSEQ, Q_SEQ_ENDSEQ, Q_SEQ_CONSEQ_ENDSEQ,
+                Q_SEQ_MINSEQ, Q_SEQ_MAXSEQ, Q_SEQ_MINSEQ_MAXSEQ,
+                Q_SEQ_CONSEQ_MINSEQ, Q_SEQ_CONSEQ_MAXSEQ,
+                Q_SEQ_CONSEQ_MINSEQ_MAXSEQ, Q_SEQ_ENDSEQ_MINSEQ,
+                Q_SEQ_ENDSEQ_MAXSEQ, Q_SEQ_ENDSEQ_MINSEQ_MAXSEQ,
+                Q_SEQ_CONSEQ_ENDSEQ_MINSEQ, Q_SEQ_CONSEQ_ENDSEQ_MAXSEQ,
+                Q_SEQ_CONSEQ_ENDSEQ_MINSEQ_MAXSEQ]
 
 
 def add_experiment(experiment_list, experiment):

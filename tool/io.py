@@ -62,7 +62,7 @@ EXPERIMENT_DIR_LIST = [QUERY_DIR, ENV_DIR, OUT_DIR, OUT_AUX_DIR,
 # SEQ operator
 SEQ_MAIN_DIR = 'exp_seq'
 # BESTSEQ operator
-TPREF_MAIN_DIR = 'exp_bestseq'
+BESTSEQ_MAIN_DIR = 'exp_bestseq'
 # CONSEQ operator
 CONSEQ_MAIN_DIR = 'exp_conseq'
 # ENDSEQ operator

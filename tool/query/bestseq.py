@@ -16,7 +16,7 @@ from tool.attributes import get_play_attribute_list, get_move_attribute_list,\
 # Queries with preference operators
 # =============================================================================
 # Play
-Q_PLAY_TPREF = '''
+Q_PLAY_BESTSEQ = '''
 SELECT SEQUENCE IDENTIFIED BY pid
 [RANGE {ran} SECOND, SLIDE {sli} SECOND] FROM s
 ACCORDING TO TEMPORAL PREFERENCES
@@ -31,7 +31,7 @@ IF ALL PREVIOUS (pc = 'mf') THEN
 '''
 
 # Move
-Q_MOVE_TPREF = '''
+Q_MOVE_BESTSEQ = '''
 SELECT SEQUENCE IDENTIFIED BY pid
 [RANGE {ran} SECOND, SLIDE {sli} SECOND] FROM s
 ACCORDING TO TEMPORAL PREFERENCES
@@ -453,19 +453,19 @@ def gen_transitive_tuples(query):
     write_to_csv(filename, att_list, rec_list)
 
 
-def gen_tpref_query(configuration, experiment_conf):
+def gen_bestseq_query(configuration, experiment_conf):
     '''
     Generate streampref queries
     '''
     # Get query dir and filename
     query_dir = get_query_dir(configuration, experiment_conf)
-    filename = query_dir + os.sep + 'tpref.cql'
+    filename = query_dir + os.sep + 'bestseq.cql'
     # Select correct query
     if experiment_conf[QUERY] == Q_PLAY:
-        query = Q_PLAY_TPREF.format(ran=experiment_conf[RAN],
+        query = Q_PLAY_BESTSEQ.format(ran=experiment_conf[RAN],
                                     sli=experiment_conf[SLI])
     elif experiment_conf[QUERY] == Q_MOVE:
-        query = Q_MOVE_TPREF.format(ran=experiment_conf[RAN],
+        query = Q_MOVE_BESTSEQ.format(ran=experiment_conf[RAN],
                                     sli=experiment_conf[SLI])
     # Store query code
     write_to_txt(filename, query)
@@ -507,25 +507,25 @@ def gen_all_queries(configuration, experiment_list):
         if exp_conf[ALGORITHM] == CQL_ALG:
             gen_cql_queries(configuration, exp_conf)
         else:
-            gen_tpref_query(configuration, exp_conf)
+            gen_bestseq_query(configuration, exp_conf)
 
 
-def gen_tpref_env(configuration, experiment_conf, output):
+def gen_bestseq_env(configuration, experiment_conf, output):
     '''
     Generate environment files for SEQ operator
     '''
     text = get_register_stream(experiment_conf)
     # Get query filename
     query_dir = get_query_dir(configuration, experiment_conf)
-    filename = query_dir + os.sep + 'tpref.cql'
+    filename = query_dir + os.sep + 'bestseq.cql'
     # Register query
     if output:
         # Get output filename
         out_file = get_out_file(configuration, experiment_conf)
-        text += REG_Q_OUTPUT_STR.format(qname='tpref', qfile=filename,
+        text += REG_Q_OUTPUT_STR.format(qname='bestseq', qfile=filename,
                                         ofile=out_file)
     else:
-        text += REG_Q_STR.format(qname='tpref', qfile=filename)
+        text += REG_Q_STR.format(qname='bestseq', qfile=filename)
     # Get environment filename
     filename = get_env_file(configuration, experiment_conf)
     write_to_txt(filename, text)
@@ -575,4 +575,4 @@ def gen_all_env(configuration, experiment_list, output=False):
         if exp_conf[ALGORITHM] == CQL_ALG:
             gen_cql_env(configuration, exp_conf, output)
         else:
-            gen_tpref_env(configuration, exp_conf, output)
+            gen_bestseq_env(configuration, exp_conf, output)
