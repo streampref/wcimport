@@ -463,10 +463,10 @@ def gen_bestseq_query(configuration, experiment_conf):
     # Select correct query
     if experiment_conf[QUERY] == Q_PLAY:
         query = Q_PLAY_BESTSEQ.format(ran=experiment_conf[RAN],
-                                    sli=experiment_conf[SLI])
+                                      sli=experiment_conf[SLI])
     elif experiment_conf[QUERY] == Q_MOVE:
         query = Q_MOVE_BESTSEQ.format(ran=experiment_conf[RAN],
-                                    sli=experiment_conf[SLI])
+                                      sli=experiment_conf[SLI])
     # Store query code
     write_to_txt(filename, query)
 

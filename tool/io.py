@@ -71,6 +71,8 @@ ENDSEQ_MAIN_DIR = 'exp_endseq'
 MINSEQ_MAIN_DIR = 'exp_minseq'
 # MAXSEQ operator
 MAXSEQ_MAIN_DIR = 'exp_maxseq'
+# Statistics experiments
+STATS_MAIN_DIR = 'exp_stats'
 
 # =============================================================================
 # Files
@@ -214,6 +216,28 @@ def create_experiment_directories(configuration, experiment_list):
                 direc = main_dir + os.sep + query + os.sep + OUT_AUX_DIR + \
                     os.sep + alg + os.sep + exp_id
                 dir_list.append(direc)
+    _create_directories(dir_list)
+
+
+def create_stat_exp_directories(configuration):
+    '''
+    Create directories for statistical experiments
+    '''
+    # Get main directory
+    main_dir = configuration[DIRECTORY]
+    # Get list of queries
+    query_list = configuration[QUERY_LIST]
+    # Add main directory to directory list
+    dir_list = [main_dir]
+    # For every query
+    for query in query_list:
+        # Add "main_dir"/"query" to list
+        dir_list.append(main_dir + os.sep + query)
+        # For every sub_dir in experiment list
+        for subdir in EXPERIMENT_DIR_LIST:
+            # Add "main_dir"/"query"/"sub_dir" to list
+            direc = main_dir + os.sep + query + os.sep + subdir
+            dir_list.append(direc)
     _create_directories(dir_list)
 
 

@@ -17,7 +17,7 @@ from tool.query.stream import get_register_stream, REG_Q_OUTPUT_STR, REG_Q_STR
 MAXSEQ_QUERY = '''
 SELECT SEQUENCE IDENTIFIED BY pid
 [RANGE {ran} SECOND, SLIDE {sli} SECOND] FROM s
-WHERE MAXIMUM SIZE IS {max}
+WHERE MAXIMUM LENGTH IS {max}
 ;
 '''
 

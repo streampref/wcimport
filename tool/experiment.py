@@ -22,9 +22,9 @@ RAN = 'ran'
 # Slide
 SLI = 'sli'
 
-# Minimum size of sequences
+# Minimum length of sequences
 MIN = 'min'
-# Maximum size of sequences
+# Maximum length of sequences
 MAX = 'max'
 
 # Query
@@ -159,6 +159,41 @@ def gen_experiment_list(configuration, match_list):
                             conf[MATCH] = match
                             # Set algorithm
                             conf[ALGORITHM] = alg
+                            # Set query
+                            conf[QUERY] = query
+                            # Change parameter to current value
+                            conf[par] = value
+                            # Add to experiment list
+                            add_experiment(exp_list, conf)
+    return exp_list
+
+
+def gen_stats_experiment_list(configuration, match_list):
+    '''
+    Generate the list of statistical experiments
+    '''
+    exp_list = []
+    parameter_conf = configuration[PARAMETER]
+    # Default parameters configuration
+    def_conf = get_default_experiment(parameter_conf)
+    # For every query
+    for query in configuration[QUERY_LIST]:
+        # For every algorithm
+        for op_list in configuration[OPERATOR_LIST]:
+            # For every parameter
+            for par in parameter_conf:
+                # Check if parameter has variation
+                if VAR in parameter_conf[par]:
+                    # For every value in the variation
+                    for value in parameter_conf[par][VAR]:
+                        # For every match
+                        for match in match_list:
+                            # Copy default values
+                            conf = def_conf.copy()
+                            # Set match
+                            conf[MATCH] = match
+                            # Set algorithm
+                            conf[OPERATOR_LIST] = op_list
                             # Set query
                             conf[QUERY] = query
                             # Change parameter to current value

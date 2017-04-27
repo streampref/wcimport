@@ -17,7 +17,7 @@ from tool.query.stream import get_register_stream, REG_Q_OUTPUT_STR, REG_Q_STR
 MINSEQ_QUERY = '''
 SELECT SEQUENCE IDENTIFIED BY pid
 [RANGE {ran} SECOND, SLIDE {sli} SECOND] FROM s
-WHERE MINIMUM SIZE IS {min}
+WHERE MINIMUM LENGTH IS {min}
 ;
 '''
 
