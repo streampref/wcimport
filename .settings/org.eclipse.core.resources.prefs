@@ -8,6 +8,7 @@ encoding//tool/query/endseq.py=utf-8
 encoding//tool/query/maxseq.py=utf-8
 encoding//tool/query/minseq.py=utf-8
 encoding//tool/query/seq.py=utf-8
+encoding//tool/query/stats.py=utf-8
 encoding//tool/query/stream.py=utf-8
 encoding//tool/run.py=utf-8
 encoding/bestseqgen.py=utf-8

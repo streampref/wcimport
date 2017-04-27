@@ -8,10 +8,10 @@ soccer world cup of 2014 from http://data.huffingtonpost.com
 
 from tool.experiment import RAN, VAR, SLI, DEF, CQL_ALG, MAXSEQ_ALG,\
     PARAMETER, QUERY_LIST, Q_PLAY, DIRECTORY, ALGORITHM_LIST, \
-    gen_experiment_list, Q_MOVE
+    gen_experiment_list, Q_MOVE, MAX
 from tool.io import MAXSEQ_MAIN_DIR, get_match_list, \
     create_experiment_directories
-from tool.query.seq import gen_all_queries, gen_all_env
+from tool.query.maxseq import gen_all_queries, gen_all_env
 from tool.run import run_experiments, summarize_all, confidence_interval_all
 
 # =============================================================================
@@ -33,6 +33,11 @@ MAXSEQ_PAR = {
     SLI: {
         VAR: [1, 3, 6, 9, 12],
         DEF: 1
+        },
+    # Max
+    MAX: {
+        VAR: [2, 4, 6, 8, 10, 12],
+        DEF: 8
         }
     }
 

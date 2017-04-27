@@ -201,7 +201,7 @@ def create_experiment_directories(configuration, experiment_list):
             dir_list.append(direc)
             # Add sub_dir for queries
             for exp in experiment_list:
-                exp_id = get_id(exp)
+                exp_id = get_id(configuration, exp)
                 # Add "main_dir"/"query"/"query_dir"/"algorithm"/"exp_id"
                 direc = main_dir + os.sep + query + os.sep + QUERY_DIR + \
                     os.sep + alg + os.sep + exp_id
@@ -211,7 +211,7 @@ def create_experiment_directories(configuration, experiment_list):
                 main_dir + os.sep + query + os.sep + OUT_AUX_DIR + os.sep + alg
             dir_list.append(direc)
             for exp in experiment_list:
-                exp_id = get_id(exp)
+                exp_id = get_id(configuration, exp)
                 # Add "main_dir"/"query"/"query_dir"/"algorithm"/"exp_id"
                 direc = main_dir + os.sep + query + os.sep + OUT_AUX_DIR + \
                     os.sep + alg + os.sep + exp_id
@@ -468,7 +468,7 @@ def get_query_dir(configuration, experiment_conf):
     '''
     Return query directory
     '''
-    exp_id = get_id(experiment_conf)
+    exp_id = get_id(configuration, experiment_conf)
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
         os.sep + QUERY_DIR + os.sep + experiment_conf[ALGORITHM] + \
         os.sep + exp_id
@@ -478,7 +478,7 @@ def get_out_file(configuration, experiment_conf):
     '''
     Return output file
     '''
-    exp_id = get_id(experiment_conf)
+    exp_id = get_id(configuration, experiment_conf)
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
         os.sep + OUT_DIR + os.sep + experiment_conf[ALGORITHM] + \
         os.sep + exp_id + '.csv'
@@ -488,7 +488,7 @@ def get_aux_out_file(configuration, experiment_conf, query_id):
     '''
     Return auxiliary output file
     '''
-    exp_id = get_id(experiment_conf)
+    exp_id = get_id(configuration, experiment_conf)
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
         os.sep + OUT_AUX_DIR + os.sep + experiment_conf[ALGORITHM] + \
         os.sep + exp_id + os.sep + query_id + '.csv'
@@ -498,7 +498,7 @@ def get_env_file(configuration, experiment_conf):
     '''
     Return query directory
     '''
-    exp_id = get_id(experiment_conf)
+    exp_id = get_id(configuration, experiment_conf)
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
         os.sep + ENV_DIR + os.sep + experiment_conf[ALGORITHM] + \
         os.sep + exp_id + '.env'
@@ -524,7 +524,7 @@ def get_detail_file(configuration, experiment_conf, count):
     '''
     Return query directory
     '''
-    exp_id = get_id(experiment_conf)
+    exp_id = get_id(configuration, experiment_conf)
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
         os.sep + DETAIL_DIR + os.sep + experiment_conf[ALGORITHM] + \
         os.sep + exp_id + ':' + str(count) + '.csv'

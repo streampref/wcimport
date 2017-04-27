@@ -210,14 +210,18 @@ def get_max_value(parameter_conf, parameter):
     return max(parameter_conf[parameter][VAR])
 
 
-def get_id(experiment_conf):
+def get_id(configuration, experiment_conf):
     '''
     Return full experiment identifier
     '''
     id_str = ''
-    parameter_list = [MATCH, RAN, SLI]
+    par_list = [MATCH]
+    par_conf = configuration[PARAMETER]
+    for par in par_conf:
+        if VAR in par_conf[par]:
+            par_list.append(par)
     # For every parameter
-    for par in parameter_list:
+    for par in par_list:
         # Get value for this parameter in the current experiment
         id_str += par + str(experiment_conf[par])
     return id_str
