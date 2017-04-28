@@ -34,8 +34,6 @@ ALGORITHM = 'algo'
 # Match
 MATCH = 'match'
 
-PARAMETER_VARIATION = [RAN, SLI]
-
 # =============================================================================
 # Configuration keys
 # =============================================================================
@@ -133,6 +131,19 @@ def add_experiment(experiment_list, experiment):
         experiment_list.append(experiment.copy())
 
 
+def get_variated_parameters(configuration):
+    '''
+    Return the list of parameters having variation
+    '''
+    par_list = []
+    par_conf = configuration[PARAMETER]
+    for par in par_conf:
+        if VAR in par_conf[par]:
+            par_list.append(par)
+    par_list.sort()
+    return par_list
+
+
 def gen_experiment_list(configuration, match_list):
     '''
     Generate the list of experiments
@@ -146,25 +157,23 @@ def gen_experiment_list(configuration, match_list):
         # For every algorithm
         for alg in configuration[ALGORITHM_LIST]:
             # For every parameter
-            for par in parameter_conf:
-                # Check if parameter has variation
-                if VAR in parameter_conf[par]:
-                    # For every value in the variation
-                    for value in parameter_conf[par][VAR]:
-                        # For every match
-                        for match in match_list:
-                            # Copy default values
-                            conf = def_conf.copy()
-                            # Set match
-                            conf[MATCH] = match
-                            # Set algorithm
-                            conf[ALGORITHM] = alg
-                            # Set query
-                            conf[QUERY] = query
-                            # Change parameter to current value
-                            conf[par] = value
-                            # Add to experiment list
-                            add_experiment(exp_list, conf)
+            for par in get_variated_parameters(configuration):
+                # For every value in the variation
+                for value in parameter_conf[par][VAR]:
+                    # For every match
+                    for match in match_list:
+                        # Copy default values
+                        conf = def_conf.copy()
+                        # Set match
+                        conf[MATCH] = match
+                        # Set algorithm
+                        conf[ALGORITHM] = alg
+                        # Set query
+                        conf[QUERY] = query
+                        # Change parameter to current value
+                        conf[par] = value
+                        # Add to experiment list
+                        add_experiment(exp_list, conf)
     return exp_list
 
 
@@ -181,25 +190,23 @@ def gen_stats_experiment_list(configuration, match_list):
         # For every algorithm
         for op_list in configuration[OPERATOR_LIST]:
             # For every parameter
-            for par in parameter_conf:
-                # Check if parameter has variation
-                if VAR in parameter_conf[par]:
-                    # For every value in the variation
-                    for value in parameter_conf[par][VAR]:
-                        # For every match
-                        for match in match_list:
-                            # Copy default values
-                            conf = def_conf.copy()
-                            # Set match
-                            conf[MATCH] = match
-                            # Set algorithm
-                            conf[OPERATOR_LIST] = op_list
-                            # Set query
-                            conf[QUERY] = query
-                            # Change parameter to current value
-                            conf[par] = value
-                            # Add to experiment list
-                            add_experiment(exp_list, conf)
+            for par in get_variated_parameters(configuration):
+                # For every value in the variation
+                for value in parameter_conf[par][VAR]:
+                    # For every match
+                    for match in match_list:
+                        # Copy default values
+                        conf = def_conf.copy()
+                        # Set match
+                        conf[MATCH] = match
+                        # Set algorithm
+                        conf[OPERATOR_LIST] = op_list
+                        # Set query
+                        conf[QUERY] = query
+                        # Change parameter to current value
+                        conf[par] = value
+                        # Add to experiment list
+                        add_experiment(exp_list, conf)
     return exp_list
 
 
@@ -215,11 +222,7 @@ def get_id(configuration, experiment_conf):
     Return full experiment identifier
     '''
     id_str = ''
-    par_list = [MATCH]
-    par_conf = configuration[PARAMETER]
-    for par in par_conf:
-        if VAR in par_conf[par]:
-            par_list.append(par)
+    par_list = get_variated_parameters(configuration) + [MATCH]
     # For every parameter
     for par in par_list:
         # Get value for this parameter in the current experiment

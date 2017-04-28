@@ -7,14 +7,15 @@ import csv
 import os
 
 from tool.io import get_detail_file, get_env_file, write_result_file, \
-    get_summary_file, get_result_file, get_max_play_ts, get_max_move_ts
+    get_summary_file, get_result_file, get_max_play_ts, get_max_move_ts,\
+    get_env_stats_file, get_detail_stats_file
 from tool.experiment import ALGORITHM, PARAMETER, VAR, CQL_ALG, \
     SEQ_ALG, RUNTIME, MEMORY, SUM_RUN, SUM_MEM, BNL_SEARCH, \
     INC_PARTITION_SEQTREE_ALG, INC_PARTITIONLIST_SEQTREE_ALG, \
     INC_PARTITION_SEQTREE_PRUNING_ALG, INC_PARTITIONLIST_SEQTREE_PRUNING_ALG, \
-    get_default_experiment, PARAMETER_VARIATION, MATCH, QUERY, QUERY_LIST,\
+    get_default_experiment, MATCH, QUERY, QUERY_LIST,\
     Q_PLAY, Q_MOVE, ALGORITHM_LIST, NAIVE_SUBSEQ_ALG, INC_SUBSEQ_ALG, \
-    MINSEQ_ALG, MAXSEQ_ALG
+    MINSEQ_ALG, MAXSEQ_ALG, get_variated_parameters
 
 
 # Command for experiment run
@@ -23,6 +24,8 @@ SIMPLE_RUN_COMMAND = "streampref -r'|' -e {env} -d {det} -m {max}"
 BESTSEQ_RUN_COMMAND = "streampref -r'|' -e {env} -d {det} -m {max} -t {alg}"
 # Command for experiment run with subsequence algorithm option
 SUBSEQ_RUN_COMMAND = "streampref -r'|' -e {env} -d {det} -m {max} -s {alg}"
+# Command for experiment run with statistics output
+STATS_RUN_COMMAND = "streampref -r'|' -e {env} -o {det} -m {max}"
 # Command for calculation of confidence interval
 CONFINTERVAL_COMMAND = "confinterval -d'|' -i {inf} -o {outf} -k {keyf}"
 
@@ -79,6 +82,25 @@ def run(configuration, experiment_conf, count):
             print "Check if 'streampref' is in path"
 
 
+def run_stats(configuration, experiment_conf):
+    '''
+    Run an experiment
+    '''
+    # Get iteration number
+    iterations = get_iterations(experiment_conf)
+    # Get environment file
+    env_file = get_env_stats_file(configuration, experiment_conf)
+    detail_file = get_detail_stats_file(configuration, experiment_conf)
+    if not os.path.isfile(detail_file):
+        command = STATS_RUN_COMMAND.format(env=env_file, det=detail_file,
+                                           max=iterations)
+        print command
+        os.system(command)
+        if not os.path.isfile(detail_file):
+            print 'Detail results file not found: ' + detail_file
+            print "Check if 'streampref' is in path"
+
+
 def run_experiments(configuration, experiment_list, run_count):
     '''
     Run all experiments
@@ -86,6 +108,14 @@ def run_experiments(configuration, experiment_list, run_count):
     for count in range(1, run_count + 1):
         for exp_conf in experiment_list:
             run(configuration, exp_conf, count)
+
+
+def run_experiments_stats(configuration, experiment_list):
+    '''
+    Run all experiments with statistics output
+    '''
+    for exp_conf in experiment_list:
+        run_stats(configuration, exp_conf)
 
 
 def get_summaries(detail_file):
@@ -169,7 +199,7 @@ def summarize_all(configuration, match_list, run_count):
     Summarize all results
     '''
     # Get parameter having variation
-    for par in PARAMETER_VARIATION:
+    for par in get_variated_parameters(configuration):
         for query in configuration[QUERY_LIST]:
             summarize(configuration, match_list, query, par, run_count)
 
@@ -195,7 +225,7 @@ def confidence_interval_all(configuration):
     Calculate confidence interval for all summarized results
     '''
     # For every parameter
-    for parameter in PARAMETER_VARIATION:
+    for parameter in get_variated_parameters(configuration):
         for query in configuration[QUERY_LIST]:
             in_file = \
                 get_summary_file(configuration, query, SUM_RUN, parameter)

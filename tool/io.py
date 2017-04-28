@@ -12,7 +12,7 @@ from tool.attributes import TS_ATT, get_original_attribute_list, \
     get_move_attribute_list, get_play_attribute_list, \
     get_player_attribute_list
 from tool.experiment import QUERY_LIST, DIRECTORY, ALGORITHM, \
-    QUERY, ALGORITHM_LIST, get_id
+    QUERY, ALGORITHM_LIST, get_id, OPERATOR_LIST
 
 
 # =============================================================================
@@ -474,6 +474,26 @@ def get_query_dir(configuration, experiment_conf):
         os.sep + exp_id
 
 
+def get_query_stats_file(configuration, experiment_conf):
+    '''
+    Return query filename for statistics query
+    '''
+    exp_id = get_id(configuration, experiment_conf) + \
+        '_'.join(experiment_conf[OPERATOR_LIST])
+    return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
+        os.sep + QUERY_DIR + os.sep + exp_id + '.cql'
+
+
+def get_env_stats_file(configuration, experiment_conf):
+    '''
+    Return environment filename for statistics query
+    '''
+    exp_id = get_id(configuration, experiment_conf) + \
+        '_'.join(experiment_conf[OPERATOR_LIST])
+    return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
+        os.sep + ENV_DIR + os.sep + exp_id + '.cql'
+
+
 def get_out_file(configuration, experiment_conf):
     '''
     Return output file
@@ -528,6 +548,16 @@ def get_detail_file(configuration, experiment_conf, count):
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
         os.sep + DETAIL_DIR + os.sep + experiment_conf[ALGORITHM] + \
         os.sep + exp_id + ':' + str(count) + '.csv'
+
+
+def get_detail_stats_file(configuration, experiment_conf):
+    '''
+    Return query directory
+    '''
+    exp_id = get_id(configuration, experiment_conf) + \
+        '_'.join(experiment_conf[OPERATOR_LIST])
+    return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
+        os.sep + DETAIL_DIR + os.sep + exp_id + '.csv'
 
 
 def get_tup_file(query):
