@@ -89,7 +89,7 @@ PLAYER_FILE = IMPORTED_DATA_DIR + os.sep + 'players.csv'
 URL_RETRY = 10
 
 # Register dialect for CSV files
-csv.register_dialect('table', delimiter='|', skipinitialspace=True)
+csv.register_dialect('table', delimiter=',', skipinitialspace=True)
 
 
 def read_url(url):

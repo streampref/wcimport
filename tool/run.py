@@ -278,7 +278,7 @@ def summarize_comp_op(configuration, match_list, query):
         exp_conf[OPERATOR_LIST] = op_list
         rec_comp = get_match_comp_summaries(configuration, match_list,
                                             exp_conf)
-        rec_comp['operators'] = str(len(op_list)) + '_'.join(op_list)
+        rec_comp['operators'] = str(len(op_list))
         rec_list.append(rec_comp)
     # Store summarized results
     filename = get_summary_file(configuration, query, '', 'operators')
