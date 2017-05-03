@@ -2,7 +2,6 @@
 '''
 Experiments
 '''
-from tool.attributes import TS_ATT
 
 # =============================================================================
 # Query identifiers
@@ -116,13 +115,7 @@ Q_SEQ_CONSEQ_ENDSEQ_MINSEQ = [SEQ, CONSEQ, ENDSEQ, MINSEQ]
 Q_SEQ_CONSEQ_ENDSEQ_MAXSEQ = [SEQ, CONSEQ, ENDSEQ, MAXSEQ]
 Q_SEQ_CONSEQ_ENDSEQ_MINSEQ_MAXSEQ = [SEQ, CONSEQ, ENDSEQ, MINSEQ, MAXSEQ]
 Q_STATS_LIST = [Q_SEQ, Q_SEQ_CONSEQ,
-                # Q_SEQ_ENDSEQ,
                 Q_SEQ_CONSEQ_ENDSEQ,
-                # Q_SEQ_MINSEQ, Q_SEQ_MAXSEQ, Q_SEQ_MINSEQ_MAXSEQ,
-                # Q_SEQ_CONSEQ_MINSEQ, Q_SEQ_CONSEQ_MAXSEQ,
-                # Q_SEQ_CONSEQ_MINSEQ_MAXSEQ, Q_SEQ_ENDSEQ_MINSEQ,
-                # Q_SEQ_ENDSEQ_MAXSEQ, Q_SEQ_ENDSEQ_MINSEQ_MAXSEQ,
-                # Q_SEQ_CONSEQ_ENDSEQ_MINSEQ, Q_SEQ_CONSEQ_ENDSEQ_MAXSEQ,
                 Q_SEQ_CONSEQ_ENDSEQ_MINSEQ_MAXSEQ]
 
 # =============================================================================

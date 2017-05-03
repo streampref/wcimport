@@ -8,7 +8,7 @@ soccer world cup of 2014 from http://data.huffingtonpost.com
 from tool.experiment import RAN, VAR, DEF, Q_STATS_LIST, OPERATOR_LIST,\
     QUERY_LIST, Q_PLAY, Q_MOVE, DIRECTORY, PARAMETER, MIN, MAX, \
     gen_stats_experiment_list
-from tool.io import STATS_MAIN_DIR, get_match_list, create_stat_exp_directories
+from tool.io import COMP_MAIN_DIR, get_match_list, create_stat_exp_directories
 from tool.query.comp import gen_all_queries, gen_all_env
 from tool.run import run_experiments_stats, summarize_all_comp
 
@@ -25,11 +25,6 @@ STATS_PAR = {
         VAR: [60, 120, 180, 240, 300],
         DEF: 180
         },
-    # Slide
-    #     SLI: {
-    #         #         VAR: [1, 5, 15, 60],
-    #         DEF: 1
-    #         },
     # Min
     MIN: {
         VAR: [2, 4, 6, 8],
@@ -48,7 +43,7 @@ STATS_CONF = {
     # Query
     QUERY_LIST: [Q_PLAY, Q_MOVE],
     # Main directory
-    DIRECTORY: STATS_MAIN_DIR,
+    DIRECTORY: COMP_MAIN_DIR,
     # Parameters
     PARAMETER: STATS_PAR
     }
@@ -59,7 +54,7 @@ def get_arguments(print_help=False):
     Get arguments
     '''
     import argparse
-    parser = argparse.ArgumentParser('STATSGen')
+    parser = argparse.ArgumentParser('COMPGen')
     parser.add_argument('-g', '--gen', action="store_true",
                         default=False,
                         help='Generate files')
@@ -95,8 +90,6 @@ def main():
     elif args.summarize:
         print 'Summarizing results'
         summarize_all_comp(STATS_CONF, match_list)
-#         print 'Calculating confidence intervals'
-#         confidence_interval_all(STATS_CONF)
     else:
         get_arguments(True)
 

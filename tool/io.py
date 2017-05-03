@@ -72,7 +72,7 @@ MINSEQ_MAIN_DIR = 'exp_minseq'
 # MAXSEQ operator
 MAXSEQ_MAIN_DIR = 'exp_maxseq'
 # Statistics experiments
-STATS_MAIN_DIR = 'exp_stats'
+COMP_MAIN_DIR = 'exp_comparisons'
 
 # =============================================================================
 # Files
@@ -526,8 +526,10 @@ def get_summary_file(configuration, query, summary, parameter):
     '''
     Return query directory
     '''
+    if summary != '':
+        summary += '_'
     return configuration[DIRECTORY] + os.sep + query + os.sep + \
-        SUMMARY_DIR + os.sep + summary + '_' + parameter + '.csv'
+        SUMMARY_DIR + os.sep + summary + parameter + '.csv'
 
 
 def get_result_file(configuration, query, summary, parameter):
