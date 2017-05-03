@@ -17,8 +17,13 @@ Next, you can use the appropriated generator to create the environment for exper
 
 WCImport has individual dataset generators for evaluation of specific StreamPref operators.
 
-- **SeqGen**: generator for evaluation of SEQ operator (sequence extraction);
-- **TPrefGen**: generator for evaluation of BESTSEQ operator (temporal preference operator).
+- **SEQGen**: generator for evaluation of SEQ operator (sequence extraction);
+- **CONSEQGen**: generator for evaluation of CONSEQ operator (subsequences with consecutive timestamp);
+- **ENDSEQGen**: generator for evaluation of ENDSEQ operator (subsequences with end position);
+- **MINSEQGen**: generator for evaluation of MINSEQ operator (filtering sequences by minimum length);
+- **MAXSEQGen**: generator for evaluation of MAXSEQ operator (filtering sequences by maximum length);
+- **BESTSEQGen**: generator for evaluation of BESTSEQ operator (dominant sequences according to temporal conditional preferences);
+- **CompGen**: Generator for evaluation of the number of comparisons unsing different combinations of operators. 
 
 # Command Line
 
