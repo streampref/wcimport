@@ -19,7 +19,7 @@ from tool.run import run_experiments_stats, summarize_all_comp
 MATCH_COUNT = 1
 
 # Parameters configuration
-STATS_PAR = {
+COMP_PAR = {
     # Range
     RAN: {
         VAR: [60, 120, 180, 240, 300],
@@ -37,7 +37,7 @@ STATS_PAR = {
         }
     }
 
-STATS_CONF = {
+COMP_CONF = {
     # Algorithms
     OPERATOR_LIST: Q_STATS_LIST,
     # Query
@@ -45,7 +45,7 @@ STATS_CONF = {
     # Main directory
     DIRECTORY: COMP_MAIN_DIR,
     # Parameters
-    PARAMETER: STATS_PAR
+    PARAMETER: COMP_PAR
     }
 
 
@@ -77,19 +77,19 @@ def main():
     args = get_arguments()
     print 'Getting list of matches'
     match_list = get_match_list()[-MATCH_COUNT:]
-    exp_list = gen_stats_experiment_list(STATS_CONF, match_list)
+    exp_list = gen_stats_experiment_list(COMP_CONF, match_list)
     if args.gen:
-        create_stat_exp_directories(STATS_CONF)
+        create_stat_exp_directories(COMP_CONF)
         print 'Generating queries'
-        gen_all_queries(STATS_CONF, exp_list)
+        gen_all_queries(COMP_CONF, exp_list)
         print 'Generating environments'
-        gen_all_env(STATS_CONF, exp_list)
+        gen_all_env(COMP_CONF, exp_list)
     elif args.run:
         print 'Running experiments'
-        run_experiments_stats(STATS_CONF, exp_list)
+        run_experiments_stats(COMP_CONF, exp_list)
     elif args.summarize:
         print 'Summarizing results'
-        summarize_all_comp(STATS_CONF, match_list)
+        summarize_all_comp(COMP_CONF, match_list)
     else:
         get_arguments(True)
 
