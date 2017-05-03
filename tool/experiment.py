@@ -2,6 +2,7 @@
 '''
 Experiments
 '''
+from tool.attributes import TS_ATT
 
 # =============================================================================
 # Query identifiers
@@ -96,7 +97,7 @@ MAXSEQ = 'MAXSEQ'
 BESTSEQ = 'BESTSEQ'
 
 # =============================================================================
-# Query for statistics experiments
+# Query for comparisons experiments
 # =============================================================================
 Q_SEQ = [SEQ]
 Q_SEQ_CONSEQ = [SEQ, CONSEQ]
@@ -114,13 +115,31 @@ Q_SEQ_ENDSEQ_MINSEQ_MAXSEQ = [SEQ, ENDSEQ, MINSEQ, MAXSEQ]
 Q_SEQ_CONSEQ_ENDSEQ_MINSEQ = [SEQ, CONSEQ, ENDSEQ, MINSEQ]
 Q_SEQ_CONSEQ_ENDSEQ_MAXSEQ = [SEQ, CONSEQ, ENDSEQ, MAXSEQ]
 Q_SEQ_CONSEQ_ENDSEQ_MINSEQ_MAXSEQ = [SEQ, CONSEQ, ENDSEQ, MINSEQ, MAXSEQ]
-Q_STATS_LIST = [Q_SEQ, Q_SEQ_CONSEQ, Q_SEQ_ENDSEQ, Q_SEQ_CONSEQ_ENDSEQ,
-                Q_SEQ_MINSEQ, Q_SEQ_MAXSEQ, Q_SEQ_MINSEQ_MAXSEQ,
-                Q_SEQ_CONSEQ_MINSEQ, Q_SEQ_CONSEQ_MAXSEQ,
-                Q_SEQ_CONSEQ_MINSEQ_MAXSEQ, Q_SEQ_ENDSEQ_MINSEQ,
-                Q_SEQ_ENDSEQ_MAXSEQ, Q_SEQ_ENDSEQ_MINSEQ_MAXSEQ,
-                Q_SEQ_CONSEQ_ENDSEQ_MINSEQ, Q_SEQ_CONSEQ_ENDSEQ_MAXSEQ,
+Q_STATS_LIST = [Q_SEQ, Q_SEQ_CONSEQ,
+                # Q_SEQ_ENDSEQ,
+                Q_SEQ_CONSEQ_ENDSEQ,
+                # Q_SEQ_MINSEQ, Q_SEQ_MAXSEQ, Q_SEQ_MINSEQ_MAXSEQ,
+                # Q_SEQ_CONSEQ_MINSEQ, Q_SEQ_CONSEQ_MAXSEQ,
+                # Q_SEQ_CONSEQ_MINSEQ_MAXSEQ, Q_SEQ_ENDSEQ_MINSEQ,
+                # Q_SEQ_ENDSEQ_MAXSEQ, Q_SEQ_ENDSEQ_MINSEQ_MAXSEQ,
+                # Q_SEQ_CONSEQ_ENDSEQ_MINSEQ, Q_SEQ_CONSEQ_ENDSEQ_MAXSEQ,
                 Q_SEQ_CONSEQ_ENDSEQ_MINSEQ_MAXSEQ]
+
+# =============================================================================
+# Comparisons statistics
+# =============================================================================
+COMP_IN = 'in'
+COMP_IN_MIN = 'in_min'
+COMP_IN_MAX = 'in_max'
+COMP_IN_AVG = 'in_avg'
+COMP = 'comp'
+COMP_OUT = 'out'
+COMP_OUT_MIN = 'out_min'
+COMP_OUT_MAX = 'out_max'
+COMP_OUT_AVG = 'out_avg'
+COMP_ATT_LIST = [COMP_IN, COMP_IN_MIN, COMP_IN_MAX, COMP_IN_AVG, COMP,
+                 COMP_OUT, COMP_OUT_MIN, COMP_OUT_MAX, COMP_OUT_AVG]
+# =============================================================================
 
 
 def add_experiment(experiment_list, experiment):
@@ -189,14 +208,18 @@ def gen_stats_experiment_list(configuration, match_list):
     for query in configuration[QUERY_LIST]:
         # For every algorithm
         for op_list in configuration[OPERATOR_LIST]:
-            # For every parameter
-            for par in get_variated_parameters(configuration):
+            par_list = get_variated_parameters(configuration)
+            if MINSEQ not in op_list and MIN in par_list:
+                par_list.remove(MIN)
+            if MAXSEQ not in op_list and MAX in par_list:
+                par_list.remove(MAX)
+            for par in par_list:
                 # For every value in the variation
                 for value in parameter_conf[par][VAR]:
                     # For every match
                     for match in match_list:
                         # Copy default values
-                        conf = def_conf.copy()
+                        conf = {key: def_conf[key] for key in par_list}
                         # Set match
                         conf[MATCH] = match
                         # Set algorithm
@@ -227,6 +250,27 @@ def get_id(configuration, experiment_conf):
     for par in par_list:
         # Get value for this parameter in the current experiment
         id_str += par + str(experiment_conf[par])
+    return id_str
+
+
+def get_stats_id(configuration, experiment_conf):
+    '''
+    Return experiment identifier with statistics output
+    '''
+    id_str = ''
+    par_list = get_variated_parameters(configuration)
+    if MINSEQ not in experiment_conf[OPERATOR_LIST] \
+            and MIN in par_list:
+        par_list.remove(MIN)
+    if MAXSEQ not in experiment_conf[OPERATOR_LIST] \
+            and MAX in par_list:
+        par_list.remove(MAX)
+    # For every parameter
+    for par in par_list:
+        # Get value for this parameter in the current experiment
+        id_str += par + str(experiment_conf[par])
+    id_str = ':'.join(experiment_conf[OPERATOR_LIST]) + '_' + id_str + \
+        '_' + experiment_conf[MATCH]
     return id_str
 
 
