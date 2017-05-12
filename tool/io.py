@@ -10,7 +10,7 @@ from kitchen.text.converters import to_str
 
 from tool.attributes import TS_ATT, get_original_attribute_list, \
     get_move_attribute_list, get_play_attribute_list, \
-    get_player_attribute_list
+    get_player_attribute_list, get_team_attribute_list
 from tool.experiment import QUERY_LIST, DIRECTORY, ALGORITHM, \
     QUERY, ALGORITHM_LIST, get_id, get_stats_id
 
@@ -81,6 +81,8 @@ COMP_MAIN_DIR = 'exp_comparisons'
 MATCH_LIST_FILE = IMPORTED_DATA_DIR + os.sep + 'matches.txt'
 # File with the list of players
 PLAYER_FILE = IMPORTED_DATA_DIR + os.sep + 'players.csv'
+# File with the list of teams
+TEAM_FILE = IMPORTED_DATA_DIR + os.sep + 'teams.csv'
 
 # =============================================================================
 # Others
@@ -396,6 +398,42 @@ def get_match_players_json(match_id):
     return None
 
 
+def get_match_teams_json(match_id):
+    '''
+    Get JSON data of teams
+    '''
+    filename = JSON_DIR + os.sep + match_id + '-teams.json'
+    if os.path.isfile(filename):
+        print 'Reading already imported data from ' + filename
+        # Just read data file of match
+        json_file = open(filename, 'r')
+        player_data = json.loads(json_file.read())
+        json_file.close()
+        return player_data
+    url = HTML_DATA_URL % match_id
+    content = read_url(url)
+    if content is not None:
+        soup = BeautifulSoup(content, 'html.parser')
+        # Get second script block
+        data_script = soup.findAll("script")[1]
+        data_lines = data_script.text.split('\n')
+        # Scan all lines
+        for line in data_lines:
+            # Check if line has the player data
+            if len(line) > 12 and line[:12] == 'HPIN.teams =':
+                # Get list of players
+                line_data = line.split(' = ')[1]
+                # Remove ';' at end
+                line_data = line_data[:-1]
+                player_data = json.loads(line_data)
+                print 'Storing imported data to ' + filename
+                json_file = open(filename, 'wb')
+                json.dump(player_data, json_file, indent=2)
+                json_file.close()
+                return player_data
+    return None
+
+
 def get_full_data_file(match_id):
     '''
     Get file name of original data
@@ -450,6 +488,14 @@ def store_players(record_list):
     '''
     att_list = get_player_attribute_list(timestamp=True, flag=True)
     write_csv_file(record_list, PLAYER_FILE, att_list)
+
+
+def store_teams(record_list):
+    '''
+    Store player data
+    '''
+    att_list = get_team_attribute_list(timestamp=True, flag=True)
+    write_csv_file(record_list, TEAM_FILE, att_list)
 
 
 def write_to_txt(filename, text):

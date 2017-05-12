@@ -9,15 +9,16 @@ http://data.huffingtonpost.com
 from tool.attributes import TS_ATT, MINUTE, SECOND, PLAYER_ID, X, Y, TYPE, \
     OUTCOME, PID, PLACE, TEAM_BALL, MOVE, PLAY, FL_ATT, \
     get_original_attribute_list,\
-    get_player_attribute_list
+    get_player_attribute_list, ID, NAME, ISO
 from tool.io import create_import_directory, get_match_json, \
     decode_object, get_match_players_json, get_match_list, store_full_data,\
-    store_move_data, store_play_data, store_players
+    store_move_data, store_play_data, store_players, get_match_teams_json,\
+    store_teams
 
 
 def get_all_matches(match_id_list):
     '''
-    Get all data from http://data.huffingtonpost.com
+    Get all matches
     '''
     print 'Getting matches data'
     match_dict = {}
@@ -32,7 +33,7 @@ def get_all_matches(match_id_list):
 
 def get_all_players(match_id_list):
     '''
-    Get all data from http://data.huffingtonpost.com
+    Get all players
     '''
     print 'Getting players data'
     attributes_set = set()
@@ -48,13 +49,14 @@ def get_all_players(match_id_list):
         for player in match_player_list:
             # Update set of all attributes
             attributes_set = attributes_set.union(set(player.keys()))
-            player_id = player['id']
-            player[PLAYER_ID] = player_id
+            player_id = player[ID]
             # Check if player was not processed
             if player_id not in player_dict:
                 # Add player do dictionary
                 player_dict[player_id] = player
-    print 'Removing duplicated players'
+            else:
+                player_dict[player_id].update(player)
+    print 'Processing player attributes'
     # List of non duplicated players
     player_list = []
     # For every player
@@ -69,6 +71,36 @@ def get_all_players(match_id_list):
         new_player[FL_ATT] = '+'
         player_list.append(new_player)
     return player_list
+
+
+def get_all_teams(match_id_list):
+    '''
+    Get all teams
+    '''
+    print 'Getting teams data'
+    attributes_set = set()
+    teams_dict = {}
+    # For every match
+    for match_id in match_id_list:
+        print 'Getting teams for match ' + match_id
+        # Get match players
+        match_team_list = get_match_teams_json(match_id)
+        # Decode player objects
+        match_team_list = decode_object(match_team_list)
+        # For every player
+        for team in match_team_list:
+            # Update set of all attributes
+            attributes_set = attributes_set.union(set(team.keys()))
+            team_id = team[ID]
+            # Check if player was not processed
+            if team_id not in teams_dict:
+                # Add player do dictionary
+                teams_dict[team_id] = {ID: team[ID],
+                                       NAME: team[NAME],
+                                       ISO: team[ISO],
+                                       TS_ATT: 0,
+                                       FL_ATT: '+'}
+    return teams_dict.values()
 
 
 def remove_duplicates(record_list):
@@ -244,6 +276,10 @@ def main():
     match_dict = get_all_matches(match_id_list)
     # Store match events into csv files
     store_match_events_csv(match_dict)
+    # Get teams data
+    team_list = get_all_teams(match_id_list)
+    print 'Storing teams data into csv files'
+    store_teams(team_list)
     # Get players data
     player_list = get_all_players(match_id_list)
     print 'Storing players data into csv files'

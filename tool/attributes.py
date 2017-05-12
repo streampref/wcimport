@@ -47,9 +47,11 @@ DOM_DICT[MOVE] = ['fw', 'rw', 'la']
 DOM_DICT[TEAM_BALL] = [0, 1]
 
 # =============================================================================
-# Player attributes
+# Player and team attributes
 # =============================================================================
+ID = 'id'
 NAME = 'name'
+ISO = 'iso'
 REAL_POSITION = 'real_position'
 REAL_POSITION_SIDE = 'real_position_side'
 KNOWN_NAME = 'known_name'
@@ -85,10 +87,12 @@ MOVE_ATT_LIST = [PID, PLACE, TEAM_BALL, MOVE]
 # Play attribute list
 PLAY_ATT_LIST = [PID, PLACE, PLAY]
 # Player attribute list
-PLAYER_ATT_LIST = [PID, NAME, REAL_POSITION, REAL_POSITION_SIDE,
+PLAYER_ATT_LIST = [ID, NAME, REAL_POSITION, REAL_POSITION_SIDE,
                    KNOWN_NAME, SHORT_NAME, LAST_NAME, FIRST_NAME,
                    MIDDLE_NAME, TEAM_ID, PREFERRED_FOOT, CLUB, CAPS, GOALS,
                    JERSEY_NUM, COUNTRY, BIRTH_DATE, PPOSITION]
+# Team attribute list
+TEAM_ATT_LIST = [ID, NAME, ISO]
 
 # =============================================================================
 #  Attribute Types (excluding timestamp)
@@ -140,6 +144,13 @@ def get_player_attribute_list(prefix='', timestamp=False, flag=False):
     Return list of player attributes
     '''
     return _process_attribute_list(PLAYER_ATT_LIST, prefix, timestamp, flag)
+
+
+def get_team_attribute_list(prefix='', timestamp=False, flag=False):
+    '''
+    Return list of player attributes
+    '''
+    return _process_attribute_list(TEAM_ATT_LIST, prefix, timestamp, flag)
 
 
 def get_play_attributes_and_types():
