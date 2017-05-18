@@ -2,27 +2,29 @@
 # -*- coding: utf-8 -*-
 
 '''
-Module to import data of soccer world cup of 2014 from
+Module to import data of 2014 Soccer World Cup from
 http://data.huffingtonpost.com
 '''
 
 from tool.attributes import TS_ATT, MINUTE, SECOND, PLAYER_ID, X, Y, TYPE, \
-    OUTCOME, PID, PLACE, TEAM_BALL, MOVE, PLAY, FL_ATT, \
-    get_original_attribute_list,\
-    get_player_attribute_list, ID, NAME, ISO
+    OUTCOME, PLACE, BALL_POSS, DIRECTION, MOVE, FL_ATT, \
+    get_event_attribute_list,\
+    get_player_attribute_list, ID, NAME, ISO, DA, DI, MF, OI, OA, FIELD_PASS,\
+    NONE, LATERAL, FORWARD, BACKWARD, TYPEOUT_TO_MOVE
 from tool.io import create_import_directory, get_match_json, \
-    decode_object, get_match_players_json, get_match_list, store_full_data,\
-    store_move_data, store_play_data, store_players, get_match_teams_json,\
+    decode_object, get_match_players_json, get_match_list, store_event_data,\
+    store_place_data, store_move_data, store_players, get_match_teams_json,\
     store_teams
 
 
-def get_all_matches(match_id_list):
+def get_all_matches(match_list):
     '''
     Get all matches
     '''
     print 'Getting matches data'
     match_dict = {}
-    for match_id in match_id_list:
+    for match in match_list:
+        match_id = match[ID]
         print 'Getting data for match ' + match_id
         match_data = get_match_json(match_id)
         match_data = decode_object(match_data)
@@ -31,7 +33,7 @@ def get_all_matches(match_id_list):
     return match_dict
 
 
-def get_all_players(match_id_list):
+def get_all_players(match_dict):
     '''
     Get all players
     '''
@@ -39,7 +41,7 @@ def get_all_players(match_id_list):
     attributes_set = set()
     player_dict = {}
     # For every match
-    for match_id in match_id_list:
+    for match_id in match_dict:
         print 'Getting player for match ' + match_id
         # Get match players
         match_player_list = get_match_players_json(match_id)
@@ -73,7 +75,7 @@ def get_all_players(match_id_list):
     return player_list
 
 
-def get_all_teams(match_id_list):
+def get_all_teams(match_dict):
     '''
     Get all teams
     '''
@@ -81,7 +83,7 @@ def get_all_teams(match_id_list):
     attributes_set = set()
     teams_dict = {}
     # For every match
-    for match_id in match_id_list:
+    for match_id in match_dict:
         print 'Getting teams for match ' + match_id
         # Get match players
         match_team_list = get_match_teams_json(match_id)
@@ -105,7 +107,7 @@ def get_all_teams(match_id_list):
 
 def remove_duplicates(record_list):
     '''
-    Return a new record list without duplicated PID per instant
+    Return a new record list without duplicated player per instant
     '''
     # Create new record list
     rec_list = []
@@ -114,7 +116,7 @@ def remove_duplicates(record_list):
     # For every input record
     for rec in record_list:
         # Convert record to tuple
-        tup = (TS_ATT, rec[TS_ATT], PID, rec[PID])
+        tup = (TS_ATT, rec[TS_ATT], PLAYER_ID, rec[PLAYER_ID])
         # Check if tuple was already processed
         if tup not in processed_set:
             # Add to processed
@@ -122,6 +124,22 @@ def remove_duplicates(record_list):
             # Add to result list
             rec_list.append(rec)
     return rec_list
+
+
+def calc_place(x_coord):
+    '''
+    Calculate place according to x coordinate
+    '''
+    if x_coord < 20:
+        return DA
+    elif x_coord < 35:
+        return DI
+    elif x_coord < 65:
+        return MF
+    elif x_coord < 80:
+        return OI
+    else:
+        return OA
 
 
 def calculate_move_stream(event_list):
@@ -136,21 +154,15 @@ def calculate_move_stream(event_list):
         if player_id not in player_event_dict:
             # Create a list for this player
             player_event_dict[player_id] = []
-        p_event = {TS_ATT: event[TS_ATT], PID: player_id,
+        p_event = {TS_ATT: event[TS_ATT], PLAYER_ID: player_id,
                    X: event[X], Y: event[Y]}
-        # Position
-        if event[X] < 20:
-            p_event[PLACE] = 'da'
-        elif event[X] < 35:
-            p_event[PLACE] = 'di'
-        elif event[X] < 65:
-            p_event[PLACE] = 'mf'
-        elif event[X] < 80:
-            p_event[PLACE] = 'oi'
-        else:
-            p_event[PLACE] = 'oa'
+        # Place
+        p_event[PLACE] = calc_place(event[X])
         # Ball possession
-        p_event[TEAM_BALL] = event[OUTCOME]
+        if event[FIELD_PASS] == 't':
+            p_event[BALL_POSS] = 1
+        else:
+            p_event[BALL_POSS] = 0
         player_event_dict[player_id].append(p_event)
     new_event_list = []
     # For every player
@@ -162,23 +174,35 @@ def calculate_move_stream(event_list):
         while len(p_event_list):
             cur_event = p_event_list.pop(0)
             # Final event
-            new_event = {TS_ATT: cur_event[TS_ATT], PID: player_id,
+            new_event = {TS_ATT: cur_event[TS_ATT], PLAYER_ID: player_id,
                          PLACE: cur_event[PLACE],
-                         TEAM_BALL: cur_event[TEAM_BALL]}
+                         BALL_POSS: cur_event[BALL_POSS]}
             # Calculate move
             x_dist = cur_event[X] - prev_event[X]
             y_dist = cur_event[Y] - prev_event[Y]
-            if abs(y_dist) > abs(x_dist):
-                new_event[MOVE] = 'la'
+            if x_dist == 0 and y_dist == 0:
+                new_event[DIRECTION] = NONE
+            elif abs(y_dist) > abs(x_dist):
+                new_event[DIRECTION] = LATERAL
             elif x_dist > 0:
-                new_event[MOVE] = 'fw'
+                new_event[DIRECTION] = FORWARD
             else:
-                new_event[MOVE] = 'rw'
+                new_event[DIRECTION] = BACKWARD
             new_event_list.append(new_event)
     # Remove duplicated
     new_event_list = remove_duplicates(new_event_list)
     # Sort all events by timestamp
     return sorted(new_event_list, key=lambda k: k[TS_ATT])
+
+
+def calc_move(move_type, outcome):
+    '''
+    Calculate move according to type and outcome attributes
+    '''
+    if (move_type, outcome) in TYPEOUT_TO_MOVE:
+        return TYPEOUT_TO_MOVE[(move_type, outcome)]
+    else:
+        return None
 
 
 def calculate_play_stream(event_list):  # IGNORE:too-many-branches
@@ -187,42 +211,13 @@ def calculate_play_stream(event_list):  # IGNORE:too-many-branches
     '''
     new_event_list = []
     for event in event_list:
-        new_event = {TS_ATT: event[TS_ATT], PID: event[PLAYER_ID]}
-        # Position
-        if event[X] < 20:
-            new_event[PLACE] = 'da'
-        elif event[X] < 35:
-            new_event[PLACE] = 'di'
-        elif event[X] < 65:
-            new_event[PLACE] = 'mf'
-        elif event[X] < 80:
-            new_event[PLACE] = 'oi'
-        else:
-            new_event[PLACE] = 'oa'
+        new_event = {TS_ATT: event[TS_ATT], PLAYER_ID: event[PLAYER_ID]}
+        # Place
+        new_event[PLACE] = calc_place(event[X])
         # Play
-        # Other (for unknown type)
-        new_event[PLAY] = 'o'
-        # Carry (conduction)
-        if event[TYPE] == '101':
-            new_event[PLAY] = 'ca'
-        # Completed pass
-        elif event[TYPE] == '1' and event[OUTCOME] == '1':
-            new_event[PLAY] = 'cp'
-        # Not completed pass
-        elif event[TYPE] == '1' and event[OUTCOME] == '0':
-            new_event[PLAY] = 'ncp'
-        # Dribble
-        elif event[TYPE] in ['3', '42'] and event[OUTCOME] == '1':
-            new_event[PLAY] = 'dr'
-        # Lost ball
-        elif event[TYPE] in ['45', '50', '51', '57']:
-            new_event[PLAY] = 'lb'
-        elif event[TYPE] in ['3', '42', '61'] and event[OUTCOME] == '0':
-            new_event[PLAY] = 'lb'
-        # Reception
-        elif event[TYPE] == '100':
-            new_event[PLAY] = 're'
-        new_event_list.append(new_event)
+        new_event[MOVE] = calc_move(int(event[TYPE]), int(event[OUTCOME]))
+        if new_event[MOVE] is not None:
+            new_event_list.append(new_event)
     # Remove duplicated
     new_event_list = remove_duplicates(new_event_list)
     # Sort all events by timestamp
@@ -237,7 +232,7 @@ def get_match_events(match_data):
     new_event_list = []
     for event in event_list:
         new_event = {}
-        for att in get_original_attribute_list():
+        for att in get_event_attribute_list():
             new_event[att] = event[att]
         timestamp = new_event[MINUTE] * 60 + new_event[SECOND]
         new_event[TS_ATT] = timestamp
@@ -255,13 +250,13 @@ def store_match_events_csv(match_dict):
         match_data = match_dict[match_id]
         # Store original data
         rec_list = get_match_events(match_data)
-        store_full_data(match_id, rec_list)
+        store_event_data(match_id, rec_list)
         # Move stream
         new_rec_list = calculate_move_stream(rec_list)
-        store_move_data(match_id, new_rec_list)
+        store_place_data(match_id, new_rec_list)
         # Play stream
         new_rec_list = calculate_play_stream(rec_list)
-        store_play_data(match_id, new_rec_list)
+        store_move_data(match_id, new_rec_list)
 
 
 def main():
@@ -271,17 +266,17 @@ def main():
     # Create directories
     create_import_directory()
     # Get list of matches
-    match_id_list = get_match_list()
+    match_list = get_match_list()
     # Get matches data
-    match_dict = get_all_matches(match_id_list)
+    match_dict = get_all_matches(match_list)
     # Store match events into csv files
     store_match_events_csv(match_dict)
     # Get teams data
-    team_list = get_all_teams(match_id_list)
+    team_list = get_all_teams(match_dict)
     print 'Storing teams data into csv files'
     store_teams(team_list)
     # Get players data
-    player_list = get_all_players(match_id_list)
+    player_list = get_all_players(match_dict)
     print 'Storing players data into csv files'
     store_players(player_list)
 
