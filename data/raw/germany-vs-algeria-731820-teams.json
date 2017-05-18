@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "GER", 
+    "name": "Germany", 
+    "color": "#000000", 
+    "id": 357, 
+    "iso": "DE", 
+    "slug": "germany"
+  }, 
+  {
+    "twitter_code": "ALG", 
+    "name": "Algeria", 
+    "color": "#57C45C", 
+    "id": 1215, 
+    "iso": "DZ", 
+    "slug": "algeria"
+  }
+]

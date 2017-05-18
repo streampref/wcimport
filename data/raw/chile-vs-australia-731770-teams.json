@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "CHI", 
+    "name": "Chile", 
+    "color": "#FF0000", 
+    "id": 831, 
+    "iso": "CL", 
+    "slug": "chile"
+  }, 
+  {
+    "twitter_code": "AUS", 
+    "name": "Australia", 
+    "color": "#FFBF00", 
+    "id": 575, 
+    "iso": "AU", 
+    "slug": "australia"
+  }
+]

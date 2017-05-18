@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "GER", 
+    "name": "Germany", 
+    "color": "#000000", 
+    "id": 357, 
+    "iso": "DE", 
+    "slug": "germany"
+  }, 
+  {
+    "twitter_code": "POR", 
+    "name": "Portugal", 
+    "color": "#F62432", 
+    "id": 359, 
+    "iso": "PT", 
+    "slug": "portugal"
+  }
+]

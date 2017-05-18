@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "ENG", 
+    "name": "England", 
+    "color": "#EA151B", 
+    "id": 114, 
+    "iso": "EN", 
+    "slug": "england"
+  }, 
+  {
+    "twitter_code": "ITA", 
+    "name": "Italy", 
+    "color": "#173DEC", 
+    "id": 119, 
+    "iso": "IT", 
+    "slug": "italy"
+  }
+]

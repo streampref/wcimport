@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "IRN", 
+    "name": "Iran", 
+    "color": "#FF0000", 
+    "id": 1042, 
+    "iso": "IR", 
+    "slug": "iran"
+  }, 
+  {
+    "twitter_code": "NGA", 
+    "name": "Nigeria", 
+    "color": "#58C655", 
+    "id": 1216, 
+    "iso": "NG", 
+    "slug": "nigeria"
+  }
+]

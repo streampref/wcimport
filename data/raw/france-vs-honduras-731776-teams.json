@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "FRA", 
+    "name": "France", 
+    "color": "#123163", 
+    "id": 368, 
+    "iso": "FR", 
+    "slug": "france"
+  }, 
+  {
+    "twitter_code": "HON", 
+    "name": "Honduras", 
+    "color": "#2154CB", 
+    "id": 847, 
+    "iso": "HN", 
+    "slug": "honduras"
+  }
+]

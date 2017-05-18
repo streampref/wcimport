@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "KOR", 
+    "name": "South Korea", 
+    "color": "#F9041D", 
+    "id": 1041, 
+    "iso": "KO", 
+    "slug": "south-korea"
+  }, 
+  {
+    "twitter_code": "BEL", 
+    "name": "Belgium", 
+    "color": "#000000", 
+    "id": 360, 
+    "iso": "BE", 
+    "slug": "belgium"
+  }
+]

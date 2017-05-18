@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "JPN", 
+    "name": "Japan", 
+    "color": "#F3614D", 
+    "id": 1266, 
+    "iso": "JP", 
+    "slug": "japan"
+  }, 
+  {
+    "twitter_code": "GRE", 
+    "name": "Greece", 
+    "color": "#2447D5", 
+    "id": 517, 
+    "iso": "GR", 
+    "slug": "greece"
+  }
+]

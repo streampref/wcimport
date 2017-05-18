@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "USA", 
+    "name": "USA", 
+    "color": "#2335D6", 
+    "id": 596, 
+    "iso": "US", 
+    "slug": "usa"
+  }, 
+  {
+    "twitter_code": "POR", 
+    "name": "Portugal", 
+    "color": "#850B23", 
+    "id": 359, 
+    "iso": "PT", 
+    "slug": "portugal"
+  }
+]

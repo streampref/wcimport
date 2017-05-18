@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "MEX", 
+    "name": "Mexico", 
+    "color": "#00812E", 
+    "id": 659, 
+    "iso": "MX", 
+    "slug": "mexico"
+  }, 
+  {
+    "twitter_code": "CMR", 
+    "name": "Cameroon", 
+    "color": "#FAD739", 
+    "id": 494, 
+    "iso": "CM", 
+    "slug": "cameroon"
+  }
+]

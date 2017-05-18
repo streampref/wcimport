@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "NED", 
+    "name": "Netherlands", 
+    "color": "#FF6600", 
+    "id": 366, 
+    "iso": "NL", 
+    "slug": "netherlands"
+  }, 
+  {
+    "twitter_code": "CRC", 
+    "name": "Costa Rica", 
+    "color": "#0000D2", 
+    "id": 838, 
+    "iso": "RC", 
+    "slug": "costa-rica"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "BIH", 
+    "name": "Bosnia and Herzegovina", 
+    "color": "#0000D9", 
+    "id": 537, 
+    "iso": "BA", 
+    "slug": "bosnia-and-herzegovina"
+  }, 
+  {
+    "twitter_code": "IRN", 
+    "name": "Iran", 
+    "color": "#FF0000", 
+    "id": 1042, 
+    "iso": "IR", 
+    "slug": "iran"
+  }
+]

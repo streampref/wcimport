@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "BRA", 
+    "name": "Brazil", 
+    "color": "#FFDF00", 
+    "id": 614, 
+    "iso": "BR", 
+    "slug": "brazil"
+  }, 
+  {
+    "twitter_code": "CHI", 
+    "name": "Chile", 
+    "color": "#FF0000", 
+    "id": 831, 
+    "iso": "CL", 
+    "slug": "chile"
+  }
+]

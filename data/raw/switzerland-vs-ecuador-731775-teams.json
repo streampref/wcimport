@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "SUI", 
+    "name": "Switzerland", 
+    "color": "#DF0000", 
+    "id": 497, 
+    "iso": "CH", 
+    "slug": "switzerland"
+  }, 
+  {
+    "twitter_code": "ECU", 
+    "name": "Ecuador", 
+    "color": "#0000FF", 
+    "id": 830, 
+    "iso": "EC", 
+    "slug": "ecuador"
+  }
+]

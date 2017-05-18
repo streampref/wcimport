@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "CMR", 
+    "name": "Cameroon", 
+    "color": "#17603E", 
+    "id": 494, 
+    "iso": "CM", 
+    "slug": "cameroon"
+  }, 
+  {
+    "twitter_code": "CRO", 
+    "name": "Croatia", 
+    "color": "#D90D11", 
+    "id": 535, 
+    "iso": "HR", 
+    "slug": "croatia"
+  }
+]

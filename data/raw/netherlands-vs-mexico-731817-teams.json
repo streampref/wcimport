@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "NED", 
+    "name": "Netherlands", 
+    "color": "#FF6600", 
+    "id": 366, 
+    "iso": "NL", 
+    "slug": "netherlands"
+  }, 
+  {
+    "twitter_code": "MEX", 
+    "name": "Mexico", 
+    "color": "#00812E", 
+    "id": 659, 
+    "iso": "MX", 
+    "slug": "mexico"
+  }
+]

@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "BEL", 
+    "name": "Belgium", 
+    "color": "#FF0000", 
+    "id": 360, 
+    "iso": "BE", 
+    "slug": "belgium"
+  }, 
+  {
+    "twitter_code": "RUS", 
+    "name": "Russia", 
+    "color": "#125CC5", 
+    "id": 536, 
+    "iso": "RU", 
+    "slug": "russia"
+  }
+]

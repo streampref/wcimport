@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "BRA", 
+    "name": "Brazil", 
+    "color": "#FFDF00", 
+    "id": 614, 
+    "iso": "BR", 
+    "slug": "brazil"
+  }, 
+  {
+    "twitter_code": "GER", 
+    "name": "Germany", 
+    "color": "#000000", 
+    "id": 357, 
+    "iso": "DE", 
+    "slug": "germany"
+  }
+]

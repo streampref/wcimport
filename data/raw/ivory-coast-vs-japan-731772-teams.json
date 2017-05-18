@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "CIV", 
+    "name": "C\u00f4te d'Ivoire", 
+    "color": "#FF8A15", 
+    "id": 1221, 
+    "iso": "CI", 
+    "slug": "cote-d-ivoire"
+  }, 
+  {
+    "twitter_code": "JPN", 
+    "name": "Japan", 
+    "color": "#000072", 
+    "id": 1266, 
+    "iso": "JP", 
+    "slug": "japan"
+  }
+]

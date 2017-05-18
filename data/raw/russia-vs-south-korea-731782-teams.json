@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "RUS", 
+    "name": "Russia", 
+    "color": "#A81717", 
+    "id": 536, 
+    "iso": "RU", 
+    "slug": "russia"
+  }, 
+  {
+    "twitter_code": "KOR", 
+    "name": "South Korea", 
+    "color": "#122DA7", 
+    "id": 1041, 
+    "iso": "KO", 
+    "slug": "south-korea"
+  }
+]

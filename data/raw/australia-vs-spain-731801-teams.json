@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "AUS", 
+    "name": "Australia", 
+    "color": "#FFBF00", 
+    "id": 575, 
+    "iso": "AU", 
+    "slug": "australia"
+  }, 
+  {
+    "twitter_code": "ESP", 
+    "name": "Spain", 
+    "color": "#0D0D0D", 
+    "id": 118, 
+    "iso": "ES", 
+    "slug": "spain"
+  }
+]

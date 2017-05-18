@@ -1,0 +1,737 @@
+_ts|_fl|id|name|real_position|real_position_side|known_name|short_name|last_name|first_name|middle_name|team_id|preferred_foot|club|caps|goals|jersey_num|country|birth_date|position
+0|+|20480|Tim Krul|Goalkeeper|Unknown||Krul|Krul|Tim|Michael|366||Newcastle United|5|0|23|Netherlands|1988-04-03|Goalkeeper
+0|+|2051|Frank Lampard|Central Midfielder|Centre||Lampard|Lampard|Frank|James|114||Unknown|105|29|8|England|1978-06-20|Midfielder
+0|+|86813|Aissa Mandi|Full Back|Left/Right||Mandi|Mandi|Aissa||1215||Reims|2|0|20|Algeria|1991-10-22|Defender
+0|+|43013|Alfredo Talavera|Goalkeeper|Unknown||Talavera|Talavera|Alfredo||659||Toluca|14|0|12|Mexico|1982-09-18|Goalkeeper
+0|+|77831|Mohammed Rabiu|Defensive Midfielder|Centre||Rabiu|Rabiu|Mohammed||1219||Kuban Krasnodar|17|0|17|Ghana|1989-12-31|Midfielder
+0|+|12297|Robin van Persie|Striker|Centre||van Persie|van Persie|Robin||366|Left|Manchester United|85|43|9|Netherlands|1983-08-06|Forward
+0|+|80215|Mohamed Zemmamouche|Goalkeeper|Unknown||Zemmamouche|Zemmamouche|Mohamed|Lamine|1215||USM Alger|7|0|16|Algeria|1985-03-19|Goalkeeper
+0|+|43020|Javier Hernández|Striker|Centre||Hernández|Hernández|Javier|Balcázar|659|Right|Manchester United|62|35|14|Mexico|1988-06-01|Forward
+0|+|12303|Didier Drogba|Striker|Centre||Drogba|Drogba|Didier|Yves|1221||Galatasaray|102|63|11|Côte d'Ivoire|1978-03-11|Forward
+0|+|51221|Marco Parolo|Central Midfielder|Left/Centre||Parolo|Parolo|Marco||119|Mostly Right|Parma|4|0|18|Italy|1985-01-25|Midfielder
+0|+|119471|Fabian Schär|Central Defender|Centre||Schär|Schär|Fabian||497||Basel|6|3|22|Switzerland|1991-12-20|Defender
+0|+|4126|Gianluigi Buffon|Goalkeeper|Unknown||Buffon|Buffon|Gianluigi||119|Right|Juventus|140|0|1|Italy|1978-01-28|Goalkeeper
+0|+|77859|Lee Bum-Young|Goalkeeper|Unknown|Lee Bum-Young|Lee Bum-Young|Lee|Bum-Young||1041||Busan I'Park|0|0|23|South Korea|1989-04-02|Goalkeeper
+0|+|99334|Juan Carlos García|Full Back|Left|Juan Carlos García|Juan Carlos García|García|Juan Carlos||847||Wigan Athletic|36|1|6|Honduras|1988-03-08|Defender
+0|+|77864|Hong Jeong-Ho|Central Defender|Centre|Hong Jeong-Ho|Hong Jeong-Ho|Hong|Jeong-Ho||1041|Right|FC Augsburg|25|1|20|South Korea|1989-08-12|Defender
+0|+|77865|Koo Ja-Cheol|Attacking Midfielder|Centre|Koo Ja-Cheol|Koo Ja-Cheol|Koo|Ja-Cheol||1041|Right|1. FSV Mainz 05|37|12|13|South Korea|1989-02-27|Midfielder
+0|+|49195|Jefferson Montero|Winger|Left/Right||Montero|Montero|Jefferson|Antonio|830|Left|Monarcas Morelia|40|8|7|Ecuador|1989-09-01|Midfielder
+0|+|51247|Vladimir Granat|Full Back|Left||Granat|Granat|Vladimir|Vasilyevich|536||Dynamo Moscow|5|0|13|Russia|1987-05-22|Defender
+0|+|77875|Yun Suk-Young|Full Back|Left|Yun Suk-Young|Yun Suk-Young|Yun|Suk-Young||1041||Queens Park Rangers|4|0|3|South Korea|1990-02-13|Defender
+0|+|77877|Kim Bo-Kyung|Attacking Midfielder|Left/Centre/Right|Kim Bo-Kyung|Kim Bo-Kyung|Kim|Bo-Kyung||1041||Cardiff City|28|3|7|South Korea|1989-10-06|Midfielder
+0|+|59741|Max Gradel|Winger|Left/Centre/Right||Gradel|Gradel|Max|Alain|1221||St Etienne|26|3|15|Côte d'Ivoire|1987-11-30|Midfielder
+0|+|51255|Dmitriy Kombarov|Winger|Left||Kombarov|Kombarov|Dmitriy|Vladimirovich|536||Spartak Moscow|23|1|23|Russia|1987-01-22|Midfielder
+0|+|14664|Yaya Touré|Defensive Midfielder|Centre|Yaya Touré|Yaya Touré|Touré|Gnegneri Yaya||1221||Manchester City|82|16|19|Côte d'Ivoire|1983-05-13|Midfielder
+0|+|104514|Oliver Zelenika|Goalkeeper|Unknown||Zelenika|Zelenika|Oliver||535||Lokomotiva Zagreb|0|0|12|Croatia|1993-05-14|Goalkeeper
+0|+|45124|André Ayew|Winger|Left/Right|André Ayew|André Ayew|Ayew|André|Morgan Rami|1219||Marseille|48|4|10|Ghana|1989-12-17|Midfielder
+0|+|14937|Cristiano Ronaldo|Second Striker|Left/Centre/Right||Ronaldo|Ronaldo|Cristiano||359|Both|Real Madrid|111|49|7|Portugal|1985-02-05|Forward
+0|+|18507|Diego Costa|Striker|Centre|Diego Costa|Diego Costa|Da Silva Costa|Diego||118|Both|Atlético de Madrid|4|0|19|Spain|1988-10-07|Forward
+0|+|80226|Serge Aurier|Full Back|Right||Aurier|Aurier|Serge||1221||Toulouse|8|0|17|Côte d'Ivoire|1992-12-24|Defender
+0|+|49230|Viktor Faizulin|Attacking Midfielder|Centre/Right||Faizulin|Faizulin|Viktor|Igorevich|536||Zenit St Petersburg|19|4|20|Russia|1986-04-22|Midfielder
+0|+|49232|Aleksey Ionov|Winger|Right||Ionov|Ionov|Aleksey|Sergeyevich|536||Dynamo Moscow|5|0|21|Russia|1989-02-18|Midfielder
+0|+|18787|Rio Mavuba|Central Midfielder|Centre||Mavuba|Mavuba|Rio|Antonio Zoba|368||Lille|12|0|12|France|1984-03-08|Midfielder
+0|+|20153|Rodrigo Palacio|Striker|Centre||Palacio|Palacio|Rodrigo||632|Right|Internazionale|22|3|18|Argentina|1982-02-05|Forward
+0|+|126407|Nabil Bentaleb|Central Midfielder|Centre||Bentaleb|Bentaleb|Nabil||1215||Tottenham Hotspur|3|1|14|Algeria|1994-11-24|Midfielder
+0|+|180315|Sylvain Gbohouo|Goalkeeper|Unknown||Gbohouo|Gbohouo|Sylvain||1221||Séwé Sport|2|0|16|Côte d'Ivoire|1988-10-29|Goalkeeper
+0|+|6240|Shola Ameobi|Striker|Centre|Shola Ameobi|Shola Ameobi|Ameobi|Foluwashola||1216|Right|Unknown|7|2|23|Nigeria|1981-10-12|Forward
+0|+|18529|Reto Ziegler|Full Back|Left||Ziegler|Ziegler|Reto||497|Left|Sassuolo|35|1|3|Switzerland|1986-01-16|Defender
+0|+|45154|Ezequiel Lavezzi|Second Striker|Left/Centre/Right||Lavezzi|Lavezzi|Ezequiel||632|Right|Paris Saint Germain|31|4|22|Argentina|1985-05-03|Forward
+0|+|45156|Antonio Candreva|Attacking Midfielder|Left/Centre/Right||Candreva|Candreva|Antonio||119|Right|Lazio|20|0|6|Italy|1987-02-28|Midfielder
+0|+|36968|Park Chu-Young|Second Striker|Centre|Park Chu-Young|Park Chu-Young|Park|Chu-Young||1041||Arsenal|64|24|10|South Korea|1985-07-10|Forward
+0|+|106606|Massimo Luongo|Defensive Midfielder|Centre||Luongo|Luongo|Massimo||575||Swindon Town|2|0|21|Australia|1992-09-25|Midfielder
+0|+|41071|Reza Ghoochanneijhad|Second Striker|Left/Centre/Right||Ghoochanneijhad|Ghoochanneijhad|Reza||1042||Charlton Athletic|14|10|16|Iran|1987-09-20|Forward
+0|+|18547|Ignazio Abate|Full Back|Right||Abate|Abate|Ignazio||119|Right|Milan|20|1|7|Italy|1986-11-12|Defender
+0|+|49277|Leroy Fer|Central Midfielder|Centre||Fer|Fer|Leroy||366||Norwich City|6|0|18|Netherlands|1990-01-05|Midfielder
+0|+|34949|Nicolas Lombaerts|Central Defender|Centre||Lombaerts|Lombaerts|Nicolas||360||Zenit St Petersburg|25|2|18|Belgium|1985-03-20|Defender
+0|+|4232|Iker Casillas|Goalkeeper|Unknown||Casillas|Casillas|Iker||118|Left|Real Madrid|154|0|1|Spain|1981-05-20|Goalkeeper
+0|+|18573|Maicon|Full Back|Right|Maicon|Maicon|Sisenando|Maicon Douglas||614|Right|Roma|72|7|23|Brazil|1981-07-26|Defender
+0|+|53392|Ramires|Central Midfielder|Centre|Ramires|Ramires|Santos do Nascimento|Ramires||614||Chelsea|42|4|16|Brazil|1987-03-24|Midfielder
+0|+|184468|Luis López|Goalkeeper|Unknown||López|López|Luis|Aurelio|847||Real Espana|0|0|1|Honduras|1993-09-13|Goalkeeper
+0|+|168085|Julian Green|Winger|Left||Green|Green|Julian|Wesley|596|Both|FC Bayern München|2|0|16|USA|1995-06-06|Midfielder
+0|+|98456|Ante Rebic|Striker|Centre||Rebic|Rebic|Ante||535|Right|Fiorentina|5|1|16|Croatia|1993-09-21|Forward
+0|+|102555|Edgar Salli|Second Striker|Left/Centre/Right||Salli|Salli|Edgar|Nicaise Constant|494||Monaco|9|1|20|Cameroon|1992-08-17|Forward
+0|+|57500|Timothy Chandler|Wing Back|Right||Chandler|Chandler|Timothy||596|Right|Eintracht Frankfurt|13|0|21|USA|1990-03-29|Defender
+0|+|12450|Kolo Touré|Central Defender|Centre||Touré|Touré|Kolo|Habib|1221||Liverpool|107|6|4|Côte d'Ivoire|1981-03-19|Defender
+0|+|184483|Ahmad Alnameh|Central Defender|Centre||Alnameh|Alnameh|Ahmad||1042||Naft Tehran|9|1|17|Iran|1982-10-20|Defender
+0|+|39077|Paul Verhaegh|Full Back|Right||Verhaegh|Verhaegh|Paul||366|Right|FC Augsburg|2|0|12|Netherlands|1983-09-01|Defender
+0|+|14503|Konstantinos Katsouranis|Defensive Midfielder|Centre||Katsouranis|Katsouranis|Konstantinos||517||PAOK Salonika|111|10|21|Greece|1979-06-21|Midfielder
+0|+|77992|Nicolás Lodeiro|Attacking Midfielder|Left/Centre/Right||Lodeiro|Lodeiro|Nicolás||837|Left|Corinthians|26|3|14|Uruguay|1989-03-21|Midfielder
+0|+|27335|Stephan Lichtsteiner|Full Back|Right||Lichtsteiner|Lichtsteiner|Stephan||497|Right|Juventus|63|5|2|Switzerland|1984-01-16|Defender
+0|+|37036|Andranik Teymourian|Defensive Midfielder|Centre||Teymourian|Teymourian|Andranik||1042||Esteghlal|79|8|14|Iran|1983-03-06|Midfielder
+0|+|184493|Hossein Mahini|Full Back|Right||Mahini|Mahini|Hossein||1042||Persepolis FC|23|0|13|Iran|1986-09-16|Defender
+0|+|184497|Ghasem Haddadifar|Attacking Midfielder|Centre||Haddadifar|Haddadifar|Ghasem||1042||Persepolis FC|18|0|11|Iran|1983-07-12|Midfielder
+0|+|20658|Pablo Zabaleta|Full Back|Right||Zabaleta|Zabaleta|Pablo|Javier|632||Manchester City|36|0|4|Argentina|1985-01-16|Defender
+0|+|14516|Didier Zokora|Central Midfielder|Centre||Zokora|Zokora|Didier|Alain|1221|Right|Unknown|119|1|5|Côte d'Ivoire|1980-12-14|Midfielder
+0|+|100534|Paulinho|Central Midfielder|Centre|Paulinho|Paulinho|Bezerra Maciel Júnior|José Paulo||614|Right|Tottenham Hotspur|26|5|8|Brazil|1988-07-25|Midfielder
+0|+|149687|Rashid Sumaila|Central Defender|Centre||Sumaila|Sumaila|Rashid||1219||Mamelodi Sundowns FC|8|0|15|Ghana|1992-12-18|Defender
+0|+|20664|David Silva|Attacking Midfielder|Left/Centre/Right||Silva|Silva|David|Josué Jiménez|118||Manchester City|80|20|21|Spain|1986-01-08|Midfielder
+0|+|37055|Luka Modric|Attacking Midfielder|Left/Centre/Right||Modric|Modric|Luka||535||Real Madrid|75|8|10|Croatia|1985-09-09|Midfielder
+0|+|39104|Mousa Dembélé|Central Midfielder|Centre||Dembélé|Dembélé|Mousa|Sidi Yaya|360||Tottenham Hotspur|57|5|19|Belgium|1987-07-16|Midfielder
+0|+|43106|Paul Aguilar|Wing Back|Right||Aguilar|Aguilar|Paul|Nicolás|659|Right|América|28|3|22|Mexico|1986-03-06|Defender
+0|+|28103|Danijel Pranjic|Full Back|Left||Pranjic|Pranjic|Danijel||535|Left|Panathinaikos|50|0|3|Croatia|1981-12-02|Defender
+0|+|37064|Andrés Guardado|Winger|Left||Guardado|Guardado|Andrés||659|Left|Valencia CF|102|14|18|Mexico|1986-09-28|Midfielder
+0|+|52940|Daryl Janmaat|Full Back|Right||Janmaat|Janmaat|Daryl||366||Feyenoord|16|0|7|Netherlands|1989-07-22|Defender
+0|+|131897|Matthew Ryan|Goalkeeper|Unknown||Ryan|Ryan|Matthew|David|575||Club Brugge|7|0|1|Australia|1992-04-08|Goalkeeper
+0|+|37070|Fabian Johnson|Full Back|Right||Johnson|Johnson|Fabian||596|Both|1899 Hoffenheim|22|1|23|USA|1987-12-11|Defender
+0|+|32978|Luis Saritama|Attacking Midfielder|Left/Centre||Saritama|Saritama|Luis|Fernando|830||Barcelona de Guayaquil|49|0|19|Ecuador|1983-10-20|Midfielder
+0|+|148515|Rafa|Attacking Midfielder|Centre|Rafa|Rafa|Ferreira da Silva|Rafael Alexandre Fernandes||359||Sporting Braga|3|0|15|Portugal|1993-05-17|Midfielder
+0|+|45268|Moussa Sissoko|Central Midfielder|Left/Centre/Right||Sissoko|Sissoko|Moussa||368||Newcastle United|17|0|18|France|1989-08-16|Midfielder
+0|+|20695|Antonio Valencia|Winger|Right|Antonio Valencia|Antonio Valencia|Valencia|Luis Antonio||830||Manchester United|71|8|16|Ecuador|1985-08-04|Midfielder
+0|+|18649|Loukas Vyntra|Full Back|Right||Vyntra|Vyntra|Loukas||517||Levante|50|0|11|Greece|1981-02-05|Defender
+0|+|37084|Bryan Ruiz|Striker|Centre||Ruiz|Ruiz|Bryan|Jafet|838||Fulham|63|13|10|Costa Rica|1985-08-18|Forward
+0|+|26848|Alexandros Tziolis|Defensive Midfielder|Centre||Tziolis|Tziolis|Alexandros||517|Right|Kayserispor|49|1|6|Greece|1985-02-13|Midfielder
+0|+|45281|Roman Bürki|Goalkeeper|Unknown||Bürki|Bürki|Roman||497||Grasshoppers Zürich|0|0|21|Switzerland|1990-11-14|Goalkeeper
+0|+|49380|Constant Djakpa|Full Back|Left||Djakpa|Djakpa|Constant||1221|Left|Eintracht Frankfurt|5|0|18|Côte d'Ivoire|1986-10-17|Defender
+0|+|41189|Axel Witsel|Attacking Midfielder|Centre/Right||Witsel|Witsel|Axel|Thomas|360|Right|Zenit St Petersburg|48|5|6|Belgium|1989-01-12|Midfielder
+0|+|20716|Jasmin Fejzic|Goalkeeper|Unknown||Fejzic|Fejzic|Jasmin||537|Right|VfR Aalen|0|0|12|Bosnia and Herzegovina|1986-05-15|Goalkeeper
+0|+|51437|Alan Dzagoev|Attacking Midfielder|Left/Centre/Right||Dzagoev|Dzagoev|Alan|Yelizbarovich|536||CSKA Moscow|33|8|10|Russia|1990-06-17|Midfielder
+0|+|61680|Maksim Kanunnikov|Striker|Centre||Kanunnikov|Kanunnikov|Maksim|Sergeyevich|536||Rubin Kazan|2|0|6|Russia|1991-07-14|Forward
+0|+|90152|Raphael Varane|Central Defender|Centre||Varane|Varane|Raphael||368|Right|Real Madrid|6|0|4|France|1993-04-25|Defender
+0|+|19921|Raul Meireles|Central Midfielder|Centre||Meireles|Meireles|Raul|José Trindade|359|Both|Fenerbahce|74|10|16|Portugal|1983-03-17|Midfielder
+0|+|39155|Adam Lallana|Attacking Midfielder|Left/Centre/Right||Lallana|Lallana|Adam|David|114||Southampton|6|0|20|England|1988-05-10|Midfielder
+0|+|8438|Samuel Eto'o|Striker|Centre||Eto'o|Eto'o|Samuel||494|Right|Unknown|115|56|9|Cameroon|1981-03-10|Forward
+0|+|18679|Anthony Vanden Borre|Full Back|Right||Vanden Borre|Vanden Borre|Anthony||360|Left|RSC Anderlecht|25|1|21|Belgium|1987-10-24|Defender
+0|+|8442|Michael Essien|Defensive Midfielder|Centre||Essien|Essien|Michael|Kojo|1219|Right|Milan|57|9|5|Ghana|1982-12-03|Midfielder
+0|+|37118|Senijad Ibricic|Attacking Midfielder|Centre||Ibricic|Ibricic|Senijad||537||Kayseri Erciyesspor|44|4|17|Bosnia and Herzegovina|1985-09-26|Midfielder
+0|+|69887|Izet Hajrovic|Winger|Right||Hajrovic|Hajrovic|Izet||537||Galatasaray|8|2|20|Bosnia and Herzegovina|1991-08-04|Midfielder
+0|+|18689|Yuri Zhirkov|Winger|Left||Zhirkov|Zhirkov|Yuri|Valentinovich|536||Dynamo Moscow|61|1|18|Russia|1983-08-20|Midfielder
+0|+|50902|Carlos Carmona|Defensive Midfielder|Centre/Right||Carmona|Carmona|Carlos||831|Right|Atalanta|45|1|6|Chile|1987-02-21|Midfielder
+0|+|18695|Vedad Ibisevic|Striker|Centre||Ibisevic|Ibisevic|Vedad||537|Right|VfB Stuttgart|55|20|9|Bosnia and Herzegovina|1984-08-06|Forward
+0|+|82184|Majeed Waris|Striker|Centre||Waris|Waris|Majeed||1219||Spartak Moscow|13|3|18|Ghana|1991-09-19|Forward
+0|+|43274|Gervinho|Second Striker|Left/Centre/Right|Gervinho|Gervinho|Kouassi|Gervais|Yao|1221||Roma|53|14|10|Côte d'Ivoire|1987-05-27|Forward
+0|+|78091|Gastón Ramírez|Attacking Midfielder|Left/Centre/Right||Ramírez|Ramírez|Gastón|Ezequiel|837|Left|Southampton|29|0|18|Uruguay|1990-12-02|Midfielder
+0|+|26894|Dante|Central Defender|Centre|Dante|Dante|Costa Santos|Dante Bonfim||614|Left|FC Bayern München|12|2|13|Brazil|1983-10-18|Defender
+0|+|68312|Xherdan Shaqiri|Winger|Left/Right||Shaqiri|Shaqiri|Xherdan||497|Both|FC Bayern München|33|9|23|Switzerland|1991-10-10|Midfielder
+0|+|80146|Jordan Ayew|Striker|Centre|Jordan Ayew|Jordan Ayew|Ayew|Jordan||1219||Marseille|13|5|13|Ghana|1991-09-11|Forward
+0|+|39187|Jeremain Lens|Striker|Centre||Lens|Lens|Jeremain|Daud|366||Dynamo Kyiv|22|8|17|Netherlands|1987-11-24|Forward
+0|+|26900|Peter Odemwingie|Second Striker|Left/Centre/Right||Odemwingie|Odemwingie|Peter|Osaze|1216||Stoke City|61|10|8|Nigeria|1981-07-15|Forward
+0|+|26901|Kevin Mirallas|Winger|Left/Right||Mirallas|Mirallas|Kevin|Antonio Joel Gislain|360||Everton|44|9|11|Belgium|1987-10-05|Forward
+0|+|102679|Diego Calvo|Winger|Left||Calvo|Calvo|Diego|Gerardo|838||Valerenga|10|1|20|Costa Rica|1991-03-25|Midfielder
+0|+|26904|João Pereira|Full Back|Right|João Pereira|João Pereira|da Silva Pereira|João Pedro||359||Valencia CF|36|0|21|Portugal|1984-02-25|Defender
+0|+|149785|Cédric Si Mohamed|Goalkeeper|Unknown||Mohamed|Mohamed|Cédric Si||1215||CS Constantine|1|0|1|Algeria|1985-01-09|Goalkeeper
+0|+|39194|Jan Vertonghen|Full Back|Left/Centre||Vertonghen|Vertonghen|Jan||360||Tottenham Hotspur|56|4|5|Belgium|1987-04-24|Defender
+0|+|102683|Yeltsin Tejeda|Defensive Midfielder|Centre|Yeltsin Tejeda|Yeltsin Tejeda|Tejeda Valverde|Yeltsin|Ignacio|838||Saprissa|22|0|17|Costa Rica|1992-03-17|Midfielder
+0|+|78108|Sebastián Coates|Central Defender|Centre||Coates|Coates|Sebastián||837|Right|Nacional|15|1|19|Uruguay|1990-10-07|Defender
+0|+|147744|Carlos Gruezo|Central Midfielder|Centre||Gruezo|Gruezo|Carlos|Armando|830|Right|VfB Stuttgart|3|0|23|Ecuador|1995-04-19|Midfielder
+0|+|119507|Manabu Saito|Winger|Left/Centre||Saito|Saito|Manabu||1266||Yokohama F. Marinos|6|1|20|Japan|1990-04-04|Forward
+0|+|39204|Jonathan de Guzmán|Attacking Midfielder|Centre||de Guzmán|de Guzmán|Jonathan|Alexander|366|Right|Swansea City|10|0|8|Netherlands|1987-09-13|Midfielder
+0|+|100649|Bernard|Attacking Midfielder|Centre/Right|Bernard|Bernard|Anício Caldeira Duarte|Bernard||614||Shakhtar Donetsk|11|1|20|Brazil|1992-09-08|Midfielder
+0|+|51498|Mehdi Mostefa|Defensive Midfielder|Centre||Mostefa|Mostefa|Mehdi||1215||Ajaccio|23|0|22|Algeria|1983-08-30|Midfielder
+0|+|157996|Masato Morishige|Central Defender|Centre||Morishige|Morishige|Masato||1266||FC Tokyo|9|1|6|Japan|1987-05-21|Defender
+0|+|39215|Michel Vorm|Goalkeeper|Unknown||Vorm|Vorm|Michel||366||Swansea City|14|0|22|Netherlands|1983-10-20|Goalkeeper
+0|+|63793|Randall Brenes|Striker|Centre||Brenes|Brenes|Randall||838||C.S. Cartagines|40|8|14|Costa Rica|1983-08-13|Forward
+0|+|51507|Laurent Koscielny|Central Defender|Centre||Koscielny|Koscielny|Laurent||368||Arsenal|17|0|21|France|1985-09-10|Defender
+0|+|55605|Toby Alderweireld|Full Back|Centre/Right||Alderweireld|Alderweireld|Toby|Albertine Maurits|360||Atlético de Madrid|34|1|2|Belgium|1989-03-02|Defender
+0|+|41270|David Luiz|Central Defender|Centre|David Luiz|David Luiz|Luiz Moreira Marinho|David||614||Paris Saint Germain|36|0|4|Brazil|1987-04-22|Defender
+0|+|49464|Christian Stuani|Striker|Centre||Stuani|Stuani|Christian|Ricardo|837|Right|Espanyol|10|4|11|Uruguay|1986-10-12|Forward
+0|+|78140|Stefan de Vrij|Central Defender|Centre||de Vrij|de Vrij|Stefan||366||Feyenoord|12|0|3|Netherlands|1992-02-05|Defender
+0|+|61758|Miiko Albornoz|Full Back|Left||Albornoz|Albornoz|Miiko||831|Left|Malmö FF|2|1|3|Chile|1990-11-30|Defender
+0|+|149828|Islam Slimani|Striker|Centre||Slimani|Slimani|Islam||1215||Sporting Lisbon|20|10|13|Algeria|1988-06-18|Forward
+0|+|49478|Fatau Dauda|Goalkeeper|Unknown||Dauda|Dauda|Fatau|Fatawu|1219||Orlando Pirates|18|0|16|Ghana|1985-04-06|Goalkeeper
+0|+|47431|Willian|Winger|Left/Centre/Right|Willian|Willian|Borges Da Silva|Willian||614||Chelsea|7|2|19|Brazil|1988-08-09|Midfielder
+0|+|49480|Daniel Opare|Full Back|Right||Opare|Opare|Daniel|Tawiah|1219|Right|Standard Liège|16|0|4|Ghana|1990-10-18|Defender
+0|+|17804|Juanfran|Full Back|Right|Juanfran|Juanfran|Torres Belén|Juan Francisco||118|Right|Atlético de Madrid|8|1|5|Spain|1985-01-09|Defender
+0|+|47434|Kostas Mitroglou|Striker|Centre||Mitroglou|Mitroglou|Kostas||517||Fulham|32|8|9|Greece|1988-03-12|Forward
+0|+|49483|Harrison Afful|Wing Back|Right||Afful|Afful|Harrison||1219||Esperance|41|0|23|Ghana|1986-07-24|Defender
+0|+|49485|Kwadwo Asamoah|Central Midfielder|Left/Centre||Asamoah|Asamoah|Kwadwo||1219|Mostly Left|Juventus|62|4|20|Ghana|1988-12-09|Midfielder
+0|+|37198|Masoud Shojaei|Attacking Midfielder|Left/Centre/Right||Shojaei|Shojaei|Masoud|Soleimani|1042|Right|Las Palmas|50|5|7|Iran|1984-06-09|Midfielder
+0|+|47501|Didier Ya Konan|Second Striker|Left/Centre/Right||Ya Konan|Ya Konan|Didier||1221|Left|Hannover 96|25|7|13|Côte d'Ivoire|1984-05-22|Forward
+0|+|131408|Andrey Semenov|Central Defender|Centre||Semenov|Semenov|Andrey|Sergeyevich|536||Terek Grozny|1|0|5|Russia|1989-03-24|Defender
+0|+|12625|Jorge Guagua|Central Defender|Centre||Guagua|Guagua|Jorge|Daniel|830||Emelec|59|2|2|Ecuador|1981-09-28|Defender
+0|+|55634|Thomas Müller|Striker|Centre/Right||Müller|Müller|Thomas||357|Right|FC Bayern München|49|17|13|Germany|1989-09-13|Forward
+0|+|18771|Sejad Salihovic|Attacking Midfielder|Left/Centre/Right||Salihovic|Salihovic|Sejad||537|Left|1899 Hoffenheim|42|4|23|Bosnia and Herzegovina|1984-10-08|Midfielder
+0|+|8533|Arjen Robben|Winger|Left/Right||Robben|Robben|Arjen||366|Left|FC Bayern München|75|23|11|Netherlands|1984-01-23|Midfielder
+0|+|12631|Walter Ayoví|Full Back|Left|Walter Ayoví|Walter Ayoví|Ayoví|Walter|Orlando|830||Pachuca|90|8|10|Ecuador|1979-08-11|Defender
+0|+|51940|David de Gea|Goalkeeper|Unknown||de Gea|de Gea|David||118|Right|Manchester United|1|0|12|Spain|1990-11-07|Goalkeeper
+0|+|151883|José María Giménez|Central Defender|Centre/Right||Giménez|Giménez|José María||837||Atlético de Madrid|6|0|13|Uruguay|1995-01-20|Defender
+0|+|12635|Édison Méndez|Defensive Midfielder|Centre||Méndez|Méndez|Édison||830||Unknown|110|18|8|Ecuador|1979-03-16|Midfielder
+0|+|17466|Pierre Webó|Striker|Centre||Webó|Webó|Pierre|Achille|494|Right|Fenerbahce|55|19|15|Cameroon|1982-01-20|Forward
+0|+|112991|Kenneth Omeruo|Central Defender|Centre/Right||Omeruo|Omeruo|Kenneth|Josiah|1216|Right|Chelsea|17|0|22|Nigeria|1993-10-17|Defender
+0|+|10594|Joseph Yobo|Central Defender|Centre/Right||Yobo|Yobo|Joseph|Michael|1216||Fenerbahce|97|7|2|Nigeria|1980-09-06|Defender
+0|+|49507|Efe Ambrose|Central Defender|Centre|Efe Ambrose|Efe Ambrose|Ambrose Emuobo|Efetobore|Eric|1216||Celtic|37|1|5|Nigeria|1988-10-18|Defender
+0|+|41316|Benedikt Höwedes|Central Defender|Centre/Right||Höwedes|Höwedes|Benedikt||357|Right|FC Schalke 04|21|2|4|Germany|1988-02-29|Defender
+0|+|33223|Asamoah Gyan|Striker|Centre||Gyan|Gyan|Asamoah||1219||Al Ain|78|39|3|Ghana|1985-11-22|Forward
+0|+|82283|Juri Lodygin|Goalkeeper|Unknown||Lodygin|Lodygin|Juri||536||Zenit St Petersburg|3|0|12|Russia|1990-05-26|Goalkeeper
+0|+|55661|Enzo Pérez|Attacking Midfielder|Centre/Right||Pérez|Pérez|Enzo||632|Right|Benfica|8|1|8|Argentina|1986-02-22|Midfielder
+0|+|41328|César Azpilicueta|Full Back|Left/Right||Azpilicueta|Azpilicueta|César||118||Chelsea|6|0|22|Spain|1989-08-28|Defender
+0|+|149879|Juwon Oshaniwa|Full Back|Left||Oshaniwa|Oshaniwa|Juwon||1216||Ashdod|10|0|13|Nigeria|1990-09-14|Defender
+0|+|49529|Ehsan Hajsafi|Attacking Midfielder|Left||Hajsafi|Hajsafi|Ehsan||1042||Sepahan|60|3|3|Iran|1990-02-25|Midfielder
+0|+|33148|Claudio Bravo|Goalkeeper|Unknown||Bravo|Bravo|Claudio||831|Right|Real Sociedad|79|0|1|Chile|1983-04-13|Goalkeeper
+0|+|10625|Daniele De Rossi|Central Midfielder|Centre||De Rossi|De Rossi|Daniele||119|Right|Roma|95|15|16|Italy|1983-07-24|Midfielder
+0|+|14402|Fernando Torres|Striker|Centre||Torres|Torres|Fernando||118|Right|Chelsea|107|37|9|Spain|1984-03-20|Forward
+0|+|78506|David Myrie|Full Back|Right||Myrie|Myrie|David||838||Herediano|10|0|8|Costa Rica|1988-06-01|Defender
+0|+|72072|Isaác Brizuela|Winger|Left/Right||Brizuela|Brizuela|Isaác||659||Toluca|7|0|17|Mexico|1990-08-28|Midfielder
+0|+|53643|Marco Fabián|Attacking Midfielder|Left/Centre||Fabián|Fabián|Marco|Jhonfai|659||Cruz Azul|15|5|8|Mexico|1989-07-21|Midfielder
+0|+|59788|James Holland|Central Midfielder|Centre||Holland|Holland|James||575|Left|FK Austria Wien|14|0|16|Australia|1989-05-15|Midfielder
+0|+|53645|Hulk|Second Striker|Left/Right|Hulk|Hulk|Vieira de Souza|Givanildo||614|Left|Zenit St Petersburg|35|9|7|Brazil|1986-07-25|Forward
+0|+|184718|Loïc Feudjou|Goalkeeper|Unknown||Feudjou|Feudjou|Loïc||494||Coton Sport Garoua|2|0|1|Cameroon|1992-04-14|Goalkeeper
+0|+|184719|Cedric Djeugoue|Central Defender|Left/Centre/Right||Djeugoue|Djeugoue|Cedric||494||Coton Sport Garoua|3|0|4|Cameroon|1992-08-28|Defender
+0|+|37265|Alexis Sánchez|Winger|Right||Sánchez|Sánchez|Alexis||831|Both|Barcelona|67|22|7|Chile|1988-12-19|Forward
+0|+|59794|Carlo Costly|Striker|Centre||Costly|Costly|Carlo|Yaír|847||Real Espana|69|31|13|Honduras|1982-07-18|Forward
+0|+|37269|Gonzalo Jara|Full Back|Right||Jara|Jara|Gonzalo|Alejandro|831||Unknown|65|3|18|Chile|1985-08-29|Defender
+0|+|19524|Santiago Cazorla|Attacking Midfielder|Left/Centre/Right||Cazorla|Cazorla|Santiago||118|Both|Arsenal|64|11|20|Spain|1984-12-13|Midfielder
+0|+|98718|Rodrigo Muñoz|Goalkeeper|Unknown||Muñoz|Muñoz|Rodrigo|Martín|837||Libertad|0|0|12|Uruguay|1982-01-22|Goalkeeper
+0|+|33190|Jorge Valdívia|Second Striker|Centre||Valdívia|Valdívia|Jorge|Luis|831||Palmeiras|57|4|10|Chile|1983-10-19|Midfielder
+0|+|39336|Luis Suarez|Striker|Centre||Suarez|Suarez|Luis|Alberto|837|Right|Liverpool|77|39|9|Uruguay|1987-01-24|Forward
+0|+|49579|Pedro|Second Striker|Left/Right|Pedro|Pedro|Rodríguez Ledesma|Pedro||118|Both|Barcelona|40|14|11|Spain|1987-07-28|Forward
+0|+|86444|Ricardo Álvarez|Attacking Midfielder|Left/Centre||Álvarez|Álvarez|Ricardo||632|Left|Internazionale|7|1|19|Argentina|1988-04-12|Midfielder
+0|+|61170|Marco Verratti|Central Midfielder|Centre||Verratti|Verratti|Marco||119|Right|Paris Saint Germain|6|1|23|Italy|1992-11-05|Midfielder
+0|+|86455|Kim Chang-Soo|Full Back|Right|Kim Chang-Soo|Kim Chang-Soo|Kim|Chang-Soo||1041||Kashiwa Reysol|9|0|2|South Korea|1985-09-12|Defender
+0|+|86458|Ha Dae-Sung|Central Midfielder|Centre|Ha Dae-Sung|Ha Dae-Sung|Ha|Dae-Sung||1041||Beijing Guoan|13|0|8|South Korea|1985-03-02|Midfielder
+0|+|15154|Jean Makoun|Defensive Midfielder|Centre||Makoun|Makoun|Jean||494||Rennes|67|5|11|Cameroon|1983-05-29|Midfielder
+0|+|108991|Nabil Ghilas|Striker|Centre||Ghilas|Ghilas|Nabil||1215|Right|FC Porto|5|2|9|Algeria|1990-04-20|Forward
+0|+|149956|Chigozie Agbim|Goalkeeper|Unknown||Agbim|Agbim|Chigozie||1216||Gombe United|14|0|21|Nigeria|1984-11-28|Goalkeeper
+0|+|149958|Azubuike Egwuekwe|Central Defender|Centre||Egwuekwe|Egwuekwe|Azubuike|Emanuel|1216||Warri Wolves|31|1|6|Nigeria|1989-07-16|Defender
+0|+|14791|Sulley Ali Muntari|Central Midfielder|Left/Centre||Muntari|Muntari|Sulley Ali||1219|Left|Milan|81|21|11|Ghana|1984-08-27|Midfielder
+0|+|12745|Leighton Baines|Full Back|Left||Baines|Baines|Leighton|John|114||Everton|24|1|3|England|1984-12-11|Defender
+0|+|149962|Ejike Uzoenyi|Winger|Left||Uzoenyi|Uzoenyi|Ejike|Christantus Ejike|1216||Mamelodi Sundowns FC|19|3|3|Nigeria|1992-03-23|Midfielder
+0|+|149963|Reuben Gabriel|Defensive Midfielder|Centre||Gabriel|Gabriel|Reuben|Shalu|1216|Right|Waasland Beveren|11|0|4|Nigeria|1990-09-25|Midfielder
+0|+|59856|Abel Hernández|Striker|Centre||Hernández|Hernández|Abel|Mathías|837|Left|Palermo|12|7|8|Uruguay|1990-08-08|Forward
+0|+|98769|Ji Dong-Won|Striker|Centre|Ji Dong-Won|Ji Dong-Won|Ji|Dong-Won||1041|Right|FC Augsburg|28|8|19|South Korea|1991-05-28|Forward
+0|+|170450|Kim Seung-Gyu|Goalkeeper|Unknown|Kim Seung-Gyu|Kim Seung-Gyu|Kim|Seung-Gyu||1041||Ulsan Hyundai|5|0|21|South Korea|1990-09-30|Goalkeeper
+0|+|170452|Lee Yong|Full Back|Right|Lee Yong|Lee Yong|Lee|Yong||1041||Ulsan Hyundai|12|0|12|South Korea|1986-12-24|Defender
+0|+|98773|Masahiko Inoha|Central Defender|Centre||Inoha|Inoha|Masahiko||1266||Jubilo Iwata|21|1|19|Japan|1985-08-28|Defender
+0|+|16854|Philippe Senderos|Central Defender|Centre||Senderos|Senderos|Philippe||497|Right|Aston Villa|53|5|4|Switzerland|1985-02-14|Defender
+0|+|98780|Juan Carlos Paredes|Wing Back|Right||Paredes|Paredes|Juan Carlos||830||Barcelona de Guayaquil|38|0|4|Ecuador|1987-07-08|Defender
+0|+|98783|Frickson Erazo|Central Defender|Centre||Erazo|Erazo|Frickson|Rafael|830||Flamengo|37|1|3|Ecuador|1988-05-05|Defender
+0|+|74208|Paul Pogba|Central Midfielder|Centre||Pogba|Pogba|Paul|Labile|368|Right|Juventus|11|2|19|France|1993-03-15|Midfielder
+0|+|98785|Jaime Ayoví|Striker|Centre|Jaime Ayoví|Jaime Ayoví|Ayoví|Jaime|Javier|830||Club Tijuana|30|9|17|Ecuador|1988-02-21|Forward
+0|+|72162|Jasper Cillessen|Goalkeeper|Unknown||Cillessen|Cillessen|Jasper||366||Ajax|8|0|1|Netherlands|1989-04-22|Goalkeeper
+0|+|28411|Keylor Navas|Goalkeeper|Unknown||Navas|Navas|Keylor|Antonio|838|Right|Levante|53|0|1|Costa Rica|1986-12-15|Goalkeeper
+0|+|121319|Esteban Granados|Defensive Midfielder|Centre|Esteban Granados|Esteban Granados|Granados Maroto|Óscar Esteban||838||Herediano|11|0|13|Costa Rica|1985-10-25|Midfielder
+0|+|33256|Johnny Herrera|Goalkeeper|Unknown||Herrera|Herrera|Johnny|Cristián|831|Left|Universidad de Chile|8|0|23|Chile|1981-05-09|Goalkeeper
+0|+|39297|Rubén Amorim|Central Midfielder|Centre||Amorim|Amorim|Rubén|Filipe Marques|359||Benfica|13|0|20|Portugal|1985-01-27|Midfielder
+0|+|121332|Waylon Francis|Full Back|Left||Francis|Francis|Waylon||838||Columbus Crew|1|0|12|Costa Rica|1990-09-20|Defender
+0|+|37368|Michael Bradley|Central Midfielder|Centre||Bradley|Bradley|Michael|Sheehan|596|Right|Toronto FC|85|12|4|USA|1987-07-31|Midfielder
+0|+|104953|Christian Atsu|Winger|Left||Atsu|Atsu|Christian||1219|Left|Chelsea|23|4|7|Ghana|1992-01-10|Midfielder
+0|+|158206|Yuya Osako|Striker|Centre||Osako|Osako|Yuya||1266|Right|TSV 1860 München|8|3|18|Japan|1990-05-18|Forward
+0|+|17152|Jermaine Jones|Defensive Midfielder|Centre||Jones|Jones|Jermaine||596|Right|Besiktas|44|2|13|USA|1981-11-03|Midfielder
+0|+|100866|Javier Aquino|Winger|Right||Aquino|Aquino|Javier|Ignacio|659||Villarreal|22|0|20|Mexico|1990-02-11|Midfielder
+0|+|100867|Diego Reyes|Central Defender|Centre||Reyes|Reyes|Diego|Antonio|659||FC Porto|14|0|5|Mexico|1992-09-19|Defender
+0|+|107013|Mattia De Sciglio|Full Back|Left/Right||De Sciglio|De Sciglio|Mattia||119|Right|Milan|11|0|2|Italy|1992-10-20|Defender
+0|+|100870|Miguel Ponce|Full Back|Left||Ponce|Ponce|Miguel|Ángel|659||Toluca|6|1|16|Mexico|1989-04-12|Defender
+0|+|68353|Sime Vrsaljko|Full Back|Right||Vrsaljko|Vrsaljko|Sime||535|Right|Genoa|7|0|2|Croatia|1992-01-10|Defender
+0|+|61960|Celso Borges|Attacking Midfielder|Centre||Borges|Borges|Celso||838||AIK|62|14|5|Costa Rica|1988-05-27|Midfielder
+0|+|61962|Mario Martínez|Attacking Midfielder|Centre||Martínez|Martínez|Mario|Roberto|847|Left|Real Espana|37|3|10|Honduras|1989-07-30|Midfielder
+0|+|33298|Jean Beausejour|Winger|Left||Beausejour|Beausejour|Jean|André Emanuel|831||Wigan Athletic|60|5|15|Chile|1984-06-01|Midfielder
+0|+|88596|Stefanos Kapino|Goalkeeper|Unknown||Kapino|Kapino|Stefanos||517||Panathinaikos|2|0|13|Greece|1994-03-18|Goalkeeper
+0|+|37399|Fredy Guarín|Central Midfielder|Centre||Guarín|Guarín|Fredy||832|Right|Internazionale|49|4|13|Colombia|1986-06-30|Midfielder
+0|+|6685|Rafael Márquez|Central Defender|Centre||Márquez|Márquez|Rafael||659||León|120|15|4|Mexico|1979-02-13|Defender
+0|+|61982|Mathis Bolly|Winger|Left/Right||Bolly|Bolly|Mathis||1221|Both|Fortuna Düsseldorf|4|0|6|Côte d'Ivoire|1990-11-14|Midfielder
+0|+|56069|Eyong Enoh|Defensive Midfielder|Centre||Enoh|Enoh|Eyong|Tarkang|494||Antalyaspor|36|2|18|Cameroon|1986-03-23|Midfielder
+0|+|14880|Hugo Campagnaro|Central Defender|Centre||Campagnaro|Campagnaro|Hugo||632|Right|Internazionale|15|0|3|Argentina|1980-06-27|Defender
+0|+|61988|Adam Larsen Kwarasey|Goalkeeper|Unknown||Larsen Kwarasey|Larsen Kwarasey|Adam||1219||Strømsgodset|21|0|12|Ghana|1987-12-12|Goalkeeper
+0|+|39461|Jô|Striker|Centre|Jô|Jô|de Assis Silva|João Alves||614|Left|Atlético Mineiro|17|5|21|Brazil|1987-03-20|Forward
+0|+|47654|Luiz Gustavo|Defensive Midfielder|Centre|Luiz Gustavo|Luiz Gustavo|Dias|Luiz Gustavo||614|Left|VfL Wolfsburg|19|1|17|Brazil|1987-07-23|Midfielder
+0|+|39464|Vangelis Moras|Central Defender|Left/Centre||Moras|Moras|Vangelis||517|Right|Verona|19|0|5|Greece|1981-08-26|Defender
+0|+|47659|Ryan McGowan|Central Defender|Centre||McGowan|McGowan|Ryan|James|575||Shandong Luneng|9|0|19|Australia|1989-08-15|Defender
+0|+|6700|Mickaël Landreau|Goalkeeper|Unknown||Landreau|Landreau|Mickaël|Vincent André-Marie|368||Bastia|11|0|23|France|1979-05-14|Goalkeeper
+0|+|39471|Panagiotis Kone|Attacking Midfielder|Left/Centre/Right||Kone|Kone|Panagiotis||517|Left|Bologna|16|1|8|Greece|1987-07-26|Midfielder
+0|+|39476|Sokratis|Central Defender|Centre|Sokratis|Sokratis|Papastathopoulos|Sokratis||517|Right|Borussia Dortmund|47|0|19|Greece|1988-06-09|Defender
+0|+|43575|Valentin Stocker|Winger|Left||Stocker|Stocker|Valentin||497||Hertha BSC|24|3|14|Switzerland|1989-04-12|Midfielder
+0|+|105017|Patrick Pemberton|Goalkeeper|Unknown||Pemberton|Pemberton|Patrick|Alberto|838||Alajuelense|21|0|18|Costa Rica|1982-04-24|Goalkeeper
+0|+|105021|Giancarlo Gonzalez|Central Defender|Centre||Gonzalez|Gonzalez|Giancarlo||838||Columbus Crew|35|2|3|Costa Rica|1988-02-08|Defender
+0|+|100927|Christoph Kramer|Defensive Midfielder|Centre||Kramer|Kramer|Christoph||357|Both|Borussia Mönchengladbach|2|0|23|Germany|1991-02-19|Midfielder
+0|+|78404|Shusaku Nishikawa|Goalkeeper|Unknown||Nishikawa|Nishikawa|Shusaku||1266||Urawa Reds|13|0|12|Japan|1986-06-18|Goalkeeper
+0|+|76359|Phil Jones|Central Defender|Centre||Jones|Jones|Phil||114|Right|Manchester United|10|0|16|England|1992-02-21|Defender
+0|+|78409|Atsuto Uchida|Full Back|Right||Uchida|Uchida|Atsuto||1266|Right|FC Schalke 04|67|2|2|Japan|1988-03-27|Defender
+0|+|12875|DaMarcus Beasley|Wing Back|Left||Beasley|Beasley|DaMarcus|Lamont|596||Puebla|116|17|7|USA|1982-05-24|Defender
+0|+|78412|Shinji Okazaki|Striker|Centre||Okazaki|Okazaki|Shinji||1266|Right|1. FSV Mainz 05|75|38|9|Japan|1986-04-16|Forward
+0|+|100941|John Anthony Brooks|Central Defender|Centre||Brooks|Brooks|John Anthony||596|Left|Hertha BSC|4|0|6|USA|1993-01-28|Defender
+0|+|33360|Francisco Javier Rodríguez|Central Defender|Centre||Rodríguez|Rodríguez|Francisco Javier||659||América|93|1|2|Mexico|1981-10-20|Defender
+0|+|118884|Erik Durm|Full Back|Left/Right||Durm|Durm|Erik||357|Right|Borussia Dortmund|1|0|15|Germany|1992-05-12|Defender
+0|+|90714|Ahmed Musa|Striker|Centre||Musa|Musa|Ahmed||1216||CSKA Moscow|37|5|7|Nigeria|1992-10-14|Forward
+0|+|14941|Klaas-Jan Huntelaar|Striker|Centre||Huntelaar|Huntelaar|Klaas-Jan||366|Right|FC Schalke 04|62|34|19|Netherlands|1983-08-12|Forward
+0|+|33376|Guillermo Ochoa|Goalkeeper|Unknown||Ochoa|Ochoa|Guillermo||659||Ajaccio|57|0|13|Mexico|1985-07-13|Goalkeeper
+0|+|21091|Alexandre Song|Central Midfielder|Centre||Song|Song|Alexandre|Dimitri|494||Barcelona|47|0|6|Cameroon|1987-09-09|Midfielder
+0|+|82533|Andy Najar|Winger|Right||Najar|Najar|Andy||847||RSC Anderlecht|18|1|17|Honduras|1993-03-16|Midfielder
+0|+|41574|Jozy Altidore|Striker|Centre||Altidore|Altidore|Jozy|Volmy|596|Right|Sunderland|69|22|17|USA|1989-11-06|Forward
+0|+|21095|Ron Vlaar|Central Defender|Centre||Vlaar|Vlaar|Ron|Peter|366||Aston Villa|24|1|2|Netherlands|1985-02-16|Defender
+0|+|66153|Samuel Inkoom|Full Back|Right||Inkoom|Inkoom|Samuel||1219||Platanias|46|1|2|Ghana|1989-06-01|Defender
+0|+|38551|Vieirinha|Winger|Left/Right|Vieirinha|Vieirinha|Vieira de Freitas|Adelino André||359|Right|VfL Wolfsburg|9|1|10|Portugal|1986-01-24|Midfielder
+0|+|49773|Albert Adomah|Winger|Right||Adomah|Adomah|Albert|Danquah|1219||Middlesbrough|15|1|14|Ghana|1987-12-13|Midfielder
+0|+|19054|Lionel Messi|Second Striker|Left/Centre/Right||Messi|Messi|Lionel||632|Left|Barcelona|86|38|10|Argentina|1987-06-24|Forward
+0|+|4719|Dirk Kuyt|Second Striker|Centre/Right||Kuyt|Kuyt|Dirk||366||Fenerbahce|98|24|15|Netherlands|1980-07-22|Midfielder
+0|+|103025|Riyad Mahrez|Winger|Left/Centre/Right||Mahrez|Mahrez|Riyad||1215||Leicester City|2|0|21|Algeria|1991-02-21|Forward
+0|+|27250|Fred|Striker|Centre|Fred|Fred|Chaves Guedes|Frederico||614||Fluminense|33|17|9|Brazil|1983-10-03|Forward
+0|+|100981|Francisco Silva|Defensive Midfielder|Centre||Silva|Silva|Francisco||831|Right|Osasuna|12|0|5|Chile|1986-02-11|Midfielder
+0|+|105080|Daniel Cambronero|Goalkeeper|Unknown||Cambronero|Cambronero|Daniel||838||Herediano|2|0|23|Costa Rica|1986-01-08|Goalkeeper
+0|+|60025|James Rodríguez|Attacking Midfielder|Left/Centre||Rodríguez|Rodríguez|James||832|Left|Monaco|22|5|10|Colombia|1991-07-12|Midfielder
+0|+|10875|Faryd Mondragón|Goalkeeper|Unknown||Mondragón|Mondragón|Faryd||832||Unknown|50|0|22|Colombia|1971-06-21|Goalkeeper
+0|+|37507|Jorge Fucile|Full Back|Left/Right||Fucile|Fucile|Jorge|Ciro|837|Right|FC Porto|42|0|4|Uruguay|1984-11-19|Defender
+0|+|100997|Park Joo-Ho|Full Back|Left|Park Joo-Ho|Park Joo-Ho|Park|Joo-Ho||1041|Left|1. FSV Mainz 05|14|0|22|South Korea|1987-01-16|Defender
+0|+|37510|Walter Gargano|Central Midfielder|Centre||Gargano|Gargano|Walter|Alejandro|837|Right|Napoli|63|1|5|Uruguay|1984-07-23|Midfielder
+0|+|39563|Marcelo|Full Back|Left|Marcelo|Marcelo|Da Silva Junior|Marcelo Vieira||614|Left|Real Madrid|31|4|6|Brazil|1988-05-12|Defender
+0|+|12056|Boubacar Barry|Goalkeeper|Unknown||Barry|Barry|Boubacar||1221||KSC Lokeren|76|0|1|Côte d'Ivoire|1979-12-30|Goalkeeper
+0|+|111251|Matthias Ginter|Central Defender|Centre||Ginter|Ginter|Matthias||357|Right|Sport-Club Freiburg|2|0|3|Germany|1994-01-19|Defender
+0|+|51310|Yacine Brahimi|Attacking Midfielder|Left/Centre/Right||Brahimi|Brahimi|Yacine||1215||Granada CF|6|0|11|Algeria|1990-02-08|Midfielder
+0|+|43670|Juan Mata|Attacking Midfielder|Left/Centre/Right||Mata|Mata|Juan||118|Left|Manchester United|33|9|13|Spain|1988-04-28|Midfielder
+0|+|55407|Álvaro Pereira|Wing Back|Left|Álvaro Pereira|Álvaro Pereira|Pereira|Álvaro|Daniel|837|Left|São Paulo|57|6|6|Uruguay|1985-11-28|Midfielder
+0|+|49822|Hernanes|Attacking Midfielder|Centre|Hernanes|Hernanes|de Carvalho Andrade Lima|Anderson Hernanes||614|Both|Internazionale|24|2|18|Brazil|1985-05-29|Midfielder
+0|+|83630|Mitchell Langerak|Goalkeeper|Unknown||Langerak|Langerak|Mitchell||575|Right|Borussia Dortmund|3|0|12|Australia|1988-08-22|Goalkeeper
+0|+|21155|Salvatore Sirigu|Goalkeeper|Unknown||Sirigu|Sirigu|Salvatore||119||Paris Saint Germain|8|0|12|Italy|1987-01-12|Goalkeeper
+0|+|27300|Cristian Zapata|Central Defender|Centre||Zapata|Zapata|Cristian||832|Right|Milan|24|0|2|Colombia|1986-09-30|Defender
+0|+|119463|Hwang Seok-Ho|Central Defender|Left/Centre/Right|Hwang Seok-Ho|Hwang Seok-Ho|Hwang|Seok-Ho||1041||Sanfrecce Hiroshima|3|0|6|South Korea|1989-06-27|Defender
+0|+|111274|Carlos Bacca|Striker|Centre||Bacca|Bacca|Carlos||832|Right|Sevilla|11|3|17|Colombia|1986-09-08|Forward
+0|+|119467|Park Jong-Woo|Central Midfielder|Centre|Park Jong-Woo|Park Jong-Woo|Park|Jong-Woo||1041||Guangzhou R&F|10|0|15|South Korea|1989-03-10|Midfielder
+0|+|43692|Anel Hadzic|Defensive Midfielder|Centre||Hadzic|Hadzic|Anel||537||SK Puntigamer Sturm Graz|2|0|21|Bosnia and Herzegovina|1989-08-16|Midfielder
+0|+|43693|Martín Cáceres|Central Defender|Left/Centre/Right||Cáceres|Cáceres|Martín|Martín|837|Right|Juventus|57|1|22|Uruguay|1987-04-07|Defender
+0|+|41647|Chris Wondolowski|Striker|Centre||Wondolowski|Wondolowski|Chris|Elliott|596||San Jose Earthquakes|20|9|18|USA|1983-01-28|Forward
+0|+|10929|Hélder Postiga|Striker|Centre||Postiga|Postiga|Hélder|Manuel Marques|359|Right|Lazio|69|27|23|Portugal|1982-08-02|Forward
+0|+|78515|Esteban Paredes|Striker|Centre||Paredes|Paredes|Esteban||831|Right|Colo Colo|35|10|22|Chile|1980-08-01|Forward
+0|+|53943|José Basanta|Central Defender|Centre||Basanta|Basanta|José|María|632||Monterrey|10|0|23|Argentina|1984-04-03|Defender
+0|+|98762|Kim Young-Gwon|Central Defender|Centre|Kim Young-Gwon|Kim Young-Gwon|Kim|Young-Gwon||1041|Left|Guangzhou Evergrande|21|1|5|South Korea|1990-02-27|Defender
+0|+|83448|Eugene Galekovic|Goalkeeper|Unknown||Galekovic|Galekovic|Eugene||575||Adelaide United|8|0|18|Australia|1981-06-12|Goalkeeper
+0|+|37572|Sergio Agüero|Striker|Left/Centre/Right||Agüero|Agüero|Sergio||632|Both|Manchester City|51|21|20|Argentina|1988-06-02|Forward
+0|+|27334|Mathieu Debuchy|Full Back|Right||Debuchy|Debuchy|Mathieu||368||Newcastle United|21|2|2|France|1985-07-28|Defender
+0|+|12999|Austin Ejide|Goalkeeper|Unknown||Ejide|Ejide|Austin|Amamchukwu|1216||Hapoel Be'er Sheva|31|0|16|Nigeria|1984-04-08|Goalkeeper
+0|+|117448|Fidel Martínez|Winger|Left/Right||Martínez|Martínez|Fidel||830||Club Tijuana|8|2|20|Ecuador|1990-02-15|Midfielder
+0|+|119498|Shuichi Gonda|Goalkeeper|Unknown||Gonda|Gonda|Shuichi||1266||FC Tokyo|2|0|23|Japan|1989-03-03|Goalkeeper
+0|+|27341|Yohan Cabaye|Central Midfielder|Centre||Cabaye|Cabaye|Yohan||368||Paris Saint Germain|30|3|6|France|1986-01-14|Midfielder
+0|+|119504|Hotaru Yamaguchi|Defensive Midfielder|Centre||Yamaguchi|Yamaguchi|Hotaru||1266||Cerezo Osaka|11|0|16|Japan|1990-10-06|Midfielder
+0|+|78545|Joao Rojas|Second Striker|Left/Right||Rojas|Rojas|Joao|Robin|830||Cruz Azul|30|2|9|Ecuador|1989-06-14|Forward
+0|+|148179|Enner Valencia|Striker|Centre|Enner Valencia|Enner Valencia|Valencia|Enner|Remberto|830||Pachuca|10|4|13|Ecuador|1989-11-04|Forward
+0|+|68309|Mario Gavranovic|Second Striker|Left/Centre/Right||Gavranovic|Gavranovic|Mario||497||FC Zürich|11|4|17|Switzerland|1989-11-24|Forward
+0|+|19160|Johan Djourou|Central Defender|Centre||Djourou|Djourou|Johan||497|Right|Hamburger SV|44|1|20|Switzerland|1987-01-18|Defender
+0|+|13017|Wayne Rooney|Second Striker|Left/Centre/Right||Rooney|Rooney|Wayne|Mark|114||Manchester United|92|39|10|England|1985-10-24|Forward
+0|+|28111|Arthur Boka|Full Back|Left||Boka|Boka|Arthur||1221|Left|VfB Stuttgart|78|1|3|Côte d'Ivoire|1983-04-02|Defender
+0|+|180956|Rahman Ahmadi|Goalkeeper|Unknown||Ahmadi|Ahmadi|Rahman||1042||Sepahan|12|0|1|Iran|1980-07-30|Goalkeeper
+0|+|51934|Ron-Robert Zieler|Goalkeeper|Unknown||Zieler|Zieler|Ron-Robert||357|Right|Hannover 96|3|0|12|Germany|1989-02-12|Goalkeeper
+0|+|15076|Nigel de Jong|Defensive Midfielder|Centre||de Jong|de Jong|Nigel||366|Right|Milan|71|1|6|Netherlands|1984-11-30|Midfielder
+0|+|37605|Mesut Özil|Attacking Midfielder|Centre||Özil|Özil|Mesut||357|Left|Arsenal|55|17|8|Germany|1988-10-15|Midfielder
+0|+|17127|Per Mertesacker|Central Defender|Centre||Mertesacker|Mertesacker|Per||357|Right|Arsenal|98|4|17|Germany|1984-09-29|Defender
+0|+|82664|Edin Visca|Winger|Left||Visca|Visca|Edin||537||Istanbul Büyüksehir Belediyespor|10|0|19|Bosnia and Herzegovina|1990-02-17|Forward
+0|+|41705|Brad Guzan|Goalkeeper|Unknown||Guzan|Guzan|Brad|Edwin|596||Aston Villa|25|0|12|USA|1984-09-09|Goalkeeper
+0|+|27375|Vasilis Torosidis|Full Back|Left||Torosidis|Torosidis|Vasilis||517|Right|Roma|66|7|15|Greece|1985-06-10|Defender
+0|+|48853|Gary Medel|Central Defender|Centre/Right||Medel|Medel|Gary||831|Right|Cardiff City|61|5|17|Chile|1987-08-03|Defender
+0|+|10995|Charles Itandje|Goalkeeper|Unknown||Itandje|Itandje|Charles|Hubert|494||PAOK Salonika|9|0|16|Cameroon|1982-11-02|Goalkeeper
+0|+|119572|Luis Garrido|Defensive Midfielder|Centre||Garrido|Garrido|Luis|Fernando|847||Club Deportivo Olimpia|20|0|19|Honduras|1990-11-05|Midfielder
+0|+|131882|Ivan Franjic|Central Defender|Centre||Franjic|Franjic|Ivan||575||Brisbane Roar|9|0|2|Australia|1987-09-10|Defender
+0|+|76542|Ki Sung-Yueng|Central Midfielder|Centre|Ki Sung-Yueng|Ki Sung-Yueng|Ki|Sung-Yueng||1041||Swansea City|59|5|16|South Korea|1989-01-24|Midfielder
+0|+|39680|Gelson Fernandes|Defensive Midfielder|Centre||Fernandes|Fernandes|Gelson|Tavares|497|Right|Sport-Club Freiburg|47|2|16|Switzerland|1986-09-02|Midfielder
+0|+|101121|Panagiotis Glykos|Goalkeeper|Unknown||Glykos|Glykos|Panagiotis||517|Right|PAOK Salonika|2|0|12|Greece|1986-10-10|Goalkeeper
+0|+|41733|Georginio Wijnaldum|Attacking Midfielder|Centre||Wijnaldum|Wijnaldum|Georginio|Gregion Emile|366||PSV|5|1|20|Netherlands|1990-11-11|Midfielder
+0|+|37641|Gabriel Paletta|Central Defender|Centre||Paletta|Paletta|Gabriel||119|Right|Parma|2|0|20|Italy|1986-02-15|Defender
+0|+|131885|Ben Halloran|Winger|Left||Halloran|Halloran|Ben||575|Right|Fortuna Düsseldorf|2|0|10|Australia|1992-06-14|Midfielder
+0|+|183059|Jalal Hosseini|Central Defender|Centre||Hosseini|Hosseini|Jalal||1042||Persepolis FC|84|6|4|Iran|1982-02-03|Defender
+0|+|17172|Andrea Barzagli|Central Defender|Centre||Barzagli|Barzagli|Andrea||119|Right|Juventus|47|0|15|Italy|1981-05-08|Defender
+0|+|148247|Camilo Vargas|Goalkeeper|Unknown||Vargas|Vargas|Camilo|Andrés|832||Independiente Santa Fe|0|0|12|Colombia|1989-03-09|Goalkeeper
+0|+|17176|Mauricio Pinilla|Striker|Left/Centre/Right||Pinilla|Pinilla|Mauricio||831|Right|Cagliari|26|5|9|Chile|1984-02-04|Forward
+0|+|11037|Rickie Lambert|Striker|Centre||Lambert|Lambert|Rickie|Lee|114||Liverpool|6|3|18|England|1982-02-16|Forward
+0|+|68394|Domagoj Vida|Full Back|Centre/Right||Vida|Vida|Domagoj||535||Dynamo Kyiv|23|1|21|Croatia|1989-04-29|Defender
+0|+|60210|Graham Zusi|Attacking Midfielder|Centre/Right||Zusi|Zusi|Graham|Jonathan|596||Sporting Kansas City|23|3|19|USA|1986-08-18|Midfielder
+0|+|60207|Matt Besler|Central Defender|Centre||Besler|Besler|Matt||596||Sporting Kansas City|17|0|5|USA|1987-02-11|Defender
+0|+|103218|Carlos Carbonero|Winger|Right||Carbonero|Carbonero|Carlos||832|Right|River Plate|1|0|5|Colombia|1990-07-25|Midfielder
+0|+|99123|Johnny Acosta|Central Defender|Centre||Acosta|Acosta|Johnny||838||Alajuelense|26|1|2|Costa Rica|1983-07-21|Defender
+0|+|15157|James Milner|Attacking Midfielder|Left/Centre/Right||Milner|Milner|James|Philip|114||Manchester City|47|1|17|England|1986-01-04|Midfielder
+0|+|99127|Joel Campbell|Striker|Left/Centre||Campbell|Campbell|Joel|Nathaniel|838||Arsenal|33|9|9|Costa Rica|1992-06-26|Forward
+0|+|99128|Oscar Duarte|Central Defender|Centre||Duarte|Duarte|Oscar|Esaú|838||Club Brugge|11|0|6|Costa Rica|1989-06-03|Defender
+0|+|92985|Julian Draxler|Attacking Midfielder|Left/Centre||Draxler|Draxler|Julian||357|Right|FC Schalke 04|11|1|14|Germany|1993-09-20|Midfielder
+0|+|60218|Omar González|Central Defender|Centre||González|González|Omar||596||LA Galaxy|20|0|3|USA|1988-10-11|Defender
+0|+|95711|José Rojas|Central Defender|Left/Centre||Rojas|Rojas|José|Manuel|831||Universidad de Chile|19|1|13|Chile|1983-06-23|Defender
+0|+|88894|Ross Barkley|Attacking Midfielder|Left/Centre/Right||Barkley|Barkley|Ross||114||Everton|6|0|21|England|1993-12-05|Midfielder
+0|+|82752|Saphir Taïder|Central Midfielder|Centre||Taïder|Taïder|Saphir|Sliti|1215|Right|Internazionale|10|3|19|Algeria|1992-02-29|Midfielder
+0|+|101188|Lucas Digne|Full Back|Left||Digne|Digne|Lucas||368||Paris Saint Germain|2|0|17|France|1993-07-20|Defender
+0|+|84450|Granit Xhaka|Central Midfielder|Centre||Xhaka|Xhaka|Granit||497|Left|Borussia Mönchengladbach|26|4|10|Switzerland|1992-09-27|Midfielder
+0|+|52049|Senad Lulic|Winger|Left||Lulic|Lulic|Senad||537|Right|Lazio|33|1|16|Bosnia and Herzegovina|1986-01-18|Midfielder
+0|+|6994|Giorgos Karagounis|Central Midfielder|Centre/Right||Karagounis|Karagounis|Giorgos||517||Unknown|135|10|10|Greece|1977-03-06|Midfielder
+0|+|13139|Ivica Olic|Striker|Left/Centre||Olic|Olic|Ivica||535|Left|VfL Wolfsburg|92|18|18|Croatia|1979-09-14|Forward
+0|+|54102|Jack Wilshere|Central Midfielder|Centre||Wilshere|Wilshere|Jack|Andrew Garry|114||Arsenal|18|0|7|England|1992-01-01|Midfielder
+0|+|57145|Federico Fernández|Central Defender|Centre/Right|Federico Fernández|Federico Fernández|Fernández|Federico||632|Right|Napoli|26|2|17|Argentina|1989-02-21|Defender
+0|+|54104|Sergio Busquets|Defensive Midfielder|Centre||Busquets|Busquets|Sergio||118|Right|Barcelona|66|0|16|Spain|1988-07-16|Midfielder
+0|+|58813|André Almeida|Full Back|Right||Almeida|Almeida|André|Gomes Magalhães|359||Benfica|5|0|19|Portugal|1990-09-10|Defender
+0|+|109404|Hiroki Sakai|Full Back|Right|Hiroki Sakai|Hiroki Sakai|Sakai|Hiroki||1266|Right|Hannover 96|17|0|21|Japan|1990-04-12|Defender
+0|+|126437|Juan Quintero|Attacking Midfielder|Centre||Quintero|Quintero|Juan||832|Left|FC Porto|4|0|20|Colombia|1993-01-18|Midfielder
+0|+|70496|Toni Sunjic|Central Defender|Centre||Sunjic|Sunjic|Toni||537||Zorya Luhansk|7|0|15|Bosnia and Herzegovina|1988-12-15|Defender
+0|+|111457|Sead Kolasinac|Full Back|Left||Kolasinac|Kolasinac|Sead||537|Left|FC Schalke 04|4|0|5|Bosnia and Herzegovina|1993-06-20|Defender
+0|+|52068|Serey Die|Defensive Midfielder|Centre|Serey Die|Serey Die|Gonzaroua Die|Sereso|Geoffroy|1221||Basel|7|0|20|Côte d'Ivoire|1984-11-07|Midfielder
+0|+|7313|Andrea Pirlo|Central Midfielder|Centre||Pirlo|Pirlo|Andrea||119|Right|Juventus|109|13|21|Italy|1979-05-19|Midfielder
+0|+|15208|Bastian Schweinsteiger|Central Midfielder|Centre||Schweinsteiger|Schweinsteiger|Bastian||357|Right|FC Bayern München|102|23|7|Germany|1984-08-01|Midfielder
+0|+|76650|Antoine Griezmann|Attacking Midfielder|Left/Centre/Right||Griezmann|Griezmann|Antoine||368|Right|Real Sociedad|4|3|11|France|1991-03-21|Midfielder
+0|+|37352|Salomon Kalou|Second Striker|Left/Centre/Right||Kalou|Kalou|Salomon|Armand|1221||Lille|67|22|8|Côte d'Ivoire|1985-08-05|Forward
+0|+|37748|Bacary Sagna|Full Back|Right||Sagna|Sagna|Bacary||368||Unknown|41|0|15|France|1983-02-14|Defender
+0|+|50038|Henrique|Central Defender|Centre|Henrique|Henrique|Adriano Buss|Henrique||614|Right|Napoli|5|0|15|Brazil|1986-10-14|Defender
+0|+|37752|Hassan Yebda|Central Midfielder|Centre||Yebda|Yebda|Hassan||1215|Right|Granada CF|25|2|7|Algeria|1984-05-14|Midfielder
+0|+|109434|Terence Kongolo|Central Defender|Centre||Kongolo|Kongolo|Terence||366||Feyenoord|1|0|14|Netherlands|1994-02-14|Defender
+0|+|17279|David Villa|Striker|Centre||Villa|Villa|David||118|Both|Melbourne City|96|58|7|Spain|1981-12-03|Forward
+0|+|9089|Ben Foster|Goalkeeper|Unknown||Foster|Foster|Ben|Anthony|114||West Bromwich Albion|7|0|13|England|1983-04-03|Goalkeeper
+0|+|131971|Adam Taggart|Striker|Centre||Taggart|Taggart|Adam|Jake|575||Newcastle Jets|5|3|9|Australia|1993-06-02|Forward
+0|+|33668|Cristian Rodríguez|Winger|Left||Rodríguez|Rodríguez|Cristian|Gabriel|837|Left|Atlético de Madrid|73|8|7|Uruguay|1985-09-30|Midfielder
+0|+|39816|Sami Khedira|Defensive Midfielder|Centre||Khedira|Khedira|Sami||357|Right|Real Madrid|46|4|6|Germany|1987-04-04|Midfielder
+0|+|66443|Dany Nounkeu|Central Defender|Centre||Nounkeu|Nounkeu|Dany|Achille|494||Besiktas|16|0|5|Cameroon|1986-04-11|Defender
+0|+|16738|Ricardo Costa|Central Defender|Centre|Ricardo Costa|Ricardo Costa|Moreira da Costa|Ricardo Miguel||359|Right|Valencia CF|19|1|13|Portugal|1981-05-16|Defender
+0|+|80784|Michael Uchebo|Striker|Centre||Uchebo|Uchebo|Michael|Okechukwu|1216||Cercle Brugge|4|1|20|Nigeria|1990-02-03|Forward
+0|+|82845|Steven Beitashour|Full Back|Right||Beitashour|Beitashour|Steven||1042||Vancouver Whitecaps|6|0|20|Iran|1987-02-01|Defender
+0|+|37793|Javi Martínez|Central Defender|Centre|Javi Martínez|Javi Martínez|Martínez Aguinaga|Javier||118|Right|FC Bayern München|17|0|4|Spain|1988-09-02|Defender
+0|+|107428|Adrian Bone|Goalkeeper|Unknown||Bone|Bone|Adrian|Javier|830||El Nacional|3|0|12|Ecuador|1988-09-08|Goalkeeper
+0|+|39847|Steven Defour|Central Midfielder|Centre||Defour|Defour|Steven|Arnold|360|Right|FC Porto|43|2|16|Belgium|1988-04-15|Midfielder
+0|+|50089|Geoff Cameron|Central Defender|Centre||Cameron|Cameron|Geoff||596||Stoke City|27|1|20|USA|1985-07-11|Defender
+0|+|13229|Alexander Kerzhakov|Striker|Centre||Kerzhakov|Kerzhakov|Alexander|Anatolyevich|536||Zenit St Petersburg|81|25|11|Russia|1982-11-27|Forward
+0|+|64431|Lee Keun-Ho|Second Striker|Left/Centre/Right|Lee Keun-Ho|Lee Keun-Ho|Lee|Keun-Ho||1041||Sangju Sangmu|64|18|11|South Korea|1985-04-11|Forward
+0|+|75592|Lorenzo Insigne|Second Striker|Left/Centre/Right||Insigne|Insigne|Lorenzo||119|Right|Napoli|5|1|22|Italy|1991-06-04|Forward
+0|+|87539|Sammy Ndjock|Goalkeeper|Unknown||Ndjock|Ndjock|Sammy||494|Right|Antalyaspor|3|0|23|Cameroon|1990-02-25|Goalkeeper
+0|+|41909|Steve Von Bergen|Central Defender|Centre||Von Bergen|Von Bergen|Steve||497|Right|BSC Young Boys|41|0|5|Switzerland|1983-06-10|Defender
+0|+|50105|Roger Espinoza|Defensive Midfielder|Left/Centre||Espinoza|Espinoza|Roger|Aníbal|847||Wigan Athletic|42|4|15|Honduras|1986-10-25|Midfielder
+0|+|13243|Diego Pérez|Defensive Midfielder|Centre||Pérez|Pérez|Diego|Fernando|837|Right|Bologna|89|2|15|Uruguay|1980-05-18|Midfielder
+0|+|52156|Admir Mehmedi|Attacking Midfielder|Left/Centre/Right||Mehmedi|Mehmedi|Admir||497|Right|Sport-Club Freiburg|21|1|18|Switzerland|1991-03-16|Forward
+0|+|17347|Darijo Srna|Wing Back|Right||Srna|Srna|Darijo||535||Shakhtar Donetsk|112|21|11|Croatia|1982-05-01|Defender
+0|+|50117|Rafik Halliche|Central Defender|Centre||Halliche|Halliche|Rafik||1215||Académica de Coimbra|29|1|5|Algeria|1986-09-02|Defender
+0|+|13262|Vincent Enyeama|Goalkeeper|Unknown||Enyeama|Enyeama|Vincent||1216||Lille|91|0|1|Nigeria|1982-08-29|Goalkeeper
+0|+|15312|Martín Demichelis|Central Defender|Centre||Demichelis|Demichelis|Martín||632|Right|Manchester City|38|2|15|Argentina|1980-12-20|Defender
+0|+|49656|Héctor Moreno|Central Defender|Centre|Héctor Moreno|Héctor Moreno|Moreno|Héctor|Alfredo|659|Left|Espanyol|53|1|15|Mexico|1988-01-17|Defender
+0|+|62419|Nikica Jelavic|Striker|Centre||Jelavic|Jelavic|Nikica||535||Hull City|33|6|9|Croatia|1985-08-27|Forward
+0|+|49657|Keisuke Honda|Second Striker|Centre||Honda|Honda|Keisuke||1266|Left|Milan|57|22|4|Japan|1986-06-13|Forward
+0|+|11225|Sergei Ignashevitch|Central Defender|Centre||Ignashevitch|Ignashevitch|Sergei|Nikolaievich|536||CSKA Moscow|98|5|4|Russia|1979-07-14|Defender
+0|+|19419|Gary Cahill|Central Defender|Centre||Cahill|Cahill|Gary|James|114||Chelsea|24|3|5|England|1985-12-19|Defender
+0|+|37852|Mathieu Valbuena|Attacking Midfielder|Left/Centre/Right||Valbuena|Valbuena|Mathieu||368||Marseille|34|5|8|France|1984-09-28|Midfielder
+0|+|82912|Bailey Wright|Central Defender|Left/Centre||Wright|Wright|Bailey|Colin|575||Preston North End|0|0|8|Australia|1992-07-28|Defender
+0|+|95201|Michel Babatunde|Winger|Left||Babatunde|Babatunde|Michel||1216||Volyn Lutsk|5|0|18|Nigeria|1992-12-24|Midfielder
+0|+|52194|Georgy Schennikov|Full Back|Left||Schennikov|Schennikov|Georgy|Mikhailovich|536||CSKA Moscow|4|0|3|Russia|1991-04-27|Defender
+0|+|175078|Abdelmoumene Djabou|Winger|Right||Djabou|Djabou|Abdelmoumene||1215||Club Africain|7|1|18|Algeria|1987-01-31|Midfielder
+0|+|15337|Tim Howard|Goalkeeper|Unknown||Howard|Howard|Tim|Matthew|596||Everton|99|0|1|USA|1979-03-06|Goalkeeper
+0|+|15338|Brad Davis|Attacking Midfielder|Left/Centre||Davis|Davis|Brad|Joseph|596||Houston Dynamo|16|0|14|USA|1981-11-08|Midfielder
+0|+|58877|Daley Blind|Central Defender|Centre||Blind|Blind|Daley||366|Both|Ajax|12|0|5|Netherlands|1990-03-09|Defender
+0|+|95742|Matt McKay|Central Midfielder|Centre||McKay|McKay|Matt|Graham|575||Brisbane Roar|47|1|17|Australia|1983-01-11|Midfielder
+0|+|41251|Eduardo|Goalkeeper|Unknown|Eduardo|Eduardo|Dos Reis Carvalho|Eduardo||359|Right|Sporting Braga|34|0|1|Portugal|1982-09-19|Goalkeeper
+0|+|37880|Landry N'Guémo|Defensive Midfielder|Centre||N'Guémo|N'Guémo|Landry|Joel Tsafack|494||Bordeaux|40|2|7|Cameroon|1985-11-28|Midfielder
+0|+|125945|Ramón Azeez|Central Midfielder|Centre||Azeez|Azeez|Ramón|Olamilekan|1216||Almería|2|0|15|Nigeria|1992-12-12|Midfielder
+0|+|13308|Maxi Rodríguez|Attacking Midfielder|Left/Right|Maxi Rodríguez|Maxi Rodríguez|Rodríguez|Maximiliano|Rubén|632|Both|Newell's Old Boys|55|16|11|Argentina|1981-01-02|Midfielder
+0|+|50175|Danny Welbeck|Striker|Left/Centre/Right||Welbeck|Welbeck|Danny|Nii Tackie Mensah|114||Manchester United|24|8|11|England|1990-11-26|Forward
+0|+|99332|Jerry Bengtson|Striker|Centre||Bengtson|Bengtson|Jerry|Ricardo|847|Right|New England Revolution|44|19|11|Honduras|1987-04-08|Forward
+0|+|7174|Antonio Cassano|Second Striker|Centre||Cassano|Cassano|Antonio||119|Right|Parma|37|10|10|Italy|1982-07-12|Forward
+0|+|99335|Edder Delgado|Defensive Midfielder|Centre||Delgado|Delgado|Edder|Gerardo|847||Real Espana|27|0|12|Honduras|1986-11-20|Midfielder
+0|+|99336|Brayan Beckeles|Full Back|Right||Beckeles|Beckeles|Brayan|Antonio|847||Club Deportivo Olimpia|24|1|21|Honduras|1985-11-28|Defender
+0|+|9047|Glen Johnson|Full Back|Right||Johnson|Johnson|Glen|McLeod Cooper|114||Liverpool|52|1|2|England|1984-08-23|Defender
+0|+|5139|Roman Weidenfeller|Goalkeeper|Unknown||Weidenfeller|Weidenfeller|Roman||357|Left|Borussia Dortmund|3|0|22|Germany|1980-08-06|Goalkeeper
+0|+|27671|Stéphane Mbia|Defensive Midfielder|Centre||Mbia|Mbia|Stéphane||494||Queens Park Rangers|49|3|17|Cameroon|1986-05-20|Midfielder
+0|+|37915|Hugo Lloris|Goalkeeper|Unknown||Lloris|Lloris|Hugo||368||Tottenham Hotspur|57|0|1|France|1986-12-26|Goalkeeper
+0|+|82975|Jung Sung-Ryong|Goalkeeper|Unknown|Jung Sung-Ryong|Jung Sung-Ryong|Jung|Sung-Ryong||1041||Suwon Bluewings|61|0|1|South Korea|1985-01-04|Goalkeeper
+0|+|5155|Miroslav Klose|Striker|Centre||Klose|Klose|Miroslav||357|Right|Lazio|132|69|11|Germany|1978-06-09|Forward
+0|+|15403|Wesley Sneijder|Attacking Midfielder|Left/Centre/Right||Sneijder|Sneijder|Wesley||366|Right|Galatasaray|99|26|10|Netherlands|1984-06-09|Midfielder
+0|+|102578|Héctor Herrera|Central Midfielder|Centre||Herrera|Herrera|Héctor|Miguel|659||FC Porto|13|0|6|Mexico|1990-04-19|Midfielder
+0|+|56366|Ousmane Viera|Central Defender|Centre|Ousmane Viera|Ousmane Viera|Diarrassouba|Ousmane|Viera|1221||Çaykur Rizespor|1|0|2|Côte d'Ivoire|1986-12-21|Defender
+0|+|27701|Abel Aguilar|Central Midfielder|Centre||Aguilar|Aguilar|Abel||832|Right|Toulouse|49|5|8|Colombia|1985-01-06|Midfielder
+0|+|101433|Renato Ibarra|Winger|Right||Ibarra|Ibarra|Renato||830||Vitesse|18|0|5|Ecuador|1991-01-20|Midfielder
+0|+|111674|Alireza Haghighi|Goalkeeper|Unknown|Alireza Haghighi|Alireza Haghighi|Haghighi|Alireza||1042||Rubin Kazan|6|0|12|Iran|1988-05-02|Goalkeeper
+0|+|154685|Alex Wilkinson|Central Defender|Centre||Wilkinson|Wilkinson|Alex|William|575||Jeonbuk Hyundai Motors|3|0|22|Australia|1984-08-13|Defender
+0|+|35903|Yasuyuki Konno|Central Defender|Left/Centre/Right||Konno|Konno|Yasuyuki||1266||Gamba Osaka|80|1|15|Japan|1983-01-25|Defender
+0|+|40002|Matteo Darmian|Full Back|Left/Right||Darmian|Darmian|Matteo||119|Left|Torino|1|0|4|Italy|1989-12-02|Defender
+0|+|19523|Souleymane Bamba|Central Defender|Centre||Bamba|Bamba|Souleymane||1221|Right|Trabzonspor|43|1|22|Côte d'Ivoire|1985-01-13|Defender
+0|+|17476|Vincent Kompany|Central Defender|Centre||Kompany|Kompany|Vincent|Jean Mpoy|360||Manchester City|59|4|4|Belgium|1986-04-10|Defender
+0|+|184502|Reza Haghighi|Defensive Midfielder|Centre|Reza Haghighi|Reza Haghighi|Haghighi|Reza||1042||Persepolis FC|9|0|8|Iran|1989-02-01|Midfielder
+0|+|104512|Soudani|Striker|Centre|Soudani|Soudani|Soudani|El Arbi|Hillel|1215||Dinamo Zagreb|22|11|15|Algeria|1987-11-25|Forward
+0|+|126030|Fabrice|Striker|Centre|Fabrice|Fabrice|Olinga Essono|Fabrice||494||Málaga|8|1|19|Cameroon|1996-05-12|Forward
+0|+|32269|Blerim Dzemaili|Central Midfielder|Centre||Dzemaili|Dzemaili|Blerim||497|Right|Napoli|34|1|15|Switzerland|1986-04-12|Midfielder
+0|+|157880|Yoichiro Kakitani|Striker|Centre||Kakitani|Kakitani|Yoichiro||1266||Cerezo Osaka|13|6|11|Japan|1990-01-03|Forward
+0|+|37971|Blaise Matuidi|Defensive Midfielder|Centre||Matuidi|Matuidi|Blaise||368||Paris Saint Germain|23|3|14|France|1987-04-09|Midfielder
+0|+|78937|Ioannis Fetfatzidis|Attacking Midfielder|Centre/Right||Fetfatzidis|Fetfatzidis|Ioannis||517||Genoa|19|3|18|Greece|1990-12-21|Midfielder
+0|+|15207|Philipp Lahm|Full Back|Left/Right||Lahm|Lahm|Philipp||357|Right|FC Bayern München|106|5|16|Germany|1983-11-11|Defender
+0|+|66749|Romelu Lukaku|Striker|Centre||Lukaku|Lukaku|Romelu|Menama|360||Chelsea|29|6|9|Belgium|1993-05-13|Forward
+0|+|103955|Raheem Sterling|Second Striker|Left/Centre/Right||Sterling|Sterling|Raheem|Shaquille|114||Liverpool|4|0|19|England|1994-12-08|Forward
+0|+|27764|Igor Denisov|Defensive Midfielder|Centre||Denisov|Denisov|Igor|Vladimirovich|536||Dynamo Moscow|44|0|7|Russia|1984-05-17|Midfielder
+0|+|46197|Mario Mandzukic|Striker|Centre||Mandzukic|Mandzukic|Mario||535|Right|FC Bayern München|50|13|17|Croatia|1986-05-21|Forward
+0|+|46198|Sammir|Attacking Midfielder|Centre|Sammir|Sammir|Cruz Campos|Jorge Sammir||535|Right|Getafe|6|0|19|Croatia|1987-04-23|Midfielder
+0|+|46203|Gordon Schildenfeld|Central Defender|Centre||Schildenfeld|Schildenfeld|Gordon||535||Panathinaikos|21|0|13|Croatia|1985-03-18|Defender
+0|+|83071|Osman Chávez|Central Defender|Centre|Osman Chávez|Osman Chávez|Chávez|Osman|Danilo|847||Qingdao Jonoon|54|0|2|Honduras|1984-07-29|Defender
+0|+|52356|Jordi Alba|Full Back|Left||Alba|Alba|Jordi||118|Left|Barcelona|26|5|18|Spain|1989-03-21|Defender
+0|+|100887|Mathew Leckie|Striker|Centre||Leckie|Leckie|Mathew||575|Right|FSV Frankfurt 1899|8|1|7|Australia|1991-02-04|Forward
+0|+|27789|Fernandinho|Central Midfielder|Centre|Fernandinho|Fernandinho|Luiz Rosa|Fernando||614||Manchester City|7|1|5|Brazil|1985-05-04|Midfielder
+0|+|31886|Aleksandr Samedov|Winger|Right||Samedov|Samedov|Aleksandr|Sergeyevich|536||Lokomotiv Moscow|17|3|19|Russia|1984-07-19|Midfielder
+0|+|64657|Ognjen Vranjes|Central Defender|Centre||Vranjes|Vranjes|Ognjen||537||Elazigspor|13|0|6|Bosnia and Herzegovina|1989-10-24|Defender
+0|+|83090|Shinji Kagawa|Attacking Midfielder|Left/Centre/Right||Kagawa|Kagawa|Shinji||1266||Manchester United|58|19|10|Japan|1989-03-17|Midfielder
+0|+|81048|Josip Drmic|Striker|Centre||Drmic|Drmic|Josip||497|Right|1. FC Nürnberg|7|3|19|Switzerland|1992-08-08|Forward
+0|+|15517|Kyle Beckerman|Defensive Midfielder|Centre||Beckerman|Beckerman|Kyle|Robert|596||Real Salt Lake|37|1|15|USA|1982-04-23|Midfielder
+0|+|97443|Ismael Diomande|Defensive Midfielder|Centre||Diomande|Diomande|Ismael||1221||St Etienne|2|0|14|Côte d'Ivoire|1992-08-28|Midfielder
+0|+|19620|Miguel Veloso|Defensive Midfielder|Centre||Veloso|Veloso|Miguel||359|Left|Dynamo Kyiv|49|2|4|Portugal|1986-05-11|Midfielder
+0|+|60582|Danijel Subasic|Goalkeeper|Unknown||Subasic|Subasic|Danijel||535||Monaco|6|0|23|Croatia|1984-10-27|Goalkeeper
+0|+|50343|Lazaros Christodoulopoulos|Attacking Midfielder|Left/Centre/Right||Christodoulopoulos|Christodoulopoulos|Lazaros||517|Both|Bologna|19|1|16|Greece|1986-12-19|Midfielder
+0|+|19624|João Moutinho|Central Midfielder|Centre||Moutinho|Moutinho|João||359|Right|Monaco|68|2|8|Portugal|1986-09-08|Midfielder
+0|+|32284|Maxi Pereira|Full Back|Right|Maxi Pereira|Maxi Pereira|Pereira Páez|Victorio Maximiliano||837|Right|Benfica|90|3|16|Uruguay|1984-06-08|Defender
+0|+|66733|Juan Guillermo Cuadrado|Wing Back|Right||Cuadrado|Cuadrado|Juan Guillermo||832|Right|Fiorentina|28|4|11|Colombia|1988-05-26|Midfielder
+0|+|68791|John Boye|Central Defender|Centre/Right||Boye|Boye|John||1219||Rennes|30|3|21|Ghana|1987-04-23|Defender
+0|+|152760|Divock Origi|Striker|Centre||Origi|Origi|Divock|Okoth|360||Lille|2|0|17|Belgium|1995-04-18|Forward
+0|+|50361|Gabriel Achilier|Central Defender|Centre||Achilier|Achilier|Gabriel|Eduardo|830||Emelec|23|0|21|Ecuador|1985-03-24|Defender
+0|+|50362|Máximo Banguera|Goalkeeper|Unknown||Banguera|Banguera|Máximo|Orlando|830||Barcelona de Guayaquil|25|0|1|Ecuador|1985-12-16|Goalkeeper
+0|+|42173|Felipe Caicedo|Striker|Centre||Caicedo|Caicedo|Felipe|Salvador|830|Left|Al Jazira Club|50|15|11|Ecuador|1988-09-05|Forward
+0|+|50369|Pablo Armero|Wing Back|Left||Armero|Armero|Pablo||832|Left|West Ham United|53|1|7|Colombia|1986-11-02|Defender
+0|+|111478|Joël Veltman|Central Defender|Centre||Veltman|Veltman|Joël||366||Ajax|2|0|13|Netherlands|1992-01-15|Defender
+0|+|124102|Pavel Mogilevets|Attacking Midfielder|Left/Centre/Right||Mogilevets|Mogilevets|Pavel|Sergeyevich|536|Right|Zenit St Petersburg|1|0|15|Russia|1993-01-25|Midfielder
+0|+|3273|Tim Cahill|Second Striker|Centre||Cahill|Cahill|Tim||575|Right|New York Red Bulls|70|33|4|Australia|1979-12-06|Forward
+0|+|48332|Orestis Karnezis|Goalkeeper|Unknown||Karnezis|Karnezis|Orestis||517||Granada CF|19|0|1|Greece|1985-07-11|Goalkeeper
+0|+|99129|José Cubero|Defensive Midfielder|Centre||Cubero|Cubero|José|Miguel|838||Herediano|36|2|22|Costa Rica|1987-02-14|Midfielder
+0|+|40141|James Troisi|Winger|Left/Right||Troisi|Troisi|James||575|Left|Atalanta|11|1|14|Australia|1988-07-03|Midfielder
+0|+|1814|Steven Gerrard|Central Midfielder|Centre||Gerrard|Gerrard|Steven|George|114||Liverpool|111|21|4|England|1980-05-30|Midfielder
+0|+|18522|Pepe|Central Defender|Centre|Pepe|Pepe|Lima Ferreira|Képler Laveran||359|Right|Real Madrid|58|3|3|Portugal|1983-02-26|Defender
+0|+|48348|Sergei Ryzhikov|Goalkeeper|Unknown||Ryzhikov|Ryzhikov|Sergei|Viktorovich|536||Rubin Kazan|1|0|16|Russia|1980-09-19|Goalkeeper
+0|+|48353|Giannis Maniatis|Defensive Midfielder|Centre||Maniatis|Maniatis|Giannis||517||Olympiakos|30|0|2|Greece|1986-10-12|Midfielder
+0|+|39462|Lucas Biglia|Central Midfielder|Centre||Biglia|Biglia|Lucas||632|Right|Lazio|19|0|6|Argentina|1986-01-30|Midfielder
+0|+|52457|Victor|Goalkeeper|Unknown|Victor|Victor|Bagy|Victor Leandro||614||Atlético Mineiro|6|0|22|Brazil|1983-01-21|Goalkeeper
+0|+|66797|Simon Mignolet|Goalkeeper|Unknown||Mignolet|Mignolet|Simon||360||Liverpool|14|0|12|Belgium|1988-03-06|Goalkeeper
+0|+|66806|Kostas Manolas|Central Defender|Centre||Manolas|Manolas|Kostas||517||Olympiakos|9|0|4|Greece|1991-06-14|Defender
+0|+|19705|Yoshito Okubo|Second Striker|Left/Centre/Right||Okubo|Okubo|Yoshito||1266||Kawasaki Frontale|56|6|13|Japan|1982-06-09|Forward
+0|+|11527|Thiago Motta|Central Midfielder|Left/Centre||Motta|Motta|Thiago||119|Left|Paris Saint Germain|20|1|5|Italy|1982-08-28|Midfielder
+0|+|77064|Jackson Martinez|Striker|Centre||Martinez|Martinez|Jackson||832||FC Porto|27|8|21|Colombia|1986-10-03|Forward
+0|+|94425|Marcelo Brozovic|Central Midfielder|Centre||Brozovic|Brozovic|Marcelo||535||Dinamo Zagreb|1|0|14|Croatia|1992-11-16|Midfielder
+0|+|66841|Mensur Mujdza|Wing Back|Right||Mujdza|Mujdza|Mensur||537|Right|Sport-Club Freiburg|24|0|13|Bosnia and Herzegovina|1984-03-28|Midfielder
+0|+|66842|André Schürrle|Attacking Midfielder|Left/Right||Schürrle|Schürrle|André||357|Right|Chelsea|33|13|9|Germany|1990-11-06|Midfielder
+0|+|61999|Martín Silva|Goalkeeper|Unknown||Silva|Silva|Martín|Andrés|837|Right|Vasco da Gama|4|0|23|Uruguay|1983-03-25|Goalkeeper
+0|+|81456|Andreas Samaris|Attacking Midfielder|Left/Centre/Right||Samaris|Samaris|Andreas||517||Olympiakos|4|0|22|Greece|1989-06-13|Midfielder
+0|+|44324|Henri Bedimo|Full Back|Left||Bedimo|Bedimo|Henri||494||Lyon|31|0|12|Cameroon|1984-06-04|Defender
+0|+|40232|Gonzalo Higuaín|Striker|Centre||Higuaín|Higuaín|Gonzalo||632|Mostly Right|Napoli|36|20|9|Argentina|1987-12-10|Forward
+0|+|70953|Asmir Avdukic|Goalkeeper|Unknown||Avdukic|Avdukic|Asmir||537||Borac Banja Luka|3|0|22|Bosnia and Herzegovina|1981-05-13|Goalkeeper
+0|+|8432|José Reina|Goalkeeper|Unknown||Reina|Reina|José||118|Right|Napoli|32|0|23|Spain|1982-08-31|Goalkeeper
+0|+|44336|Sofiane Feghouli|Attacking Midfielder|Left/Centre/Right||Feghouli|Feghouli|Sofiane||1215|Right|Valencia CF|18|5|10|Algeria|1989-12-26|Midfielder
+0|+|44346|Olivier Giroud|Striker|Centre||Giroud|Giroud|Olivier||368|Left|Arsenal|30|8|9|France|1986-09-30|Forward
+0|+|52540|Kevin Großkreutz|Wing Back|Right||Großkreutz|Großkreutz|Kevin||357|Right|Borussia Dortmund|5|0|2|Germany|1988-07-19|Defender
+0|+|61898|Mix Diskerud|Attacking Midfielder|Centre|Mix Diskerud|Mix Diskerud|Diskerud|Mikkel|Morgenstar Pålssønn|596||Rosenborg|20|3|10|USA|1990-10-02|Midfielder
+0|+|41184|Marouane Fellaini|Central Midfielder|Centre||Fellaini|Fellaini|Marouane||360||Manchester United|50|8|8|Belgium|1987-11-22|Midfielder
+0|+|17733|Lukas Podolski|Second Striker|Left||Podolski|Podolski|Lukas||357|Left|Arsenal|114|47|10|Germany|1985-06-04|Forward
+0|+|17743|Hugo Almeida|Striker|Centre|Hugo Almeida|Hugo Almeida|Pereira de Almeida|Hugo Miguel||359||Besiktas|55|19|9|Portugal|1984-05-23|Forward
+0|+|40275|Giovani dos Santos|Second Striker|Left/Centre/Right||dos Santos|dos Santos|Giovani||659|Left|Villarreal|74|15|10|Mexico|1989-05-11|Forward
+0|+|34352|Michael Umaña|Central Defender|Centre/Right||Umaña|Umaña|Michael||838||Saprissa|82|1|4|Costa Rica|1982-07-16|Defender
+0|+|66905|Jonathan Mensah|Central Defender|Centre||Mensah|Mensah|Jonathan||1219||Evian Thonon Gaillard|26|1|19|Ghana|1990-07-13|Defender
+0|+|165210|Alireza Jahanbakhsh|Winger|Right||Jahanbakhsh|Jahanbakhsh|Alireza||1042||N.E.C.|7|1|9|Iran|1993-10-08|Forward
+0|+|77711|Tommy Oar|Winger|Left||Oar|Oar|Tommy||575|Left|FC Utrecht|15|1|11|Australia|1991-12-10|Midfielder
+0|+|154976|Adnan Januzaj|Attacking Midfielder|Left/Centre/Right||Januzaj|Januzaj|Adnan||360||Manchester United|1|0|20|Belgium|1995-02-05|Midfielder
+0|+|60772|Thibaut Courtois|Goalkeeper|Unknown||Courtois|Courtois|Thibaut||360|Right|Chelsea|17|0|1|Belgium|1992-05-11|Goalkeeper
+0|+|42484|Giovanni Sio|Second Striker|Centre/Right||Sio|Sio|Giovanni|Guy Yann|1221|Left|Basel|7|0|21|Côte d'Ivoire|1989-03-31|Forward
+0|+|154983|Toshihiro Aoyama|Defensive Midfielder|Centre||Aoyama|Aoyama|Toshihiro||1266||Sanfrecce Hiroshima|5|0|14|Japan|1986-02-22|Midfielder
+0|+|85352|Bruno Martins Indi|Central Defender|Centre||Martins Indi|Martins Indi|Bruno|Maximiliano|366||Feyenoord|16|2|4|Netherlands|1992-02-08|Defender
+0|+|105835|Eduardo Vargas|Striker|Left/Centre||Vargas|Vargas|Eduardo||831|Right|Napoli|30|14|11|Chile|1989-11-20|Forward
+0|+|48492|Andrey Eshchenko|Full Back|Left||Eshchenko|Eshchenko|Andrey|Olegovich|536||Anzhi Makhachkala|12|0|22|Russia|1984-02-09|Defender
+0|+|80447|Maya Yoshida|Central Defender|Centre||Yoshida|Yoshida|Maya||1266||Southampton|40|2|22|Japan|1988-08-24|Defender
+0|+|60800|Emmanuel Badu|Defensive Midfielder|Centre||Badu|Badu|Emmanuel|Agyemang|1219|Right|Udinese|48|7|8|Ghana|1990-12-02|Midfielder
+0|+|37121|Makoto Hasebe|Central Midfielder|Centre/Right||Hasebe|Hasebe|Makoto||1266|Right|1. FC Nürnberg|78|2|17|Japan|1984-01-18|Midfielder
+0|+|15749|Joe Hart|Goalkeeper|Unknown||Hart|Hart|Joe|Charles Joseph John|114||Manchester City|41|0|1|England|1987-04-19|Goalkeeper
+0|+|85388|Emmanuel Emenike|Striker|Centre||Emenike|Emenike|Emmanuel|Chinenye|1216|Right|Fenerbahce|23|9|9|Nigeria|1987-05-10|Forward
+0|+|66957|Rémy Cabella|Attacking Midfielder|Left/Centre/Right||Cabella|Cabella|Rémy||368||Montpellier|1|0|7|France|1990-03-08|Midfielder
+0|+|87447|Muhamed Besic|Central Defender|Centre||Besic|Besic|Muhamed||537||Ferencváros|9|0|7|Bosnia and Herzegovina|1992-09-10|Defender
+0|+|116120|Ogenyi Onazi|Defensive Midfielder|Centre/Right||Onazi|Onazi|Ogenyi|Eddy|1216|Right|Lazio|21|1|17|Nigeria|1992-12-25|Midfielder
+0|+|42564|Eric Maxim Choupo-Moting|Striker|Centre||Choupo-Moting|Choupo-Moting|Eric Maxim|Maxim|494|Right|1. FSV Mainz 05|26|13|13|Cameroon|1989-03-23|Forward
+0|+|52635|Eder|Striker|Centre|Eder|Eder|Macedo Lopes|Éderzito Antonio||359||Sporting Braga|8|0|11|Portugal|1987-12-22|Forward
+0|+|40349|Asmir Begovic|Goalkeeper|Unknown||Begovic|Begovic|Asmir||537||Stoke City|30|0|1|Bosnia and Herzegovina|1987-06-20|Goalkeeper
+0|+|46497|Ángel Di María|Attacking Midfielder|Left/Right||Di María|Di María|Ángel||632|Left|Real Madrid|47|9|7|Argentina|1988-02-14|Midfielder
+0|+|122779|Eugenio Mena|Full Back|Left||Mena|Mena|Eugenio||831|Left|Santos|25|3|2|Chile|1988-07-18|Defender
+0|+|15780|Dani Alves|Full Back|Right|Dani Alves|Dani Alves|Alves da Silva|Daniel||614|Right|Barcelona|75|6|2|Brazil|1983-05-06|Defender
+0|+|60841|Haris Seferovic|Striker|Centre||Seferovic|Seferovic|Haris||497|Left|Real Sociedad|11|1|9|Switzerland|1992-02-22|Forward
+0|+|38314|Stéphane Ruffier|Goalkeeper|Unknown||Ruffier|Ruffier|Stéphane||368||St Etienne|2|0|16|France|1986-09-27|Goalkeeper
+0|+|78407|Yuto Nagatomo|Full Back|Left/Right||Nagatomo|Nagatomo|Yuto||1266|Both|Internazionale|70|3|5|Japan|1986-09-12|Defender
+0|+|3508|Xabi Alonso|Central Midfielder|Centre||Alonso|Alonso|Xabi||118|Right|Real Madrid|110|15|14|Spain|1981-11-25|Midfielder
+0|+|83383|Stephen Adams|Goalkeeper|Unknown||Adams|Adams|Stephen||1219||Aduana Stars|6|0|1|Ghana|1989-09-28|Goalkeeper
+0|+|46525|Fábio Coentrão|Full Back|Left|Fábio Coentrão|Fábio Coentrão|da Silva Coentrão|Fábio Alexandre||359|Left|Real Madrid|45|4|5|Portugal|1988-03-11|Defender
+0|+|118300|Hiroshi Kiyotake|Attacking Midfielder|Centre||Kiyotake|Kiyotake|Hiroshi||1266|Right|1. FC Nürnberg|25|1|8|Japan|1989-11-12|Midfielder
+0|+|40383|Fraser Forster|Goalkeeper|Unknown||Forster|Forster|Fraser|Gerard|114||Celtic|2|0|22|England|1988-03-17|Goalkeeper
+0|+|155072|Khosro Heydari|Attacking Midfielder|Right||Heydari|Heydari|Khosro||1042||Esteghlal|49|0|2|Iran|1983-09-14|Midfielder
+0|+|62914|Teófilo Gutiérrez|Striker|Centre||Gutiérrez|Gutiérrez|Teófilo||832|Right|River Plate|30|12|9|Colombia|1985-05-17|Forward
+0|+|17861|Sergio Ramos|Central Defender|Centre||Ramos|Ramos|Sergio||118|Right|Real Madrid|116|9|15|Spain|1986-03-30|Defender
+0|+|155079|Hashem Beikzadeh|Full Back|Left||Beikzadeh|Beikzadeh|Hashem||1042||Esteghlal|17|1|19|Iran|1984-01-22|Defender
+0|+|155084|Pejman Montazeri|Central Defender|Centre||Montazeri|Montazeri|Pejman||1042||Umm Salal|22|1|15|Iran|1983-09-06|Defender
+0|+|83407|Michael Arroyo|Winger|Left||Arroyo|Arroyo|Michael|Antonio|830||Atlante|21|3|15|Ecuador|1987-04-23|Midfielder
+0|+|83409|Oswaldo Minda|Defensive Midfielder|Centre|Oswaldo Minda|Oswaldo Minda|Minda|Tilson Oswaldo||830||Chivas USA|18|0|14|Ecuador|1983-07-26|Midfielder
+0|+|17878|Francesc Fábregas|Attacking Midfielder|Left/Centre/Right||Fábregas|Fábregas|Francesc||118|Right|Barcelona|89|13|10|Spain|1987-05-04|Midfielder
+0|+|19927|Karim Benzema|Striker|Centre||Benzema|Benzema|Karim||368|Both|Real Madrid|66|21|10|France|1987-12-19|Forward
+0|+|19928|Julio César|Goalkeeper|Unknown|Julio César|Julio César|Soares De Espindola|Julio Cesar||614|Left|Toronto FC|80|0|12|Brazil|1979-09-03|Goalkeeper
+0|+|20388|Manuel Neuer|Goalkeeper|Unknown||Neuer|Neuer|Manuel||357|Right|FC Bayern München|45|0|1|Germany|1986-03-27|Goalkeeper
+0|+|7645|Phil Jagielka|Central Defender|Centre||Jagielka|Jagielka|Phil|Nikodem|114||Everton|26|2|6|England|1982-08-17|Defender
+0|+|82362|Kwak Tae-Hwi|Central Defender|Centre|Kwak Tae-Hwi|Kwak Tae-Hwi|Kwak|Tae-Hwi||1041||Al-Hilal|35|5|4|South Korea|1981-07-08|Defender
+0|+|83425|Cristopher Toselli|Goalkeeper|Unknown||Toselli|Toselli|Cristopher|Benjamin|831||Universidad Católica|4|0|12|Chile|1988-06-15|Goalkeeper
+0|+|28130|Dimitrios Salpingidis|Winger|Centre/Right||Salpingidis|Salpingidis|Dimitrios||517||PAOK Salonika|76|13|14|Greece|1981-08-18|Forward
+0|+|57254|Adrián Ramos|Striker|Centre||Ramos|Ramos|Adrián||832|Right|Hertha BSC|26|2|19|Colombia|1986-01-22|Forward
+0|+|34285|Maynor Figueroa|Central Defender|Left/Centre||Figueroa|Figueroa|Maynor|Alexis|847||Hull City|103|3|3|Honduras|1983-05-02|Defender
+0|+|28146|Benoit Assou-Ekotto|Full Back|Left||Assou-Ekotto|Assou-Ekotto|Benoit|Pierre David|494||Tottenham Hotspur|22|0|2|Cameroon|1984-03-24|Defender
+0|+|34291|Víctor Bernárdez|Central Defender|Centre||Bernárdez|Bernárdez|Víctor|Salvador|847||San Jose Earthquakes|77|3|5|Honduras|1982-05-24|Defender
+0|+|34292|Donis Escober|Goalkeeper|Unknown||Escober|Escober|Donis|Salatiel|847||Club Deportivo Olimpia|20|0|22|Honduras|1981-02-03|Goalkeeper
+0|+|18686|Vassili Berezoutski|Central Defender|Centre/Right||Berezoutski|Berezoutski|Vassili|Vladimirovich|536||CSKA Moscow|78|4|14|Russia|1982-06-20|Defender
+0|+|34296|Wilson Palacios|Defensive Midfielder|Centre|Wilson Palacios|Wilson Palacios|Palacios|Wilson|Roberto|847||Stoke City|94|5|8|Honduras|1984-07-29|Midfielder
+0|+|42493|Mario Balotelli|Striker|Centre||Balotelli|Balotelli|Mario||119|Right|Milan|30|12|9|Italy|1990-08-12|Forward
+0|+|34302|Noel Valladares|Goalkeeper|Unknown||Valladares|Valladares|Noel|Eduardo|847||Club Deportivo Olimpia|121|0|18|Honduras|1977-05-03|Goalkeeper
+0|+|91651|Mateo Kovacic|Attacking Midfielder|Left/Centre/Right||Kovacic|Kovacic|Mateo||535|Mostly Right|Internazionale|10|0|20|Croatia|1994-05-06|Midfielder
+0|+|20578|Mehdi Lacen|Defensive Midfielder|Centre||Lacen|Lacen|Mehdi|Gregory Giuseppe|1215|Left|Getafe|30|0|8|Algeria|1984-03-15|Midfielder
+0|+|19975|Fernando Gago|Defensive Midfielder|Centre||Gago|Gago|Fernando||632|Right|Boca Juniors|49|0|5|Argentina|1986-04-10|Midfielder
+0|+|83465|Vincent Aboubakar|Striker|Centre||Aboubakar|Aboubakar|Vincent||494||Lorient|25|2|10|Cameroon|1992-01-22|Forward
+0|+|58893|Marcos Rojo|Central Defender|Centre||Rojo|Rojo|Marcos||632|Left|Sporting Lisbon|22|0|16|Argentina|1990-03-20|Defender
+0|+|38419|Loïc Remy|Striker|Left/Centre/Right||Remy|Remy|Loïc||368||Queens Park Rangers|25|5|20|France|1987-01-02|Forward
+0|+|69140|Shkodran Mustafi|Central Defender|Centre/Right||Mustafi|Mustafi|Shkodran||357|Right|Sampdoria|1|0|21|Germany|1992-04-17|Defender
+0|+|54806|Augusto Fernández|Central Midfielder|Centre|Augusto Fernández|Augusto Fernández|Fernández|Augusto||632|Right|Celta de Vigo|8|1|13|Argentina|1986-04-10|Midfielder
+0|+|40471|Sammy Bossut|Goalkeeper|Unknown||Bossut|Bossut|Sammy||360||SV Zulte Waregem|0|0|13|Belgium|1985-08-11|Goalkeeper
+0|+|32281|Diego Godín|Central Defender|Centre||Godín|Godín|Diego|Roberto|837|Right|Atlético de Madrid|77|4|3|Uruguay|1986-02-16|Defender
+0|+|69147|Ermin Bicakcic|Central Defender|Centre||Bicakcic|Bicakcic|Ermin||537|Both|Eintracht Braunschweig|7|1|3|Bosnia and Herzegovina|1990-01-24|Defender
+0|+|28188|Haris Medunjanin|Central Midfielder|Centre||Medunjanin|Medunjanin|Haris||537||Gaziantepspor|35|5|18|Bosnia and Herzegovina|1985-03-08|Midfielder
+0|+|179741|Bakhtiar Rahmani|Attacking Midfielder|Centre||Rahmani|Rahmani|Bakhtiar||1042||Foolad FC|4|0|18|Iran|1991-09-23|Midfielder
+0|+|52775|Nicolas N'Koulou|Central Defender|Centre||N'Koulou|N'Koulou|Nicolas|Alexis Julio|494||Marseille|48|0|3|Cameroon|1990-03-27|Defender
+0|+|13867|Mark Bresciano|Attacking Midfielder|Left/Centre/Right||Bresciano|Bresciano|Mark||575|Right|Al Gharafa|74|13|23|Australia|1980-02-11|Midfielder
+0|+|42544|Edin Dzeko|Striker|Centre||Dzeko|Dzeko|Edin||537||Manchester City|62|35|11|Bosnia and Herzegovina|1986-03-17|Forward
+0|+|106760|Luke Shaw|Full Back|Left||Shaw|Shaw|Luke|Paul Hoare|114||Southampton|2|0|23|England|1995-07-12|Defender
+0|+|34355|Júnior Díaz|Full Back|Left|Júnior Díaz|Júnior Díaz|Díaz Campbell|Júnior Enrique||838|Left|1. FSV Mainz 05|62|1|15|Costa Rica|1983-09-12|Defender
+0|+|38454|Dejan Lovren|Full Back|Centre/Right||Lovren|Lovren|Dejan||535|Both|Southampton|25|2|6|Croatia|1989-07-05|Defender
+0|+|34361|Roy Miller|Full Back|Left||Miller|Miller|Roy||838||New York Red Bulls|47|1|19|Costa Rica|1984-11-24|Defender
+0|+|88746|Faouzi Ghoulam|Full Back|Left||Ghoulam|Ghoulam|Faouzi||1215||Napoli|6|0|3|Algeria|1991-02-01|Defender
+0|+|69179|Daniel Davari|Goalkeeper|Unknown||Davari|Davari|Daniel||1042|Right|Eintracht Braunschweig|4|0|22|Iran|1988-01-06|Goalkeeper
+0|+|38462|Vedran Corluka|Full Back|Centre/Right||Corluka|Corluka|Vedran||535||Lokomotiv Moscow|72|4|5|Croatia|1986-02-05|Defender
+0|+|80480|Jason Davidson|Full Back|Left||Davidson|Davidson|Jason|Alan|575||Heracles Almelo|7|0|3|Australia|1991-06-29|Defender
+0|+|53515|Oribe Peralta|Striker|Centre||Peralta|Peralta|Oribe||659||América|28|16|19|Mexico|1984-01-12|Forward
+0|+|67140|Avdija Vrsajevic|Central Midfielder|Right||Vrsajevic|Vrsajevic|Avdija||537||Hajduk Split|13|0|2|Bosnia and Herzegovina|1986-03-06|Midfielder
+0|+|42565|Arturo Vidal|Central Midfielder|Left/Centre/Right||Vidal|Vidal|Arturo||831|Right|Juventus|54|8|8|Chile|1987-05-22|Midfielder
+0|+|38470|Eduardo|Striker|Centre|Eduardo|Eduardo|da Silva|Eduardo||535||Shakhtar Donetsk|63|29|22|Croatia|1983-02-25|Forward
+0|+|15943|Thomas Vermaelen|Full Back|Left/Centre||Vermaelen|Vermaelen|Thomas||360||Arsenal|47|1|3|Belgium|1985-11-14|Defender
+0|+|38472|Ognjen Vukojevic|Defensive Midfielder|Centre||Vukojevic|Vukojevic|Ognjen||535||Dynamo Kyiv|55|4|8|Croatia|1983-12-20|Midfielder
+0|+|83531|Charles Aránguiz|Defensive Midfielder|Left/Centre||Aránguiz|Aránguiz|Charles||831|Right|Internacional|21|2|20|Chile|1989-04-17|Midfielder
+0|+|77390|Koke|Attacking Midfielder|Left/Centre/Right|Koke|Koke|Resurrección|Jorge|Merodio|118|Right|Atlético de Madrid|8|0|17|Spain|1992-01-08|Midfielder
+0|+|151119|DeAndre Yedlin|Wing Back|Right||Yedlin|Yedlin|DeAndre||596||Seattle Sounders FC|4|0|2|USA|1993-07-09|Defender
+0|+|9809|Maxwell|Full Back|Left|Maxwell|Maxwell|Cabelino Andrade|Maxwell||614|Left|Paris Saint Germain|9|0|14|Brazil|1981-08-27|Defender
+0|+|18003|Raúl Albiol|Central Defender|Centre||Albiol|Albiol|Raúl||118|Right|Napoli|46|0|2|Spain|1985-09-04|Defender
+0|+|58966|Alexander Domínguez|Goalkeeper|Unknown||Domínguez|Domínguez|Alexander||830||LDU Quito|18|0|22|Ecuador|1987-06-05|Goalkeeper
+0|+|17337|Carl Medjani|Central Defender|Centre||Medjani|Medjani|Carl||1215||Valenciennes|26|1|12|Algeria|1985-05-15|Defender
+0|+|42584|Laurent Ciman|Central Defender|Centre||Ciman|Ciman|Laurent||360|Right|Standard Liège|8|0|23|Belgium|1985-08-05|Defender
+0|+|40539|Matthew Spiranovic|Central Defender|Centre||Spiranovic|Spiranovic|Matthew|Thomas|575||Western Sydney Wanderers|18|0|6|Australia|1988-06-27|Defender
+0|+|55909|Chris Smalling|Central Defender|Centre||Smalling|Smalling|Chris|Lloyd|114||Manchester United|12|0|12|England|1989-11-22|Defender
+0|+|18018|Alessio Cerci|Second Striker|Centre/Right||Cerci|Cerci|Alessio||119|Left|Torino|12|0|11|Italy|1987-07-23|Forward
+0|+|77755|Marcos Ureña|Striker|Centre||Ureña|Ureña|Marcos|Danilo|838||Kuban Krasnodar|24|7|21|Costa Rica|1990-03-05|Forward
+0|+|46696|Miralem Pjanic|Attacking Midfielder|Left/Centre/Right||Pjanic|Pjanic|Miralem||537|Both|Roma|48|8|8|Bosnia and Herzegovina|1990-04-02|Midfielder
+0|+|156604|Mehrdad Pooladi|Wing Back|Left||Pooladi|Pooladi|Mehrdad||1042||Persepolis FC|21|0|23|Iran|1987-02-26|Defender
+0|+|44989|Toni Kroos|Central Midfielder|Centre||Kroos|Kroos|Toni||357|Both|FC Bayern München|44|5|18|Germany|1990-01-04|Midfielder
+0|+|40560|Aurélien Chedjou|Central Defender|Centre||Chedjou|Chedjou|Aurélien|Bayard|494||Galatasaray|30|1|14|Cameroon|1985-06-20|Defender
+0|+|28277|Leonardo Bonucci|Central Defender|Centre||Bonucci|Bonucci|Leonardo||119|Right|Juventus|37|2|19|Italy|1987-05-01|Defender
+0|+|52857|Panagiotis Tachtsidis|Central Midfielder|Left/Centre||Tachtsidis|Tachtsidis|Panagiotis||517|Left|Torino|6|0|23|Greece|1991-02-15|Midfielder
+0|+|54908|Nacer Chadli|Attacking Midfielder|Left/Right||Chadli|Chadli|Nacer||360||Tottenham Hotspur|20|2|22|Belgium|1989-08-02|Midfielder
+0|+|7810|Stipe Pletikosa|Goalkeeper|Unknown||Pletikosa|Pletikosa|Stipe||535||FC Rostov|111|0|1|Croatia|1979-01-08|Goalkeeper
+0|+|54917|Dries Mertens|Winger|Left/Right||Mertens|Mertens|Dries||360||Napoli|25|3|14|Belgium|1987-05-06|Midfielder
+0|+|83591|Michael Barrantes|Attacking Midfielder|Centre|Michael Barrantes|Michael Barrantes|Barrantes|Michael||838||Aalesund|50|4|11|Costa Rica|1983-10-04|Midfielder
+0|+|28301|Cheick Tioté|Defensive Midfielder|Left/Centre/Right||Tioté|Tioté|Cheick|Ismael|1221||Newcastle United|43|1|9|Côte d'Ivoire|1986-06-21|Midfielder
+0|+|20113|Claudio Marchisio|Central Midfielder|Left/Centre/Right||Marchisio|Marchisio|Claudio||119|Right|Juventus|44|3|8|Italy|1986-01-19|Midfielder
+0|+|56979|Jordan Henderson|Central Midfielder|Centre||Henderson|Henderson|Jordan|Brian|114||Liverpool|11|0|14|England|1990-06-17|Midfielder
+0|+|85654|Jordy Clasie|Defensive Midfielder|Centre||Clasie|Clasie|Jordy||366||Feyenoord|8|0|16|Netherlands|1991-06-27|Midfielder
+0|+|60914|Joel Matip|Central Defender|Centre||Matip|Matip|Joel|Job|494|Right|FC Schalke 04|23|0|21|Cameroon|1991-08-08|Defender
+0|+|18372|Alberto Aquilani|Central Midfielder|Centre||Aquilani|Aquilani|Alberto||119|Right|Fiorentina|35|5|14|Italy|1984-07-07|Midfielder
+0|+|149786|Essaïd Belkalem|Central Defender|Centre||Belkalem|Belkalem|Essaïd||1215||Watford|13|1|4|Algeria|1989-01-01|Defender
+0|+|85665|Tino Susic|Attacking Midfielder|Left/Centre||Susic|Susic|Tino|Sven|537|Left|Hajduk Split|2|0|14|Bosnia and Herzegovina|1992-02-13|Midfielder
+0|+|19739|Eiji Kawashima|Goalkeeper|Unknown||Kawashima|Kawashima|Eiji||1266||Standard Liège|56|0|1|Japan|1983-03-20|Goalkeeper
+0|+|59046|Ciro Immobile|Striker|Centre||Immobile|Immobile|Ciro||119|Right|Borussia Dortmund|2|0|17|Italy|1990-02-20|Forward
+0|+|153255|Juan Pablo Montes|Central Defender|Centre||Montes|Montes|Juan Pablo||847||Motagua|11|1|4|Honduras|1985-10-26|Defender
+0|+|102057|Raúl Jiménez|Striker|Centre||Jiménez|Jiménez|Raúl|Alonso|659||América|24|4|9|Mexico|1991-05-05|Forward
+0|+|18090|Igor Akinfeev|Goalkeeper|Unknown||Akinfeev|Akinfeev|Igor|Vladimirovich|536||CSKA Moscow|69|0|1|Russia|1986-04-08|Goalkeeper
+0|+|10866|Georgios Samaras|Striker|Left/Centre||Samaras|Samaras|Georgios||517||Unknown|74|8|7|Greece|1985-02-21|Forward
+0|+|18094|Tranquillo Barnetta|Winger|Left/Right||Barnetta|Barnetta|Tranquillo||497|Right|Eintracht Frankfurt|74|10|7|Switzerland|1985-05-22|Midfielder
+0|+|16050|Zvjezdan Misimovic|Attacking Midfielder|Centre||Misimovic|Misimovic|Zvjezdan||537|Both|Guizhou Renhe|81|25|10|Bosnia and Herzegovina|1982-06-05|Midfielder
+0|+|18102|Giorgio Chiellini|Central Defender|Left/Centre||Chiellini|Chiellini|Giorgio||119|Left|Juventus|68|4|3|Italy|1984-08-14|Defender
+0|+|5816|Xavi|Central Midfielder|Centre|Xavi|Xavi|Hernández|Xavi||118|Right|Barcelona|132|12|8|Spain|1980-01-25|Midfielder
+0|+|69305|Ricardo Rodriguez|Full Back|Left||Rodriguez|Rodriguez|Ricardo||497|Left|VfL Wolfsburg|21|0|13|Switzerland|1992-08-25|Defender
+0|+|119468|Han Kook-Young|Defensive Midfielder|Centre|Han Kook-Young|Han Kook-Young|Han|Kook-Young||1041||Kashiwa Reysol|10|0|14|South Korea|1990-04-19|Midfielder
+0|+|11973|Diego Benaglio|Goalkeeper|Unknown||Benaglio|Benaglio|Diego||497|Right|VfL Wolfsburg|57|0|1|Switzerland|1983-09-08|Goalkeeper
+0|+|44743|Beto|Goalkeeper|Unknown|Beto|Beto|Bastos Pimparel|Antonio Alberto||359||Sevilla|7|0|22|Portugal|1982-05-01|Goalkeeper
+0|+|81610|Aleksei Kozlov|Full Back|Right||Kozlov|Kozlov|Aleksei|Anatolyevich|536||Dynamo Moscow|11|0|2|Russia|1986-12-25|Defender
+0|+|48844|David Ospina|Goalkeeper|Unknown||Ospina|Ospina|David||832||Nice|44|0|1|Colombia|1988-08-31|Goalkeeper
+0|+|52941|Denis Glushakov|Attacking Midfielder|Left/Centre/Right||Glushakov|Glushakov|Denis|Borisovich|536||Spartak Moscow|26|3|8|Russia|1987-01-27|Midfielder
+0|+|57038|Alexander Kokorin|Striker|Centre||Kokorin|Kokorin|Alexander|Aleksandrovich|536||Dynamo Moscow|22|5|9|Russia|1991-03-19|Forward
+0|+|27256|Bruno Alves|Central Defender|Centre/Right|Bruno Alves|Bruno Alves|Regufe Alves|Bruno Eduardo||359||Fenerbahce|72|10|2|Portugal|1981-11-27|Defender
+0|+|77523|Marvin Chávez|Winger|Left/Right|Marvin Chávez|Marvin Chávez|Chávez|Marvin|Antonio|847||Chivas USA|42|4|23|Honduras|1983-11-03|Midfielder
+0|+|48852|Mauricio Isla|Full Back|Right||Isla|Isla|Mauricio||831|Right|Juventus|47|2|4|Chile|1988-06-12|Defender
+0|+|15310|Nick Rimando|Goalkeeper|Unknown||Rimando|Rimando|Nick|Paul|596||Real Salt Lake|14|0|22|USA|1979-06-17|Goalkeeper
+0|+|48854|Fabián Orellana|Second Striker|Centre/Right||Orellana|Orellana|Fabián||831|Right|Celta de Vigo|26|2|14|Chile|1986-01-27|Forward
+0|+|50904|José Fuenzalida|Attacking Midfielder|Right||Fuenzalida|Fuenzalida|José||831||Colo Colo|23|1|19|Chile|1985-02-22|Midfielder
+0|+|83675|Carlos Valdés|Central Defender|Centre||Valdés|Valdés|Carlos||832||San Lorenzo|14|2|23|Colombia|1985-05-22|Defender
+0|+|48863|Álvaro González|Attacking Midfielder|Centre/Right||González|González|Álvaro|Rafael|837|Right|Lazio|43|2|20|Uruguay|1984-10-29|Midfielder
+0|+|100987|Alan Pulido|Striker|Centre||Pulido|Pulido|Alan||659||Tigres|6|4|11|Mexico|1991-03-08|Forward
+0|+|8924|Daniel van Buyten|Central Defender|Centre||van Buyten|van Buyten|Daniel||360|Right|FC Bayern München|79|10|15|Belgium|1978-02-07|Defender
+0|+|28392|Christian Bolaños|Winger|Right||Bolaños|Bolaños|Christian||838||FC København|55|2|7|Costa Rica|1984-05-17|Midfielder
+0|+|59115|Mile Jedinak|Central Midfielder|Centre||Jedinak|Jedinak|Mile|John|575|Both|Crystal Palace|44|4|15|Australia|1984-08-03|Midfielder
+0|+|179950|Kirim Ansarifard|Striker|Centre||Ansarifard|Ansarifard|Kirim||1042||Persepolis FC|42|9|10|Iran|1990-04-03|Forward
+0|+|42738|Juan Zuñiga|Full Back|Right||Zuñiga|Zuñiga|Juan||832|Right|Napoli|50|1|18|Colombia|1985-12-14|Defender
+0|+|40691|Jerome Boateng|Central Defender|Centre/Right||Boateng|Boateng|Jerome||357|Right|FC Bayern München|39|0|20|Germany|1988-09-03|Defender
+0|+|14075|Patrice Evra|Full Back|Left||Evra|Evra|Patrice|Latyr|368||Manchester United|58|0|3|France|1981-05-15|Defender
+0|+|20226|Clint Dempsey|Second Striker|Left/Centre/Right||Dempsey|Dempsey|Clint|Drew|596||Seattle Sounders FC|104|37|8|USA|1983-03-09|Forward
+0|+|50947|Christian Noboa|Central Midfielder|Centre||Noboa|Noboa|Christian|Fernando|830||Dynamo Moscow|42|2|6|Ecuador|1985-04-09|Midfielder
+0|+|163588|Kunle Odunlami|Central Defender|Centre||Odunlami|Odunlami|Kunle|Ebenezer|1216||Sunshine Stars|11|0|12|Nigeria|1991-04-30|Defender
+0|+|40711|Oliver Bozanic|Winger|Left||Bozanic|Bozanic|Oliver||575|Left|FC Luzern|3|0|13|Australia|1989-01-08|Midfielder
+0|+|83725|Felipe Gutierrez|Central Midfielder|Centre||Gutierrez|Gutierrez|Felipe||831||FC Twente|18|1|16|Chile|1990-10-08|Midfielder
+0|+|40720|Edinson Cavani|Striker|Centre||Cavani|Cavani|Edinson|Roberto|837|Right|Paris Saint Germain|62|21|21|Uruguay|1987-02-14|Forward
+0|+|28434|Diego Lugano|Central Defender|Centre||Lugano|Lugano|Diego|Alfredo|837||Unknown|94|9|2|Uruguay|1980-11-02|Defender
+0|+|21123|Valon Behrami|Winger|Right||Behrami|Behrami|Valon||497|Right|Napoli|48|2|11|Switzerland|1985-04-19|Midfielder
+0|+|42774|Morgan Schneiderlin|Defensive Midfielder|Centre||Schneiderlin|Schneiderlin|Morgan||368||Southampton|1|0|22|France|1989-11-08|Midfielder
+0|+|57112|Eliaquim Mangala|Central Defender|Centre||Mangala|Mangala|Eliaquim||368|Both|FC Porto|3|0|13|France|1991-02-13|Defender
+0|+|38685|Silvestre Varela|Second Striker|Left/Right||Varela|Varela|Silvestre||359|Right|FC Porto|24|4|18|Portugal|1985-02-02|Forward
+0|+|38533|Rui Patricio|Goalkeeper|Unknown|Rui Patricio|Rui Patricio|Patricio|Rui Pedro dos Santos||359||Sporting Lisbon|30|0|12|Portugal|1988-02-15|Goalkeeper
+0|+|42786|Eden Hazard|Winger|Left/Right||Hazard|Hazard|Eden||360||Chelsea|45|6|10|Belgium|1991-01-07|Midfielder
+0|+|37192|Mark Milligan|Defensive Midfielder|Centre||Milligan|Milligan|Mark||575|Right|Melbourne Victory|30|2|5|Australia|1985-08-04|Midfielder
+0|+|119772|José Juan Vázquez|Central Midfielder|Left/Centre/Right||Vázquez|Vázquez|José Juan||659||León|5|0|23|Mexico|1988-03-14|Midfielder
+0|+|65323|Aron Jóhannsson|Striker|Left/Centre/Right||Jóhannsson|Jóhannsson|Aron||596||AZ|8|2|9|USA|1990-11-10|Forward
+0|+|18221|Gerard Piqué|Central Defender|Centre||Piqué|Piqué|Gerard||118|Right|Barcelona|60|4|3|Spain|1987-02-02|Defender
+0|+|42798|Óscar Bagüí|Full Back|Left||Bagüí|Bagüí|Óscar|Dalmiro|830||Emelec|21|0|18|Ecuador|1982-12-10|Defender
+0|+|40755|Daniel Sturridge|Striker|Left/Centre/Right||Sturridge|Sturridge|Daniel|Andre|114||Liverpool|12|4|9|England|1989-09-01|Forward
+0|+|106297|Uche Nwofor|Striker|Centre||Nwofor|Nwofor|Uche|Innocent|1216||VVV-Venlo|6|3|19|Nigeria|1991-09-17|Forward
+0|+|53056|Giorgios Tzavellas|Full Back|Left||Tzavellas|Tzavellas|Giorgios||517||PAOK Salonika|13|0|3|Greece|1987-11-26|Defender
+0|+|40772|Gökhan Inler|Central Midfielder|Centre||Inler|Inler|Gökhan||497|Right|Napoli|73|6|8|Switzerland|1984-06-27|Midfielder
+0|+|81735|Liassine Cadamuro|Central Defender|Centre||Cadamuro|Cadamuro|Liassine||1215|Right|Real Sociedad|7|0|17|Algeria|1988-03-05|Defender
+0|+|42824|Carlos Sánchez|Central Midfielder|Centre||Sánchez|Sánchez|Carlos|Alberto|832||Elche|44|0|6|Colombia|1986-02-06|Midfielder
+0|+|91977|Carlos Peña|Central Midfielder|Centre||Peña|Peña|Carlos|Alberto|659||León|16|2|21|Mexico|1990-03-29|Midfielder
+0|+|20301|Emir Spahic|Central Defender|Centre||Spahic|Spahic|Emir||537|Right|Bayer 04 Leverkusen|74|3|4|Bosnia and Herzegovina|1980-08-18|Defender
+0|+|61262|Oscar|Attacking Midfielder|Left/Centre/Right|Oscar|Oscar|dos Santos Emboada Junior|Oscar||614||Chelsea|31|9|11|Brazil|1991-09-09|Midfielder
+0|+|28495|John Obi Mikel|Defensive Midfielder|Centre||Mikel|Mikel|John Obi|Michael Nchekwube|1216||Chelsea|59|4|10|Nigeria|1987-04-22|Midfielder
+0|+|40784|Mamadou Sakho|Central Defender|Centre||Sakho|Sakho|Mamadou||368||Liverpool|19|2|5|France|1990-02-13|Defender
+0|+|104276|Luís Neto|Central Defender|Centre||Neto|Neto|Luís||359|Right|Zenit St Petersburg|9|0|14|Portugal|1988-05-26|Defender
+0|+|61278|Neymar|Striker|Left/Centre|Neymar|Neymar|Santos Júnior|Neymar da Silva||614|Both|Barcelona|49|31|10|Brazil|1992-02-05|Forward
+0|+|20319|Theofanis Gekas|Striker|Centre||Gekas|Gekas|Theofanis||517||Konyaspor|72|24|17|Greece|1980-05-23|Forward
+0|+|20322|Carlos Salcido|Full Back|Left||Salcido|Salcido|Carlos|Arnoldo|659||Guadalajara|120|10|3|Mexico|1980-04-02|Defender
+0|+|114321|Sayouba Mandé|Goalkeeper|Unknown||Mandé|Mandé|Sayouba||1221||Stabaek|1|0|23|Côte d'Ivoire|1993-06-15|Goalkeeper
+0|+|28525|Ezequiel Garay|Central Defender|Centre||Garay|Garay|Ezequiel||632|Right|Benfica|18|0|2|Argentina|1986-10-10|Defender
+0|+|20335|Jose de Jesús Corona|Goalkeeper|Unknown||Corona|Corona|Jose de Jesús||659||Cruz Azul|33|0|1|Mexico|1981-01-26|Goalkeeper
+0|+|42864|Fernando Muslera|Goalkeeper|Unknown||Muslera|Muslera|Fernando||837||Galatasaray|58|0|1|Uruguay|1986-06-16|Goalkeeper
+0|+|49013|Victor Moses|Winger|Left/Right||Moses|Moses|Victor||1216|Both|Chelsea|22|7|11|Nigeria|1990-12-12|Forward
+0|+|69495|Oleg Shatov|Attacking Midfielder|Centre||Shatov|Shatov|Oleg|Aleksandrovich|536|Right|Zenit St Petersburg|7|2|17|Russia|1990-07-29|Midfielder
+0|+|96122|William Carvalho|Defensive Midfielder|Centre||Carvalho|Carvalho|William|Silva|359||Sporting Lisbon|4|0|6|Portugal|1992-04-07|Midfielder
+0|+|34683|Yann Sommer|Goalkeeper|Unknown||Sommer|Sommer|Yann||497||Basel|6|0|12|Switzerland|1988-12-17|Goalkeeper
+0|+|45034|Ivan Perisic|Attacking Midfielder|Left/Centre/Right||Perisic|Perisic|Ivan||535|Right|VfL Wolfsburg|29|3|4|Croatia|1989-02-02|Midfielder
+0|+|32644|Javier Mascherano|Defensive Midfielder|Centre||Mascherano|Mascherano|Javier||632|Right|Barcelona|98|3|14|Argentina|1984-06-08|Midfielder
+0|+|28549|Rais M'Bolhi|Goalkeeper|Unknown||M'Bolhi|M'Bolhi|Rais|Cobos Adrien|1215||CSKA Sofia|28|0|23|Algeria|1986-04-25|Goalkeeper
+0|+|34694|Djamel Mesbah|Wing Back|Left||Mesbah|Mesbah|Djamel|Eddine|1215|Left|Livorno|26|0|6|Algeria|1984-10-09|Defender
+0|+|20360|Kevin-Prince Boateng|Attacking Midfielder|Centre||Boateng|Boateng|Kevin-Prince||1219|Both|FC Schalke 04|13|2|9|Ghana|1987-03-06|Midfielder
+0|+|55179|Mubarak Wakaso|Winger|Left||Wakaso|Wakaso|Mubarak||1219|Left|Rubin Kazan|17|7|22|Ghana|1990-07-25|Midfielder
+0|+|34703|Ivan Rakitic|Attacking Midfielder|Left/Centre/Right||Rakitic|Rakitic|Ivan||535|Right|Sevilla|62|9|7|Croatia|1988-03-10|Midfielder
+0|+|51090|Thiago Silva|Central Defender|Centre|Thiago Silva|Thiago Silva|da Silva|Thiago Emiliano||614|Right|Paris Saint Germain|46|2|3|Brazil|1984-09-22|Defender
+0|+|42899|Sergio Romero|Goalkeeper|Unknown||Romero|Romero|Sergio||632|Right|Sampdoria|47|0|1|Argentina|1987-02-22|Goalkeeper
+0|+|40943|Jefferson|Goalkeeper|Unknown|Jefferson|Jefferson|de Oliveira Galvao|Jefferson||614||Botafogo|9|0|1|Brazil|1983-01-02|Goalkeeper
+0|+|155552|Eder Balanta|Central Defender|Left/Centre||Balanta|Balanta|Eder||832|Left|River Plate|3|0|16|Colombia|1993-02-28|Defender
+0|+|40868|José Holebas|Wing Back|Left||Holebas|Holebas|José|Lloyd|517||Olympiakos|22|1|20|Greece|1984-06-27|Defender
+0|+|149959|Godfrey Oboabona|Central Defender|Centre||Oboabona|Oboabona|Godfrey|Itama|1216||Çaykur Rizespor|35|1|14|Nigeria|1990-09-16|Defender
+0|+|104359|Jean-Daniel Akpa-Akpro|Full Back|Left/Right||Akpa-Akpro|Akpa-Akpro|Jean-Daniel||1221||Toulouse|1|0|7|Côte d'Ivoire|1992-10-11|Defender
+0|+|55209|Óscar García|Winger|Right|Óscar García|Óscar García|García|Óscar|Boniek|847||Houston Dynamo|90|2|14|Honduras|1984-09-04|Midfielder
+0|+|12204|Mario Yepes|Central Defender|Left/Centre||Yepes|Yepes|Mario||832|Left|Atalanta|98|6|3|Colombia|1976-01-13|Defender
+0|+|106824|Memphis Depay|Striker|Centre||Depay|Depay|Memphis||366||PSV|6|0|21|Netherlands|1994-02-13|Forward
+0|+|21150|Mariano Andujar|Goalkeeper|Unknown||Andujar|Andujar|Mariano||632|Right|Catania|10|0|21|Argentina|1983-07-30|Goalkeeper
+0|+|61366|Kevin De Bruyne|Attacking Midfielder|Left/Centre/Right||De Bruyne|De Bruyne|Kevin||360|Right|VfL Wolfsburg|21|4|7|Belgium|1991-06-28|Midfielder
+0|+|87995|Mattia Perin|Goalkeeper|Unknown||Perin|Perin|Mattia||119|Right|Genoa|0|0|13|Italy|1992-11-10|Goalkeeper
+0|+|110524|Gotoku Sakai|Full Back|Right|Gotoku Sakai|Gotoku Sakai|Sakai|Gotoku||1266|Both|VfB Stuttgart|12|0|3|Japan|1991-03-14|Defender
+0|+|61770|Alejandro Bedoya|Central Midfielder|Centre||Bedoya|Bedoya|Alejandro||596||Nantes|27|1|11|USA|1987-04-29|Midfielder
+0|+|77760|Cristian Gamboa|Full Back|Right||Gamboa|Gamboa|Cristian|Esteban|838||Rosenborg|25|1|16|Costa Rica|1989-10-24|Defender
+0|+|36803|Javad Nekounam|Central Midfielder|Centre||Nekounam|Nekounam|Javad||1042|Right|Kuwait SC|140|37|6|Iran|1980-09-07|Midfielder
+0|+|42948|Agustín Orión|Goalkeeper|Unknown||Orión|Orión|Agustín||632|Right|Boca Juniors|3|0|12|Argentina|1981-07-26|Goalkeeper
+0|+|38392|Mats Hummels|Central Defender|Centre||Hummels|Hummels|Mats||357|Right|Borussia Dortmund|30|2|5|Germany|1988-12-16|Defender
+0|+|44998|Dario Vidosic|Attacking Midfielder|Centre||Vidosic|Vidosic|Dario||575|Left|FC Sion|23|2|20|Australia|1987-04-08|Midfielder
+0|+|67527|Nyom|Full Back|Right|Nyom|Nyom|Nyom|Allan-Roméo||494|Right|Granada CF|10|0|22|Cameroon|1988-05-10|Defender
+0|+|88008|Afriyie Acquah|Central Midfielder|Centre||Acquah|Acquah|Afriyie||1219|Right|1899 Hoffenheim|5|1|6|Ghana|1992-01-05|Midfielder
+0|+|12237|Andrés Iniesta|Attacking Midfielder|Left/Centre/Right||Iniesta|Iniesta|Andrés||118|Right|Barcelona|97|12|6|Spain|1984-05-11|Midfielder
+0|+|73678|Benjamin Moukandjo|Striker|Centre||Moukandjo|Moukandjo|Benjamin||494||Nancy|17|2|8|Cameroon|1988-11-12|Forward
+0|+|37197|Amir Hossein Sadeqi|Central Defender|Centre||Sadeqi|Sadeqi|Amir Hossein||1042||Esteghlal|16|1|5|Iran|1981-09-06|Defender
+0|+|85971|Son Heung-Min|Striker|Left/Centre/Right|Son Heung-Min|Son Heung-Min|Son|Heung-Min||1041|Both|Bayer 04 Leverkusen|25|6|9|South Korea|1992-07-08|Forward
+0|+|116694|Kim Shin-Wook|Striker|Centre|Kim Shin-Wook|Kim Shin-Wook|Kim|Shin-Wook||1041||Ulsan Hyundai|26|3|18|South Korea|1988-04-14|Forward
+0|+|59351|Egidio Arévalo Rios|Defensive Midfielder|Centre/Right||Arévalo Rios|Arévalo Rios|Egidio|Raúl|837|Right|Tigres|55|0|17|Uruguay|1982-01-01|Midfielder
+0|+|81880|Alex Oxlade-Chamberlain|Attacking Midfielder|Left/Centre/Right||Oxlade-Chamberlain|Oxlade-Chamberlain|Alex|Mark David|114||Arsenal|15|3|15|England|1993-08-15|Midfielder
+0|+|34301|Jerry Palacios|Striker|Centre|Jerry Palacios|Jerry Palacios|Palacios|Jerry|Nelson|847||Alajuelense|24|5|9|Honduras|1982-05-13|Forward
+0|+|118749|Marcelo Díaz|Central Midfielder|Centre||Díaz|Díaz|Marcelo|Alfonso|831||Basel|21|1|21|Chile|1986-12-30|Midfielder
+0|+|69600|Mario Götze|Attacking Midfielder|Left/Centre/Right||Götze|Götze|Mario||357|Right|FC Bayern München|29|9|19|Germany|1992-06-03|Midfielder
+0|+|73698|Miguel Layún|Full Back|Left/Right||Layún|Layún|Miguel|Arturo|659||América|13|2|7|Mexico|1988-06-25|Defender
+0|+|18086|Yasuhito Endo|Central Midfielder|Centre||Endo|Endo|Yasuhito||1266||Gamba Osaka|143|12|7|Japan|1980-01-28|Midfielder
+0|+|28649|Madjid Bougherra|Central Defender|Centre||Bougherra|Bougherra|Madjid||1215||Lekhwiya|62|4|2|Algeria|1982-10-07|Defender
+0|+|163818|Rony Martínez|Striker|Centre||Martínez|Martínez|Rony|Darío|847||CD Real Sociedad|9|1|16|Honduras|1988-10-16|Forward
+0|+|56999|Milan Badelj|Central Midfielder|Left/Centre/Right||Badelj|Badelj|Milan||535|Right|Hamburger SV|9|1|15|Croatia|1989-02-25|Midfielder
+0|+|47085|Michael Lang|Central Defender|Centre||Lang|Lang|Michael||497||Grasshoppers Zürich|6|1|6|Switzerland|1991-02-08|Defender
+0|+|102383|Santiago Arias|Full Back|Right||Arias|Arias|Santiago||832|Right|PSV|6|0|4|Colombia|1992-01-13|Defender
+0|+|104475|Jorge Claros|Defensive Midfielder|Centre||Claros|Claros|Jorge|Aarón|847||Motagua|50|3|20|Honduras|1986-01-08|Midfielder
+0|+|12273|Diego Forlán|Second Striker|Centre||Forlán|Forlán|Diego||837|Both|Cerezo Osaka|110|36|10|Uruguay|1979-05-19|Forward
+0|+|149491|Alexander Mejía|Defensive Midfielder|Centre/Right||Mejía|Mejía|Alexander||832|Right|Atlético Nacional|8|0|15|Colombia|1988-07-11|Midfielder
+0|+|59380|Víctor Ibarbo|Second Striker|Left/Centre/Right||Ibarbo|Ibarbo|Víctor||832|Right|Cagliari|9|1|14|Colombia|1990-05-19|Forward
+0|+|38530|Nani|Attacking Midfielder|Left/Centre/Right|Nani|Nani|Almeida da Cunha|Luís||359||Manchester United|75|14|17|Portugal|1986-11-17|Midfielder
+0|+|57001|Wilfried Bony|Striker|Centre||Bony|Bony|Wilfried|Guemiand|1221||Swansea City|24|8|12|Côte d'Ivoire|1988-12-10|Forward
+0|+|18427|Ashkan Dejagah|Attacking Midfielder|Left/Centre/Right||Dejagah|Dejagah|Ashkan||1042|Both|Fulham|14|4|21|Iran|1986-07-05|Midfielder
+0|+|75773|Lee Chung-Yong|Winger|Right|Lee Chung-Yong|Lee Chung-Yong|Lee|Chung-Yong||1041||Bolton Wanderers|55|6|17|South Korea|1988-07-02|Midfielder
+0|+|81918|Emilio Izaguirre|Full Back|Left||Izaguirre|Izaguirre|Emilio|Arturo|847||Celtic|66|1|7|Honduras|1986-05-10|Defender

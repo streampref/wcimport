@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "CRC", 
+    "name": "Costa Rica", 
+    "color": "#E9161C", 
+    "id": 838, 
+    "iso": "RC", 
+    "slug": "costa-rica"
+  }, 
+  {
+    "twitter_code": "ENG", 
+    "name": "England", 
+    "color": "#2B57AC", 
+    "id": 114, 
+    "iso": "EN", 
+    "slug": "england"
+  }
+]

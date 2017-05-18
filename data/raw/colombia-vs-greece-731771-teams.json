@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "COL", 
+    "name": "Colombia", 
+    "color": "#FFDF00", 
+    "id": 832, 
+    "iso": "CO", 
+    "slug": "colombia"
+  }, 
+  {
+    "twitter_code": "GRE", 
+    "name": "Greece", 
+    "color": "#2447D5", 
+    "id": 517, 
+    "iso": "GR", 
+    "slug": "greece"
+  }
+]

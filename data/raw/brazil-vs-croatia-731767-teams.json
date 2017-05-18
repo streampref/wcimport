@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "BRA", 
+    "name": "Brazil", 
+    "color": "#FFDF00", 
+    "id": 614, 
+    "iso": "BR", 
+    "slug": "brazil"
+  }, 
+  {
+    "twitter_code": "CRO", 
+    "name": "Croatia", 
+    "color": "#D90D11", 
+    "id": 535, 
+    "iso": "HR", 
+    "slug": "croatia"
+  }
+]

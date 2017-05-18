@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "NGA", 
+    "name": "Nigeria", 
+    "color": "#58C655", 
+    "id": 1216, 
+    "iso": "NG", 
+    "slug": "nigeria"
+  }, 
+  {
+    "twitter_code": "BIH", 
+    "name": "Bosnia and Herzegovina", 
+    "color": "#0000D9", 
+    "id": 537, 
+    "iso": "BA", 
+    "slug": "bosnia-and-herzegovina"
+  }
+]

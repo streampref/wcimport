@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "POR", 
+    "name": "Portugal", 
+    "color": "#F62432", 
+    "id": 359, 
+    "iso": "PT", 
+    "slug": "portugal"
+  }, 
+  {
+    "twitter_code": "GHA", 
+    "name": "Ghana", 
+    "color": "#000000", 
+    "id": 1219, 
+    "iso": "GH", 
+    "slug": "ghana"
+  }
+]

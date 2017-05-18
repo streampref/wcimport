@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "GRE", 
+    "name": "Greece", 
+    "color": "#2447D5", 
+    "id": 517, 
+    "iso": "GR", 
+    "slug": "greece"
+  }, 
+  {
+    "twitter_code": "CIV", 
+    "name": "C\u00f4te d'Ivoire", 
+    "color": "#26A064", 
+    "id": 1221, 
+    "iso": "CI", 
+    "slug": "cote-d-ivoire"
+  }
+]

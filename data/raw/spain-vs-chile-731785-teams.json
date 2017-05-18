@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "ESP", 
+    "name": "Spain", 
+    "color": "#E3000B", 
+    "id": 118, 
+    "iso": "ES", 
+    "slug": "spain"
+  }, 
+  {
+    "twitter_code": "CHI", 
+    "name": "Chile", 
+    "color": "#0C3EB0", 
+    "id": 831, 
+    "iso": "CL", 
+    "slug": "chile"
+  }
+]

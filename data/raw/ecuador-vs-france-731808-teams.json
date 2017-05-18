@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "ECU", 
+    "name": "Ecuador", 
+    "color": "#FFFF00", 
+    "id": 830, 
+    "iso": "EC", 
+    "slug": "ecuador"
+  }, 
+  {
+    "twitter_code": "FRA", 
+    "name": "France", 
+    "color": "#123163", 
+    "id": 368, 
+    "iso": "FR", 
+    "slug": "france"
+  }
+]

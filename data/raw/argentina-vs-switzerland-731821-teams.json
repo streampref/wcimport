@@ -1,0 +1,18 @@
+[
+  {
+    "twitter_code": "ARG", 
+    "name": "Argentina", 
+    "color": "#6DB6FC", 
+    "id": 632, 
+    "iso": "AR", 
+    "slug": "argentina"
+  }, 
+  {
+    "twitter_code": "SUI", 
+    "name": "Switzerland", 
+    "color": "#DF0000", 
+    "id": 497, 
+    "iso": "CH", 
+    "slug": "switzerland"
+  }
+]
