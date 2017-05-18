@@ -15,7 +15,7 @@ from tool.query.stream import get_register_stream, REG_Q_OUTPUT_STR, REG_Q_STR
 # Query using MAXSEQ operator
 # =============================================================================
 MAXSEQ_QUERY = '''
-SELECT SEQUENCE IDENTIFIED BY pid
+SELECT SEQUENCE IDENTIFIED BY player_id
 [RANGE {ran} SECOND, SLIDE {sli} SECOND] FROM s
 WHERE MAXIMUM LENGTH IS {max}
 ;
@@ -26,26 +26,27 @@ WHERE MAXIMUM LENGTH IS {max}
 # =============================================================================
 # Query to get sequence from stream
 CQL_Z = '''
-SELECT SEQUENCE IDENTIFIED BY pid [RANGE {ran} SECOND, SLIDE {sli} SECOND]
+SELECT SEQUENCE IDENTIFIED BY player_id
+    [RANGE {ran} SECOND, SLIDE {sli} SECOND]
 FROM s;
 '''
 
 # Query to get sequence id having a maxium of positions
 CQL_ZMAX = '''
-SELECT DISTINCT pid FROM z
+SELECT DISTINCT player_id FROM z
 EXCEPT
-SELECT pid FROM z WHERE _pos > {max};
+SELECT player_id FROM z WHERE _pos > {max};
 '''
 
 # Query equivalent to MAXSEQ operator
 CQL_EQUIV = '''
-SELECT z.* FROM z, zmax WHERE z.pid = zmax.pid;
+SELECT z.* FROM z, zmax WHERE z.player_id = zmax.player_id;
 '''
 
 
 def gen_maxseq_query(configuration, experiment_conf):
     '''
-    Generate queries with MAXSEQ operator
+    Generate MAXSEQ query
     '''
     query_dir = get_query_dir(configuration, experiment_conf)
     filename = query_dir + os.sep + 'maxseq.cql'
@@ -57,7 +58,7 @@ def gen_maxseq_query(configuration, experiment_conf):
 
 def gen_cql_queries(configuration, experiment_conf):
     '''
-    Generate all CQL queries equivalent to MAXSEQ operator
+    Generate CQL queries
     '''
     query_dir = get_query_dir(configuration, experiment_conf)
     query = CQL_Z.format(ran=experiment_conf[RAN],
@@ -84,7 +85,7 @@ def gen_all_queries(configuration, experiment_list):
 
 def gen_maxseq_env(configuration, experiment_conf, output):
     '''
-    Generate environment files for MAXSEQ operator
+    Generate environment for MAXSEQ
     '''
     text = get_register_stream(experiment_conf)
     # Get query filename
@@ -105,9 +106,9 @@ def gen_maxseq_env(configuration, experiment_conf, output):
 
 def gen_cql_env(configuration, experiment_conf, output):
     '''
-    Generate environment files for StremPref
+    Generate environment for CQL
     '''
-    text = get_register_stream(configuration, experiment_conf)
+    text = get_register_stream(experiment_conf)
     query_dir = get_query_dir(configuration, experiment_conf)
     # Environment files for equivalent CQL queries
     filename = query_dir + os.sep + 'z.cql'
@@ -129,7 +130,7 @@ def gen_cql_env(configuration, experiment_conf, output):
 
 def gen_all_env(configuration, experiment_list, output=False):
     '''
-    Generate all environment files
+    Generate all environments
     '''
     for exp_conf in experiment_list:
         if exp_conf[ALGORITHM] == CQL_ALG:

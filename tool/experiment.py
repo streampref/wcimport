@@ -6,8 +6,8 @@ Experiments
 # =============================================================================
 # Query identifiers
 # =============================================================================
-Q_PLAY = 'play'
 Q_MOVE = 'move'
+Q_PLACE = 'place'
 
 # =============================================================================
 # Experiment parameters
@@ -96,7 +96,7 @@ MAXSEQ = 'MAXSEQ'
 BESTSEQ = 'BESTSEQ'
 
 # =============================================================================
-# Query for comparisons experiments
+# Query for statistical experiments
 # =============================================================================
 Q_SEQ = [SEQ]
 Q_SEQ_CONSEQ = [SEQ, CONSEQ]
@@ -119,19 +119,19 @@ Q_STATS_LIST = [Q_SEQ, Q_SEQ_CONSEQ,
                 Q_SEQ_CONSEQ_ENDSEQ_MINSEQ_MAXSEQ]
 
 # =============================================================================
-# Comparisons statistics
+# statistics
 # =============================================================================
-COMP_IN = 'in'
-COMP_IN_MIN = 'in_min'
-COMP_IN_MAX = 'in_max'
-COMP_IN_AVG = 'in_avg'
-COMP = 'comp'
-COMP_OUT = 'out'
-COMP_OUT_MIN = 'out_min'
-COMP_OUT_MAX = 'out_max'
-COMP_OUT_AVG = 'out_avg'
-COMP_ATT_LIST = [COMP_IN, COMP_IN_MIN, COMP_IN_MAX, COMP_IN_AVG, COMP,
-                 COMP_OUT, COMP_OUT_MIN, COMP_OUT_MAX, COMP_OUT_AVG]
+STATS_IN = 'in'
+STATS_IN_MIN = 'in_min'
+STATS_IN_MAX = 'in_max'
+STATS_IN_AVG = 'in_avg'
+STATS_COMP = 'comp'
+STATS_OUT = 'out'
+STATS_OUT_MIN = 'out_min'
+STATS_OUT_MAX = 'out_max'
+STATS_OUT_AVG = 'out_avg'
+STATS_ATT_LIST = [STATS_IN, STATS_IN_MIN, STATS_IN_MAX, STATS_IN_AVG, STATS_COMP,
+                 STATS_OUT, STATS_OUT_MIN, STATS_OUT_MAX, STATS_OUT_AVG]
 # =============================================================================
 
 
@@ -265,13 +265,6 @@ def get_stats_id(configuration, experiment_conf):
     id_str = ':'.join(experiment_conf[OPERATOR_LIST]) + '_' + id_str + \
         '_' + experiment_conf[MATCH]
     return id_str
-
-
-def get_max_data_timestamp(parameter_conf):
-    '''
-    Return the maximum timstamp for a generated data stream
-    '''
-    return max(parameter_conf[RAN][VAR]) + max(parameter_conf[SLI][VAR])
 
 
 def get_default_experiment(parameter_conf):

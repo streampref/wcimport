@@ -7,16 +7,16 @@ import csv
 import os
 
 from tool.io import get_detail_file, get_env_file, write_result_file, \
-    get_summary_file, get_result_file, get_max_play_ts, get_max_move_ts,\
+    get_summary_file, get_result_file, get_max_move_ts, get_max_place_ts,\
     get_env_stats_file, get_detail_stats_file
 from tool.experiment import ALGORITHM, PARAMETER, VAR, CQL_ALG, \
     SEQ_ALG, RUNTIME, MEMORY, SUM_RUN, SUM_MEM, BNL_SEARCH, \
     INC_PARTITION_SEQTREE_ALG, INC_PARTITIONLIST_SEQTREE_ALG, \
     INC_PARTITION_SEQTREE_PRUNING_ALG, INC_PARTITIONLIST_SEQTREE_PRUNING_ALG, \
     get_default_experiment, MATCH, QUERY, QUERY_LIST,\
-    Q_PLAY, Q_MOVE, ALGORITHM_LIST, NAIVE_SUBSEQ_ALG, INC_SUBSEQ_ALG, \
+    Q_MOVE, Q_PLACE, ALGORITHM_LIST, NAIVE_SUBSEQ_ALG, INC_SUBSEQ_ALG, \
     MINSEQ_ALG, MAXSEQ_ALG, get_variated_parameters, OPERATOR_LIST,\
-    COMP_ATT_LIST, COMP_IN
+    STATS_ATT_LIST, STATS_IN
 
 
 # Command for experiment run
@@ -51,10 +51,10 @@ def get_iterations(experiment_conf):
     '''
     Return the number of iterations
     '''
-    if experiment_conf[QUERY] == Q_PLAY:
-        return get_max_play_ts(experiment_conf[MATCH])
-    elif experiment_conf[QUERY] == Q_MOVE:
+    if experiment_conf[QUERY] == Q_MOVE:
         return get_max_move_ts(experiment_conf[MATCH])
+    elif experiment_conf[QUERY] == Q_PLACE:
+        return get_max_place_ts(experiment_conf[MATCH])
 
 
 def run(configuration, experiment_conf, count):
@@ -85,7 +85,7 @@ def run(configuration, experiment_conf, count):
 
 def run_stats(configuration, experiment_conf):
     '''
-    Run an experiment
+    Run statistical experiment
     '''
     # Get iteration number
     iterations = get_iterations(experiment_conf)
@@ -143,42 +143,42 @@ def get_summaries(detail_file):
     return (sum_time, sum_memory / count)
 
 
-def get_comp_summaries(detail_file):
+def get_stats_summaries(detail_file):
     '''
-    Read results from a detail file
+    Read statistical results from a detail file
     '''
     # Check if file exists
     if not os.path.isfile(detail_file):
         print 'File does not exists: ' + detail_file
-        return {att: float('NaN') for att in COMP_ATT_LIST}
-    rec_out = {att: 0.0 for att in COMP_ATT_LIST}
+        return {att: float('NaN') for att in STATS_ATT_LIST}
+    rec_out = {att: 0.0 for att in STATS_ATT_LIST}
     in_file = open(detail_file, 'r')
-    reader = csv.DictReader(in_file, skipinitialspace=True, dialect='table')
+    reader = csv.DictReader(in_file, skipinitialspace=True)
     count = 0
     for rec in reader:
-        if rec[COMP_IN] > 0:
-            for att in COMP_ATT_LIST:
+        if rec[STATS_IN] > 0:
+            for att in STATS_ATT_LIST:
                 rec_out[att] += float(rec[att])
         count += 1
     in_file.close()
-    for att in COMP_ATT_LIST:
+    for att in STATS_ATT_LIST:
         rec_out[att] /= count
     return rec_out
 
 
-def get_match_comp_summaries(configuration, match_list, exp_conf):
+def get_match_stats_summaries(configuration, match_list, exp_conf):
     '''
-    Get math summaries
+    Get math statistical summaries
     '''
-    rec_out = {att: 0.0 for att in COMP_ATT_LIST}
+    rec_out = {att: 0.0 for att in STATS_ATT_LIST}
     for match in match_list:
         exp_copy = exp_conf.copy()
         exp_copy[MATCH] = match
         dfile = get_detail_stats_file(configuration, exp_copy)
-        rec = get_comp_summaries(dfile)
-        for att in COMP_ATT_LIST:
+        rec = get_stats_summaries(dfile)
+        for att in STATS_ATT_LIST:
             rec_out[att] += rec[att]
-    for att in COMP_ATT_LIST:
+    for att in STATS_ATT_LIST:
         rec_out[att] = rec_out[att] / len(match_list)
     return rec_out
 
@@ -201,7 +201,7 @@ def get_match_summaries(configuration, match_list, exp_conf, count):
 
 def summarize(configuration, match_list, query, parameter, run_count):
     '''
-    Summarize experiments about range variation
+    Summarize experiments
     '''
     # Result lists
     time_list = []
@@ -237,9 +237,9 @@ def summarize(configuration, match_list, query, parameter, run_count):
     write_result_file(filename, mem_list, parameter)
 
 
-def summarize_comp(configuration, match_list, query, parameter):
+def summarize_stats(configuration, match_list, query, parameter):
     '''
-    Summarize experiments fo comparisons
+    Summarize statistical experiments
     '''
     # Result lists
     rec_list = []
@@ -255,20 +255,20 @@ def summarize_comp(configuration, match_list, query, parameter):
         exp_conf[parameter] = value
         for op_list in configuration[OPERATOR_LIST]:
             exp_conf[OPERATOR_LIST] = op_list
-            rec_comp = get_match_comp_summaries(configuration, match_list,
-                                                exp_conf)
+            rec_stats = get_match_stats_summaries(configuration, match_list,
+                                                  exp_conf)
             ope = op_list[-1]
-            for att in rec_comp:
-                rec[ope+att] = rec_comp[att]
+            for att in rec_stats:
+                rec[ope+att] = rec_stats[att]
         rec_list.append(rec)
     # Store summarized results
     filename = get_summary_file(configuration, query, '', parameter)
     write_result_file(filename, rec_list, parameter)
 
 
-def summarize_comp_op(configuration, match_list, query):
+def summarize_stats_operators(configuration, match_list, query):
     '''
-    Summarize experiments fo comparisons
+    Summarize statistical experiments of operators
     '''
     # Result lists
     rec_list = []
@@ -276,10 +276,10 @@ def summarize_comp_op(configuration, match_list, query):
         exp_conf = get_default_experiment(configuration[PARAMETER])
         exp_conf[QUERY] = query
         exp_conf[OPERATOR_LIST] = op_list
-        rec_comp = get_match_comp_summaries(configuration, match_list,
-                                            exp_conf)
-        rec_comp['operators'] = str(len(op_list))
-        rec_list.append(rec_comp)
+        rec_stats = get_match_stats_summaries(configuration, match_list,
+                                              exp_conf)
+        rec_stats['operators'] = str(len(op_list))
+        rec_list.append(rec_stats)
     # Store summarized results
     filename = get_summary_file(configuration, query, '', 'operators')
     write_result_file(filename, rec_list, 'operators')
@@ -295,16 +295,16 @@ def summarize_all(configuration, match_list, run_count):
             summarize(configuration, match_list, query, par, run_count)
 
 
-def summarize_all_comp(configuration, match_list):
+def summarize_all_stats(configuration, match_list):
     '''
-    Summarize all results
+    Summarize all statistical results
     '''
     # Get parameter having variation
     for par in get_variated_parameters(configuration):
         for query in configuration[QUERY_LIST]:
-            summarize_comp(configuration, match_list, query, par)
+            summarize_stats(configuration, match_list, query, par)
         for query in configuration[QUERY_LIST]:
-            summarize_comp_op(configuration, match_list, query)
+            summarize_stats_operators(configuration, match_list, query)
 
 
 def confidence_interval(parameter, in_file, out_file):

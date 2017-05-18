@@ -5,9 +5,9 @@ Queries for experiments with ENDSEQ operator
 
 import os
 
-from tool.attributes import get_play_attribute_list, get_move_attribute_list
+from tool.attributes import get_move_attribute_list, get_place_attribute_list
 from tool.experiment import SLI, RAN, ALGORITHM, \
-    CQL_ALG, QUERY, Q_PLAY, Q_MOVE
+    CQL_ALG, QUERY, Q_MOVE, Q_PLACE
 from tool.io import get_query_dir, write_to_txt, get_out_file, get_env_file
 from tool.query.stream import get_register_stream, REG_Q_OUTPUT_STR, REG_Q_STR
 
@@ -17,7 +17,7 @@ from tool.query.stream import get_register_stream, REG_Q_OUTPUT_STR, REG_Q_STR
 # =============================================================================
 ENDSEQ_QUERY = '''
 SELECT SUBSEQUENCE END POSITION
-FROM SEQUENCE IDENTIFIED BY pid
+FROM SEQUENCE IDENTIFIED BY player_id
 [RANGE {ran} SECOND, SLIDE {sli} SECOND] FROM s;
 '''
 
@@ -26,7 +26,8 @@ FROM SEQUENCE IDENTIFIED BY pid
 # =============================================================================
 # Query to get sequence from stream
 CQL_Z = '''
-SELECT SEQUENCE IDENTIFIED BY pid [RANGE {ran} SECOND, SLIDE {sli} SECOND]
+SELECT SEQUENCE IDENTIFIED BY player_id
+    [RANGE {ran} SECOND, SLIDE {sli} SECOND]
 FROM s;
 '''
 
@@ -38,7 +39,7 @@ SELECT _pos - {ran} + 1 AS _pos, {att} FROM z WHERE _pos >= {ran}
 
 def gen_endseq_query(configuration, experiment_conf):
     '''
-    Generate queries with ENDSEQ operator
+    Generate ENDSEQ query
     '''
     query_dir = get_query_dir(configuration, experiment_conf)
     filename = query_dir + os.sep + 'endseq.cql'
@@ -59,16 +60,16 @@ def gen_cql_z_query(query_dir, experiment_conf):
 
 def gen_cql_final_query(query_dir, experiment_conf):
     '''
-    Generate final query equivalent to ENDSEQ operator
+    Generate final query CQL query
     '''
     filename = query_dir + os.sep + 'equiv.cql'
     if os.path.isfile(filename):
         return
     range_value = experiment_conf[RAN]
-    if experiment_conf[QUERY] == Q_PLAY:
-        att_list = get_play_attribute_list('z.')
-    elif experiment_conf[QUERY] == Q_MOVE:
+    if experiment_conf[QUERY] == Q_MOVE:
         att_list = get_move_attribute_list('z.')
+    elif experiment_conf[QUERY] == Q_PLACE:
+        att_list = get_place_attribute_list('z.')
     att_str = ', '.join(att_list)
     pos_query_list = []
     for position in range(1, range_value + 1):
@@ -82,7 +83,7 @@ def gen_cql_final_query(query_dir, experiment_conf):
 
 def gen_cql_queries(configuration, experiment_conf):
     '''
-    Generate all CQL queries equivalent to ENDSEQ operator
+    Generate CQL queries
     '''
     query_dir = get_query_dir(configuration, experiment_conf)
     gen_cql_z_query(query_dir, experiment_conf)
@@ -102,7 +103,7 @@ def gen_all_queries(configuration, experiment_list):
 
 def gen_endseq_env(configuration, experiment_conf, output):
     '''
-    Generate environment files for ENDSEQ operator
+    Generate environment for ENDSEQ
     '''
     text = get_register_stream(experiment_conf)
     # Get query filename
@@ -123,7 +124,7 @@ def gen_endseq_env(configuration, experiment_conf, output):
 
 def gen_cql_env(configuration, experiment_conf, output):
     '''
-    Generate environment files for StremPref
+    Generate environment for CQL
     '''
     text = get_register_stream(experiment_conf)
     query_dir = get_query_dir(configuration, experiment_conf)
@@ -145,7 +146,7 @@ def gen_cql_env(configuration, experiment_conf, output):
 
 def gen_all_env(configuration, experiment_list, output=False):
     '''
-    Generate all environment files
+    Generate all environments
     '''
     for exp_conf in experiment_list:
         if exp_conf[ALGORITHM] == CQL_ALG:

@@ -5,9 +5,9 @@ Queries for experiments with CONSEQ operator
 
 import os
 
-from tool.attributes import get_play_attribute_list, get_move_attribute_list
+from tool.attributes import get_move_attribute_list, get_place_attribute_list
 from tool.experiment import SLI, RAN, ALGORITHM, \
-    CQL_ALG, QUERY, Q_PLAY, Q_MOVE
+    CQL_ALG, QUERY, Q_MOVE, Q_PLACE
 from tool.io import get_query_dir, write_to_txt, get_out_file, get_env_file
 from tool.query.stream import get_register_stream, REG_Q_OUTPUT_STR, REG_Q_STR
 
@@ -17,7 +17,7 @@ from tool.query.stream import get_register_stream, REG_Q_OUTPUT_STR, REG_Q_STR
 # =============================================================================
 CONSEQ_QUERY = '''
 SELECT SUBSEQUENCE CONSECUTIVE TIMESTAMP
-FROM SEQUENCE IDENTIFIED BY pid
+FROM SEQUENCE IDENTIFIED BY player_id
 [RANGE {ran} SECOND, SLIDE {sli} SECOND] FROM s;
 '''
 
@@ -36,48 +36,49 @@ SELECT RSTREAM FROM table_ots;
 
 # Query to get sequence from stream with OTS
 CQL_Z = '''
-SELECT SEQUENCE IDENTIFIED BY pid [RANGE {ran} SECOND, SLIDE {sli} SECOND]
+SELECT SEQUENCE IDENTIFIED BY player_id
+    [RANGE {ran} SECOND, SLIDE {sli} SECOND]
 FROM stream_ots;
 '''
 
 # Auxiliar query to compare timestamps
 CQL_Z_PRIME = '''
-SELECT _pos + 1 AS _pos, ots + 1 AS ots, pid FROM z;
+SELECT _pos + 1 AS _pos, ots + 1 AS ots, player_id FROM z;
 '''
 
 # Start position of ct-subsequences
 CQL_P_START = '''
-SELECT _pos AS start, z.pid FROM z
+SELECT _pos AS start, z.player_id FROM z
 WHERE _pos = 1
 UNION
-SELECT z._pos AS start, z.pid
+SELECT z._pos AS start, z.player_id
 FROM z, z_prime AS zp
-WHERE z._pos = zp._pos AND z.pid = zp.pid
+WHERE z._pos = zp._pos AND z.player_id = zp.player_id
 AND NOT z.ots = zp.ots;
 '''
 
 # End position of ct-subsequences
 CQL_P_END = '''
-SELECT start - 1 AS end, pid FROM p_start
+SELECT start - 1 AS end, player_id FROM p_start
 WHERE start > 1
 UNION
-SELECT MAX(z._pos) AS end, pid FROM z
-GROUP BY pid;
+SELECT MAX(z._pos) AS end, player_id FROM z
+GROUP BY player_id;
 '''
 
 # Start and end of ct-subsequences
 CQL_P_START_END = '''
-SELECT start, MIN(end) AS end, s.pid
+SELECT start, MIN(end) AS end, s.player_id
 FROM p_start AS s, p_end AS e
-WHERE s.pid = e.pid AND start <= end
-GROUP BY start, s.pid;
+WHERE s.player_id = e.player_id AND start <= end
+GROUP BY start, s.player_id;
 '''
 
 # Query equivalent to CONSEQ operator
 CQL_EQUIV = '''
 SELECT z._pos - se.start + 1 AS _pos, {zatt}
 FROM z, p_start_end AS se
-WHERE z.pid = se.pid
+WHERE z.player_id = se.player_id
 AND z._pos >= se.start AND z._pos <= se.end;
     '''
 
@@ -105,7 +106,7 @@ def gen_cql_z_query(query_dir, experiment_conf):
 
 def gen_cql_queries(configuration, experiment_conf):
     '''
-    Generate all CQL queries equivalent to CONSEQ operator
+    Generate CQL queries
     '''
     query_dir = get_query_dir(configuration, experiment_conf)
     filename = query_dir + os.sep + 'table_ots.cql'
@@ -122,10 +123,10 @@ def gen_cql_queries(configuration, experiment_conf):
     filename = query_dir + os.sep + 'p_start_end.cql'
     write_to_txt(filename, CQL_P_START_END)
     filename = query_dir + os.sep + 'equiv.cql'
-    if experiment_conf[QUERY] == Q_PLAY:
-        att_list = get_play_attribute_list('z.')
-    elif experiment_conf[QUERY] == Q_MOVE:
+    if experiment_conf[QUERY] == Q_MOVE:
         att_list = get_move_attribute_list('z.')
+    elif experiment_conf[QUERY] == Q_PLACE:
+        att_list = get_place_attribute_list('z.')
     att_list = ', '.join(att_list)
     query = CQL_EQUIV.format(zatt=att_list)
     write_to_txt(filename, query)
@@ -144,7 +145,7 @@ def gen_all_queries(configuration, experiment_list):
 
 def gen_conseq_env(configuration, experiment_conf, output):
     '''
-    Generate environment files for CONSEQ operator
+    Generate environment for CONSEQ
     '''
     text = get_register_stream(experiment_conf)
     # Get query filename
@@ -165,7 +166,7 @@ def gen_conseq_env(configuration, experiment_conf, output):
 
 def gen_cql_env(configuration, experiment_conf, output):
     '''
-    Generate environment files for StremPref
+    Generate environment for CQL
     '''
     text = get_register_stream(experiment_conf)
     query_dir = get_query_dir(configuration, experiment_conf)
@@ -199,7 +200,7 @@ def gen_cql_env(configuration, experiment_conf, output):
 
 def gen_all_env(configuration, experiment_list, output=False):
     '''
-    Generate all environment files
+    Generate all environments
     '''
     for exp_conf in experiment_list:
         if exp_conf[ALGORITHM] == CQL_ALG:

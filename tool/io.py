@@ -8,9 +8,9 @@ import os
 from bs4 import BeautifulSoup
 from kitchen.text.converters import to_str
 
-from tool.attributes import TS_ATT, get_original_attribute_list, \
-    get_move_attribute_list, get_play_attribute_list, \
-    get_player_attribute_list, get_team_attribute_list
+from tool.attributes import TS_ATT, get_event_attribute_list, \
+    get_place_attribute_list, get_move_attribute_list, \
+    get_player_attribute_list, get_team_attribute_list, ID, MATCH_ATT_LIST
 from tool.experiment import QUERY_LIST, DIRECTORY, ALGORITHM, \
     QUERY, ALGORITHM_LIST, get_id, get_stats_id
 
@@ -18,8 +18,9 @@ from tool.experiment import QUERY_LIST, DIRECTORY, ALGORITHM, \
 # =============================================================================
 # URL
 # =============================================================================
+BASE_URL = 'http://data.huffingtonpost.com/2014/world-cup/matches/'
 # Start URL (final match)
-START_URL = 'http://data.huffingtonpost.com/2014/world-cup/matches/' + \
+START_URL = BASE_URL + \
     'germany-vs-argentina-731830'
 # URL for JSON data of match
 JSON_DATA_URL = 'http://data.huffingtonpost.com/2014/world-cup/matches/%s.json'
@@ -32,16 +33,16 @@ HTML_DATA_URL = 'http://data.huffingtonpost.com/2014/world-cup/matches/%s'
 # Imported data directory
 IMPORTED_DATA_DIR = 'data'
 # Main directory for JSON files
-JSON_DIR = IMPORTED_DATA_DIR + os.sep + 'json'
+JSON_DIR = IMPORTED_DATA_DIR + os.sep + 'raw'
 # Directory for original data
-MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'match_full'
+MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'events'
 # Directory for move data
-MOVE_MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'move'
+PLACE_MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'places'
 # Directory for play data
-PLAY_MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'play'
+MOVE_MATCH_DIR = IMPORTED_DATA_DIR + os.sep + 'moves'
 # Directories list
 IMPORT_DIR_LIST = [IMPORTED_DATA_DIR, JSON_DIR, MATCH_DIR,
-                   MOVE_MATCH_DIR, PLAY_MATCH_DIR]
+                   PLACE_MATCH_DIR, MOVE_MATCH_DIR]
 
 # =============================================================================
 # Generic directories and files for experiments
@@ -72,13 +73,13 @@ MINSEQ_MAIN_DIR = 'exp_minseq'
 # MAXSEQ operator
 MAXSEQ_MAIN_DIR = 'exp_maxseq'
 # Statistics experiments
-COMP_MAIN_DIR = 'exp_comparisons'
+STATS_MAIN_DIR = 'exp_stats'
 
 # =============================================================================
 # Files
 # =============================================================================
 # File with list of matches
-MATCH_LIST_FILE = IMPORTED_DATA_DIR + os.sep + 'matches.txt'
+MATCH_LIST_FILE = IMPORTED_DATA_DIR + os.sep + 'matches.csv'
 # File with the list of players
 PLAYER_FILE = IMPORTED_DATA_DIR + os.sep + 'players.csv'
 # File with the list of teams
@@ -89,9 +90,6 @@ TEAM_FILE = IMPORTED_DATA_DIR + os.sep + 'teams.csv'
 # =============================================================================
 # Number of retries to get an URL
 URL_RETRY = 10
-
-# Register dialect for CSV files
-csv.register_dialect('table', delimiter=',', skipinitialspace=True)
 
 
 def read_url(url):
@@ -127,26 +125,6 @@ def read_url(url):
         try_count += 1
     # Return empty string when the URL could not be read
     return None
-
-
-def write_csv_file(record_list, filename, attribute_list):
-    '''
-    Write record list into file
-    '''
-    # Check if record list is not empty
-    if not len(record_list):
-        return
-    # Open file
-    out_file = open(filename, 'w')
-    # Check if attribute list is None
-    if attribute_list is None:
-        # Extract attribute list from record list
-        attribute_list = record_list[0].keys()
-    # Write data
-    out_write = csv.DictWriter(out_file, attribute_list, dialect='table')
-    out_write.writeheader()
-    out_write.writerows(record_list)
-    out_file.close()
 
 
 def _create_directories(directory_list):
@@ -243,30 +221,31 @@ def create_stat_exp_directories(configuration):
     _create_directories(dir_list)
 
 
-def store_match_list(match_id_list):
+def store_match_list(match_list):
     '''
     Store match list into a file
     '''
-    match_file = open(MATCH_LIST_FILE, 'w')
-    for match in match_id_list:
-        match_file.write(match + '\n')
-    match_file.close()
+    write_to_csv(MATCH_LIST_FILE, MATCH_ATT_LIST, match_list)
 
 
-def get_match_id_list_from_file():
+def get_match_list_from_file():
     '''
-    Get list of matches identifier from file
+    Get list of matches from file
     '''
     if os.path.isfile(MATCH_LIST_FILE):
         print 'Reading list of matches from ' + MATCH_LIST_FILE
-        match_file = open(MATCH_LIST_FILE, 'r')
-        match_id_list = []
-        for line in match_file:
-            match_id_list.append(line.strip())
-        match_file.close()
-        return match_id_list
+        match_list = read_from_csv(MATCH_LIST_FILE, MATCH_ATT_LIST)
+        return match_list
     else:
         return None
+
+
+def get_match_id_list():
+    '''
+    Return a list of match identifiers
+    '''
+    match_list = get_match_list()
+    return [match[ID] for match in match_list]
 
 
 def get_match_list():
@@ -275,7 +254,7 @@ def get_match_list():
     '''
     print 'Getting list of matches'
     # Try to read the match list from file
-    link_list = get_match_id_list_from_file()
+    link_list = get_match_list_from_file()
     if link_list is not None:
         # Return the list read from file
         return link_list
@@ -294,19 +273,50 @@ def get_match_list():
         for item in a_list:
             link = item.get('href')
             # Get just final part of link
-            link = link.split('/')[-1]
+            link = to_str(link.split('/')[-1])
             if link not in link_list:
                 link_list.append(link)
     # Sort matches by numerical ID
     match_id_list = sorted(link_list, key=lambda k: int(k.split('-')[-1]))
+    match_list = []
+    for match_id in match_id_list:
+        match_dict = get_match_details(match_id)
+        new_match_dict = {}
+        for att in MATCH_ATT_LIST:
+            if att in match_dict:
+                new_match_dict[att] = match_dict[att]
+            else:
+                new_match_dict[att] = ''
+        match_list.append(new_match_dict)
     # Store match list
-    store_match_list(match_id_list)
-    return match_id_list
+    store_match_list(match_list)
+    return match_list
+
+
+def get_match_details(match_id):
+    '''
+    Get match details
+    '''
+    url = BASE_URL + match_id
+    # Read site content
+    content = read_url(url)
+    # Parse site content
+    soup = BeautifulSoup(content, 'html.parser')
+    detail = soup.find_all("div", class_="module match-meta")
+    det_list = detail[0].ul.find_all('li')
+    det_dict = {ID: to_str(match_id)}
+    for det_item in det_list:
+        det_str = det_item.get_text()
+        det = det_str.split(':')
+        det_id = to_str(det[0]).lower().strip()
+        det_value = to_str(det[1]).lower().strip()
+        det_dict[det_id] = det_value
+    return det_dict
 
 
 def decode_object(original_object):
     '''
-    Decode a dictionary to string
+    Decode unicode to string
     '''
     # Check if object is unicode
     if isinstance(original_object, unicode):
@@ -434,41 +444,25 @@ def get_match_teams_json(match_id):
     return None
 
 
-def get_full_data_file(match_id):
+def get_event_data_file(match_id):
     '''
-    Get file name of original data
+    Get file name of event
     '''
     return MATCH_DIR + os.sep + match_id + '.csv'
 
 
-def store_full_data(match_id, record_list):
+def store_event_data(match_id, record_list):
     '''
-    Store full match data
+    Store event data
     '''
-    filename = get_full_data_file(match_id)
-    att_list = get_original_attribute_list(timestamp=True)
-    write_csv_file(record_list, filename, att_list)
-
-
-def get_play_data_file(match_id):
-    '''
-    Get file name of original data
-    '''
-    return PLAY_MATCH_DIR + os.sep + match_id + '.csv'
-
-
-def store_play_data(match_id, record_list):
-    '''
-    Store match plays
-    '''
-    filename = get_play_data_file(match_id)
-    att_list = get_play_attribute_list(timestamp=True)
-    write_csv_file(record_list, filename, att_list)
+    filename = get_event_data_file(match_id)
+    att_list = get_event_attribute_list(timestamp=True)
+    write_to_csv(filename, att_list, record_list)
 
 
 def get_move_data_file(match_id):
     '''
-    Get file name of original data
+    Get file name of move
     '''
     return MOVE_MATCH_DIR + os.sep + match_id + '.csv'
 
@@ -479,28 +473,44 @@ def store_move_data(match_id, record_list):
     '''
     filename = get_move_data_file(match_id)
     att_list = get_move_attribute_list(timestamp=True)
-    write_csv_file(record_list, filename, att_list)
+    write_to_csv(filename, att_list, record_list)
+
+
+def get_place_data_file(match_id):
+    '''
+    Get file name of place
+    '''
+    return PLACE_MATCH_DIR + os.sep + match_id + '.csv'
+
+
+def store_place_data(match_id, record_list):
+    '''
+    Store place data
+    '''
+    filename = get_place_data_file(match_id)
+    att_list = get_place_attribute_list(timestamp=True)
+    write_to_csv(filename, att_list, record_list)
 
 
 def store_players(record_list):
     '''
-    Store player data
+    Store players data
     '''
     att_list = get_player_attribute_list(timestamp=True, flag=True)
-    write_csv_file(record_list, PLAYER_FILE, att_list)
+    write_to_csv(PLAYER_FILE, att_list, record_list)
 
 
 def store_teams(record_list):
     '''
-    Store player data
+    Store teams data
     '''
     att_list = get_team_attribute_list(timestamp=True, flag=True)
-    write_csv_file(record_list, TEAM_FILE, att_list)
+    write_to_csv(TEAM_FILE, att_list, record_list)
 
 
 def write_to_txt(filename, text):
     '''
-    Store record list into a CSV file
+    Store record list into a TXT file
     '''
     # Check if file does not exists
     if not os.path.isfile(filename):
@@ -560,7 +570,7 @@ def get_aux_out_file(configuration, experiment_conf, query_id):
 
 def get_env_file(configuration, experiment_conf):
     '''
-    Return query directory
+    Return environment file
     '''
     exp_id = get_id(configuration, experiment_conf)
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
@@ -570,7 +580,7 @@ def get_env_file(configuration, experiment_conf):
 
 def get_summary_file(configuration, query, summary, parameter):
     '''
-    Return query directory
+    Return summary file
     '''
     if summary != '':
         summary += '_'
@@ -580,7 +590,7 @@ def get_summary_file(configuration, query, summary, parameter):
 
 def get_result_file(configuration, query, summary, parameter):
     '''
-    Return query directory
+    Return result file
     '''
     return configuration[DIRECTORY] + os.sep + query + os.sep + \
         RESULT_DIR + os.sep + summary + '_' + parameter + '.csv'
@@ -588,7 +598,7 @@ def get_result_file(configuration, query, summary, parameter):
 
 def get_detail_file(configuration, experiment_conf, count):
     '''
-    Return query directory
+    Return detail file
     '''
     exp_id = get_id(configuration, experiment_conf)
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
@@ -598,7 +608,7 @@ def get_detail_file(configuration, experiment_conf, count):
 
 def get_detail_stats_file(configuration, experiment_conf):
     '''
-    Return query directory
+    Return statistics detail file
     '''
     exp_id = get_stats_id(configuration, experiment_conf)
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
@@ -607,7 +617,7 @@ def get_detail_stats_file(configuration, experiment_conf):
 
 def get_tup_file(query):
     '''
-    Get the TUP fienale for a query
+    Get the TUP filename
     '''
     return IMPORTED_DATA_DIR + os.sep + 'tup_' + query + '.csv'
 
@@ -636,7 +646,8 @@ def write_to_csv(filename, attribute_list, record_list):
     if not os.path.isfile(filename):
         # Store data to file
         data_file = open(filename, 'w')
-        writer = csv.DictWriter(data_file, attribute_list, dialect='table')
+        csv.register_dialect('pipes', delimiter='|', skipinitialspace=True)
+        writer = csv.DictWriter(data_file, attribute_list, dialect='pipes')
         writer.writeheader()
         writer.writerows(record_list)
         data_file.close()
@@ -647,7 +658,8 @@ def read_from_csv(filename, attribute_list):
     Read data from a CSV file
     '''
     data_file = open(filename, 'r')
-    reader = csv.DictReader(data_file, attribute_list, dialect='table')
+    csv.register_dialect('pipes', delimiter='|', skipinitialspace=True)
+    reader = csv.DictReader(data_file, attribute_list, dialect='pipes')
     # Skip header
     reader.next()
     rec_list = []
@@ -656,23 +668,23 @@ def read_from_csv(filename, attribute_list):
     return rec_list
 
 
-def get_max_play_ts(match_id):
+def get_max_move_ts(match_id):
     '''
-    Return the maximum timestamp from a play stream
+    Return the maximum timestamp from move stream
     '''
-    filename = get_play_data_file(match_id)
-    att_list = get_play_attribute_list(timestamp=True)
+    filename = get_move_data_file(match_id)
+    att_list = get_move_attribute_list(timestamp=True)
     rec_list = read_from_csv(filename, att_list)
     last_rec = rec_list[-1]
     return int(last_rec[TS_ATT])
 
 
-def get_max_move_ts(match_id):
+def get_max_place_ts(match_id):
     '''
-    Return a record list from move data file
+    Return the maximum timestamp from place stream
     '''
-    filename = get_move_data_file(match_id)
-    att_list = get_move_attribute_list(timestamp=True)
+    filename = get_place_data_file(match_id)
+    att_list = get_place_attribute_list(timestamp=True)
     rec_list = read_from_csv(filename, att_list)
     last_rec = rec_list[-1]
     return int(last_rec[TS_ATT])

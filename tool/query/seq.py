@@ -5,9 +5,9 @@ Queries for experiments with SEQ operator
 
 import os
 
-from tool.attributes import get_play_attribute_list, get_move_attribute_list
+from tool.attributes import get_move_attribute_list, get_place_attribute_list
 from tool.experiment import SLI, RAN, ALGORITHM, \
-    CQL_ALG, QUERY, Q_PLAY, Q_MOVE
+    CQL_ALG, QUERY, Q_MOVE, Q_PLACE
 from tool.io import get_query_dir, write_to_txt, get_out_file, get_env_file
 from tool.query.stream import get_register_stream, REG_Q_OUTPUT_STR, REG_Q_STR
 
@@ -16,7 +16,7 @@ from tool.query.stream import get_register_stream, REG_Q_OUTPUT_STR, REG_Q_STR
 # Query using SEQ operator
 # =============================================================================
 SEQ_QUERY = '''
-SELECT SEQUENCE IDENTIFIED BY pid
+SELECT SEQUENCE IDENTIFIED BY player_id
 [RANGE {ran} SECOND, SLIDE {sli} SECOND] FROM s;
 '''
 
@@ -33,7 +33,7 @@ SELECT _pos, {att}
 FROM spos[RANGE {ran} SECOND, SLIDE {sli} SECOND];
 '''
 # W_1 (Sequence positions from 1 to end)
-CQL_W1 = 'SELECT _pos, pid FROM w;'
+CQL_W1 = 'SELECT _pos, player_id FROM w;'
 # W_i (Sequence positions from i to end,  w_(i-1) - p_(i-1))
 CQL_WI = '''
 SELECT * FROM w{prev}
@@ -42,18 +42,18 @@ SELECT * FROM p{prev};
 '''
 # P_i (Tuples with minimum _pos for each identifier)
 CQL_PI = '''
-SELECT MIN(_pos) AS _pos, pid FROM w{pos}
-GROUP BY pid;
+SELECT MIN(_pos) AS _pos, player_id FROM w{pos}
+GROUP BY player_id;
 '''
 CQL_PI_FINAL = '''
     SELECT {pos} AS _pos, {att} FROM p{pos}, w
-    WHERE p{pos}.pid = w.pid AND p{pos}._pos = w._pos
+    WHERE p{pos}.player_id = w.player_id AND p{pos}._pos = w._pos
     '''
 
 
 def gen_seq_query(configuration, experiment_conf):
     '''
-    Generate queries with SEQ operator
+    Generate SEQ query
     '''
     query_dir = get_query_dir(configuration, experiment_conf)
     filename = query_dir + os.sep + 'seq.cql'
@@ -88,10 +88,10 @@ def gen_cql_w_query(query_dir, experiment_conf):
     Consider RANGE and SLIDE and generate W relation
     '''
     query = experiment_conf[QUERY]
-    if query == Q_PLAY:
-        att_list = get_play_attribute_list()
-    elif query == Q_MOVE:
+    if query == Q_MOVE:
         att_list = get_move_attribute_list()
+    elif query == Q_PLACE:
+        att_list = get_place_attribute_list()
     # Build attribute names list
     att_str = ', '.join(att_list)
     # W
@@ -103,14 +103,14 @@ def gen_cql_w_query(query_dir, experiment_conf):
 
 def gen_cql_equiv_query(query_dir, experiment_conf):
     '''
-    Generate final query equivalent to SEQ operator for a range parameter
+    Generate final CQL query
     '''
     # Get attribute list
     query = experiment_conf[QUERY]
-    if query == Q_PLAY:
-        att_list = get_play_attribute_list(prefix='w.')
-    elif query == Q_MOVE:
+    if query == Q_MOVE:
         att_list = get_move_attribute_list(prefix='w.')
+    elif query == Q_PLACE:
+        att_list = get_place_attribute_list(prefix='w.')
     att_str = ', '.join(att_list)
     # List of final position queries
     pos_query_list = []
@@ -135,7 +135,7 @@ def gen_cql_rpos_spos_queries(query_dir):
 
 def gen_cql_queries(configuration, experiment_conf):
     '''
-    Generate all CQL queries equivalent to SEQ operator
+    Generate all CQL queries
     '''
     query_dir = get_query_dir(configuration, experiment_conf)
     gen_cql_rpos_spos_queries(query_dir)
@@ -157,7 +157,7 @@ def gen_all_queries(configuration, experiment_list):
 
 def gen_seq_env(configuration, experiment_conf, output):
     '''
-    Generate environment files for SEQ operator
+    Generate environment for SEQ
     '''
     text = get_register_stream(experiment_conf)
     # Get query filename
@@ -178,7 +178,7 @@ def gen_seq_env(configuration, experiment_conf, output):
 
 def gen_cql_env(configuration, experiment_conf, output):
     '''
-    Generate enviroNment files for StremPref
+    Generate environment for CQL
     '''
     text = get_register_stream(experiment_conf)
     query_dir = get_query_dir(configuration, experiment_conf)
@@ -219,7 +219,7 @@ def gen_cql_env(configuration, experiment_conf, output):
 
 def gen_all_env(configuration, experiment_list, output=False):
     '''
-    Generate all environment files
+    Generate all environments
     '''
     for exp_conf in experiment_list:
         if exp_conf[ALGORITHM] == CQL_ALG:

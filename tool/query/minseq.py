@@ -15,7 +15,7 @@ from tool.query.stream import get_register_stream, REG_Q_OUTPUT_STR, REG_Q_STR
 # Query using MINSEQ operator
 # =============================================================================
 MINSEQ_QUERY = '''
-SELECT SEQUENCE IDENTIFIED BY pid
+SELECT SEQUENCE IDENTIFIED BY player_id
 [RANGE {ran} SECOND, SLIDE {sli} SECOND] FROM s
 WHERE MINIMUM LENGTH IS {min}
 ;
@@ -26,24 +26,25 @@ WHERE MINIMUM LENGTH IS {min}
 # =============================================================================
 # Query to get sequence from stream
 CQL_Z = '''
-SELECT SEQUENCE IDENTIFIED BY pid [RANGE {ran} SECOND, SLIDE {sli} SECOND]
+SELECT SEQUENCE IDENTIFIED BY player_id
+    [RANGE {ran} SECOND, SLIDE {sli} SECOND]
 FROM s;
 '''
 
 # Query to get sequence id having a minium of positions
 CQL_ZMIN = '''
-SELECT DISTINCT pid FROM z WHERE _pos >= {min};
+SELECT DISTINCT player_id FROM z WHERE _pos >= {min};
 '''
 
 # Query equivalent to MINSEQ operator
 CQL_EQUIV = '''
-SELECT z.* FROM z, zmin WHERE z.pid = zmin.pid;
+SELECT z.* FROM z, zmin WHERE z.player_id = zmin.player_id;
 '''
 
 
 def gen_minseq_query(configuration, experiment_conf):
     '''
-    Generate queries with MINSEQ operator
+    Generate MINSEQ query
     '''
     query_dir = get_query_dir(configuration, experiment_conf)
     filename = query_dir + os.sep + 'minseq.cql'
@@ -55,7 +56,7 @@ def gen_minseq_query(configuration, experiment_conf):
 
 def gen_cql_queries(configuration, experiment_conf):
     '''
-    Generate all CQL queries equivalent to MINSEQ operator
+    Generate CQL queries
     '''
     query_dir = get_query_dir(configuration, experiment_conf)
     query = CQL_Z.format(ran=experiment_conf[RAN],
@@ -82,7 +83,7 @@ def gen_all_queries(configuration, experiment_list):
 
 def gen_minseq_env(configuration, experiment_conf, output):
     '''
-    Generate environment files for MINSEQ operator
+    Generate environment for MINSEQ
     '''
     text = get_register_stream(experiment_conf)
     # Get query filename
@@ -103,7 +104,7 @@ def gen_minseq_env(configuration, experiment_conf, output):
 
 def gen_cql_env(configuration, experiment_conf, output):
     '''
-    Generate environment files for StremPref
+    Generate environment for CQL
     '''
     text = get_register_stream(experiment_conf)
     query_dir = get_query_dir(configuration, experiment_conf)
@@ -127,7 +128,7 @@ def gen_cql_env(configuration, experiment_conf, output):
 
 def gen_all_env(configuration, experiment_list, output=False):
     '''
-    Generate all environment files
+    Generate all environments
     '''
     for exp_conf in experiment_list:
         if exp_conf[ALGORITHM] == CQL_ALG:

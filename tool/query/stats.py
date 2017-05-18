@@ -1,10 +1,10 @@
 # -*- coding: utf-8 -*-
 '''
-Queries for experiments with preference operators
+Queries for experiments with statistics operators
 '''
 
 from tool.io import get_query_stats_file, write_to_txt, get_env_stats_file
-from tool.experiment import QUERY, Q_PLAY, Q_MOVE, OPERATOR_LIST, RAN,\
+from tool.experiment import QUERY, Q_MOVE, Q_PLACE, OPERATOR_LIST, RAN,\
     CONSEQ, ENDSEQ, MINSEQ, MAXSEQ, MAX, MIN
 from tool.query.stream import get_register_stream, REG_Q_STR
 
@@ -12,9 +12,8 @@ from tool.query.stream import get_register_stream, REG_Q_STR
 # =============================================================================
 # Queries with preference operators
 # =============================================================================
-# Play
 Q_SEQ = '''
-SEQUENCE IDENTIFIED BY pid [RANGE {ran} SECOND] FROM s\n
+SEQUENCE IDENTIFIED BY player_id [RANGE {ran} SECOND] FROM s\n
 '''
 
 Q_CONSEQ = '''
@@ -33,35 +32,36 @@ Q_MAXSEQ = '''
 MAXIMUM LENGTH IS {max}
 '''
 
-Q_PLAY_BESTSEQ = '''
+# Move
+Q_MOVE_BESTSEQ = '''
 \nACCORDING TO TEMPORAL PREFERENCES
-IF PREVIOUS (pl = 're') THEN
-    (pl = 'dr') BETTER (pl = 'cp') [pc]
+IF PREVIOUS (move = 'rec') THEN
+    (move = 'drib') BETTER (move = 'pass') [place]
 AND
-    (pl = 'cp') BETTER (pl = 'ncp')
+    (move = 'pass') BETTER (move = 'bpas')
 AND
-IF ALL PREVIOUS (pc = 'mf') THEN
-    (pc = 'mf') BETTER (pc = 'di')
+IF ALL PREVIOUS (place = 'mf') THEN
+    (place = 'mf') BETTER (place = 'di')
 ;
 '''
 
-# Move
-Q_MOVE_BESTSEQ = '''
+# Place
+Q_PLACE_BESTSEQ = '''
 ACCORDING TO TEMPORAL PREFERENCES
-IF PREVIOUS (pc = 'di') AND (tb = 1) THEN
-    (pc = 'mf') BETTER (pc = 'di')[mv]
+IF PREVIOUS (place = 'di') AND (ball = 1) THEN
+    (place = 'mf') BETTER (place = 'di')[direc]
 AND
-IF ALL PREVIOUS (tb = 1) AND (tb = 0) AND PREVIOUS (pc = 'oi') THEN
-    (pc = 'mf') BETTER (pc = 'oi')
+IF ALL PREVIOUS (ball = 1) AND (ball = 0) AND PREVIOUS (place = 'oi') THEN
+    (place = 'mf') BETTER (place = 'oi')
 AND
-(mv = 'la') BETTER (mv = 'fw')
+(direc = 'la') BETTER (direc = 'fw')
 ;
 '''
 
 
 def gen_stats_query(configuration, experiment_conf):
     '''
-    Generate streampref queries
+    Generate single query
     '''
     op_list = experiment_conf[OPERATOR_LIST]
     query = 'SELECT '
@@ -83,10 +83,10 @@ def gen_stats_query(configuration, experiment_conf):
     if len(where_list):
         query += '\nWHERE ' + ' AND '.join(where_list)
     # Select correct query
-    if experiment_conf[QUERY] == Q_PLAY:
-        query += Q_PLAY_BESTSEQ
-    elif experiment_conf[QUERY] == Q_MOVE:
+    if experiment_conf[QUERY] == Q_MOVE:
         query += Q_MOVE_BESTSEQ
+    elif experiment_conf[QUERY] == Q_PLACE:
+        query += Q_PLACE_BESTSEQ
     # Store query code
     filename = get_query_stats_file(configuration, experiment_conf)
     write_to_txt(filename, query)
@@ -104,7 +104,7 @@ def gen_all_queries(configuration, experiment_list):
 
 def gen_stats_env(configuration, experiment_conf):
     '''
-    Generate environment files for SEQ operator
+    Generate environment
     '''
     text = get_register_stream(experiment_conf)
     # Get query filename
@@ -118,7 +118,7 @@ def gen_stats_env(configuration, experiment_conf):
 
 def gen_all_env(configuration, experiment_list):
     '''
-    Generate all environment files
+    Generate all environments
     '''
     for exp_conf in experiment_list:
         gen_stats_env(configuration, exp_conf)
