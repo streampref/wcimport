@@ -2,15 +2,15 @@
 # -*- coding: utf-8 -*-
 
 '''
-Module for generation of environments for experiments over import data of
-soccer world cup of 2014 from http://data.huffingtonpost.com
+Module for statistical experiments with operators
 '''
 from tool.experiment import RAN, VAR, DEF, Q_STATS_LIST, OPERATOR_LIST,\
-    QUERY_LIST, Q_PLAY, Q_MOVE, DIRECTORY, PARAMETER, MIN, MAX, \
+    QUERY_LIST, Q_MOVE, Q_PLACE, DIRECTORY, PARAMETER, MIN, MAX, \
     gen_stats_experiment_list
-from tool.io import COMP_MAIN_DIR, get_match_list, create_stat_exp_directories
-from tool.query.comp import gen_all_queries, gen_all_env
-from tool.run import run_experiments_stats, summarize_all_comp
+from tool.io import STATS_MAIN_DIR, create_stat_exp_directories,\
+    get_match_id_list
+from tool.query.stats import gen_all_queries, gen_all_env
+from tool.run import run_experiments_stats, summarize_all_stats
 
 # =============================================================================
 # Experiment execution
@@ -19,7 +19,7 @@ from tool.run import run_experiments_stats, summarize_all_comp
 MATCH_COUNT = 1
 
 # Parameters configuration
-COMP_PAR = {
+STATS_PAR = {
     # Range
     RAN: {
         VAR: [60, 120, 180, 240, 300],
@@ -37,15 +37,15 @@ COMP_PAR = {
         }
     }
 
-COMP_CONF = {
+STATS_CONF = {
     # Algorithms
     OPERATOR_LIST: Q_STATS_LIST,
     # Query
-    QUERY_LIST: [Q_PLAY, Q_MOVE],
+    QUERY_LIST: [Q_MOVE, Q_PLACE],
     # Main directory
-    DIRECTORY: COMP_MAIN_DIR,
+    DIRECTORY: STATS_MAIN_DIR,
     # Parameters
-    PARAMETER: COMP_PAR
+    PARAMETER: STATS_PAR
     }
 
 
@@ -54,7 +54,7 @@ def get_arguments(print_help=False):
     Get arguments
     '''
     import argparse
-    parser = argparse.ArgumentParser('COMPGen')
+    parser = argparse.ArgumentParser('STATSGen')
     parser.add_argument('-g', '--gen', action="store_true",
                         default=False,
                         help='Generate files')
@@ -76,20 +76,20 @@ def main():
     '''
     args = get_arguments()
     print 'Getting list of matches'
-    match_list = get_match_list()[-MATCH_COUNT:]
-    exp_list = gen_stats_experiment_list(COMP_CONF, match_list)
+    match_list = get_match_id_list()[-MATCH_COUNT:]
+    exp_list = gen_stats_experiment_list(STATS_CONF, match_list)
     if args.gen:
-        create_stat_exp_directories(COMP_CONF)
+        create_stat_exp_directories(STATS_CONF)
         print 'Generating queries'
-        gen_all_queries(COMP_CONF, exp_list)
+        gen_all_queries(STATS_CONF, exp_list)
         print 'Generating environments'
-        gen_all_env(COMP_CONF, exp_list)
+        gen_all_env(STATS_CONF, exp_list)
     elif args.run:
         print 'Running experiments'
-        run_experiments_stats(COMP_CONF, exp_list)
+        run_experiments_stats(STATS_CONF, exp_list)
     elif args.summarize:
         print 'Summarizing results'
-        summarize_all_comp(COMP_CONF, match_list)
+        summarize_all_stats(STATS_CONF, match_list)
     else:
         get_arguments(True)
 

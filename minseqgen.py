@@ -2,14 +2,13 @@
 # -*- coding: utf-8 -*-
 
 '''
-Module for generation of environments for experiments over import data of
-soccer world cup of 2014 from http://data.huffingtonpost.com
+Module for experiments with MINSEQ operator
 '''
 
 from tool.experiment import RAN, VAR, SLI, DEF, CQL_ALG, MINSEQ_ALG,\
-    PARAMETER, QUERY_LIST, Q_PLAY, DIRECTORY, ALGORITHM_LIST, \
-    gen_experiment_list, Q_MOVE, MIN
-from tool.io import MINSEQ_MAIN_DIR, get_match_list, \
+    PARAMETER, QUERY_LIST, Q_MOVE, DIRECTORY, ALGORITHM_LIST, \
+    gen_experiment_list, Q_PLACE, MIN
+from tool.io import MINSEQ_MAIN_DIR, get_match_id_list, \
     create_experiment_directories
 from tool.query.minseq import gen_all_queries, gen_all_env
 from tool.run import run_experiments, summarize_all, confidence_interval_all
@@ -45,7 +44,7 @@ MINSEQ_CONF = {
     # Algorithms
     ALGORITHM_LIST: [CQL_ALG, MINSEQ_ALG],
     # Query
-    QUERY_LIST: [Q_PLAY, Q_MOVE],
+    QUERY_LIST: [Q_MOVE, Q_PLACE],
     # Main directory
     DIRECTORY: MINSEQ_MAIN_DIR,
     # Parameters
@@ -83,7 +82,7 @@ def main():
     '''
     args = get_arguments()
     print 'Getting list of matches'
-    match_list = get_match_list()[-MATCH_COUNT:]
+    match_list = get_match_id_list()[-MATCH_COUNT:]
     exp_list = gen_experiment_list(MINSEQ_CONF, match_list)
     if args.gen:
         create_experiment_directories(MINSEQ_CONF, exp_list)

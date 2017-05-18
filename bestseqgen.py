@@ -2,17 +2,16 @@
 # -*- coding: utf-8 -*-
 
 '''
-Module for generation of environments for experiments over import data of
-soccer world cup of 2014 from http://data.huffingtonpost.com
+Module for experiments with BESTSEQ operator
 '''
 
 from tool.experiment import RAN, VAR, SLI, DEF, CQL_ALG, \
-    PARAMETER, QUERY_LIST, Q_PLAY, DIRECTORY, ALGORITHM_LIST, \
-    gen_experiment_list, Q_MOVE, BNL_SEARCH, INC_PARTITION_SEQTREE_ALG,\
+    PARAMETER, QUERY_LIST, Q_MOVE, DIRECTORY, ALGORITHM_LIST, \
+    gen_experiment_list, Q_PLACE, BNL_SEARCH, INC_PARTITION_SEQTREE_ALG,\
     INC_PARTITION_SEQTREE_PRUNING_ALG, INC_PARTITIONLIST_SEQTREE_ALG,\
     INC_PARTITIONLIST_SEQTREE_PRUNING_ALG
-from tool.io import BESTSEQ_MAIN_DIR, get_match_list, \
-    create_experiment_directories
+from tool.io import BESTSEQ_MAIN_DIR, \
+    create_experiment_directories, get_match_id_list
 from tool.run import run_experiments, summarize_all, confidence_interval_all
 from tool.query.bestseq import gen_all_queries, gen_all_env
 
@@ -45,7 +44,7 @@ BESTSEQ_CONF = {
                      INC_PARTITIONLIST_SEQTREE_ALG,
                      INC_PARTITIONLIST_SEQTREE_PRUNING_ALG],
     # Query
-    QUERY_LIST: [Q_PLAY, Q_MOVE],
+    QUERY_LIST: [Q_MOVE, Q_PLACE],
     # Main directory
     DIRECTORY: BESTSEQ_MAIN_DIR,
     # Parameters
@@ -83,7 +82,7 @@ def main():
     '''
     args = get_arguments()
     print 'Getting list of matches'
-    match_list = get_match_list()[-MATCH_COUNT:]
+    match_list = get_match_id_list()[-MATCH_COUNT:]
     exp_list = gen_experiment_list(BESTSEQ_CONF, match_list)
     if args.gen:
         create_experiment_directories(BESTSEQ_CONF, exp_list)

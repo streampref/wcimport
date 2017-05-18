@@ -2,15 +2,14 @@
 # -*- coding: utf-8 -*-
 
 '''
-Module for generation of environments for experiments over import data of
-soccer world cup of 2014 from http://data.huffingtonpost.com
+Module for experiments with MAXSEQ operator
 '''
 
 from tool.experiment import RAN, VAR, SLI, DEF, CQL_ALG, MAXSEQ_ALG,\
-    PARAMETER, QUERY_LIST, Q_PLAY, DIRECTORY, ALGORITHM_LIST, \
-    gen_experiment_list, Q_MOVE, MAX
-from tool.io import MAXSEQ_MAIN_DIR, get_match_list, \
-    create_experiment_directories
+    PARAMETER, QUERY_LIST, Q_MOVE, DIRECTORY, ALGORITHM_LIST, \
+    gen_experiment_list, Q_PLACE, MAX
+from tool.io import MAXSEQ_MAIN_DIR, \
+    create_experiment_directories, get_match_id_list
 from tool.query.maxseq import gen_all_queries, gen_all_env
 from tool.run import run_experiments, summarize_all, confidence_interval_all
 
@@ -45,7 +44,7 @@ MAXSEQ_CONF = {
     # Algorithms
     ALGORITHM_LIST: [CQL_ALG, MAXSEQ_ALG],
     # Query
-    QUERY_LIST: [Q_PLAY, Q_MOVE],
+    QUERY_LIST: [Q_MOVE, Q_PLACE],
     # Main directory
     DIRECTORY: MAXSEQ_MAIN_DIR,
     # Parameters
@@ -83,7 +82,7 @@ def main():
     '''
     args = get_arguments()
     print 'Getting list of matches'
-    match_list = get_match_list()[-MATCH_COUNT:]
+    match_list = get_match_id_list()[-MATCH_COUNT:]
     exp_list = gen_experiment_list(MAXSEQ_CONF, match_list)
     if args.gen:
         create_experiment_directories(MAXSEQ_CONF, exp_list)

@@ -2,15 +2,14 @@
 # -*- coding: utf-8 -*-
 
 '''
-Module for generation of environments for experiments over import data of
-soccer world cup of 2014 from http://data.huffingtonpost.com
+Module for experiments with CONSEQ operator
 '''
 
 from tool.experiment import RAN, VAR, SLI, DEF, CQL_ALG, NAIVE_SUBSEQ_ALG, \
-    INC_SUBSEQ_ALG, PARAMETER, QUERY_LIST, Q_PLAY, DIRECTORY, \
-    ALGORITHM_LIST, Q_MOVE, gen_experiment_list
-from tool.io import CONSEQ_MAIN_DIR, get_match_list, \
-    create_experiment_directories
+    INC_SUBSEQ_ALG, PARAMETER, QUERY_LIST, Q_MOVE, DIRECTORY, \
+    ALGORITHM_LIST, Q_PLACE, gen_experiment_list
+from tool.io import CONSEQ_MAIN_DIR, \
+    create_experiment_directories, get_match_id_list
 from tool.query.conseq import gen_all_queries, gen_all_env
 from tool.run import run_experiments, summarize_all, confidence_interval_all
 
@@ -41,7 +40,7 @@ CONSEQ_CONF = {
     # Algorithms
     ALGORITHM_LIST: [CQL_ALG, INC_SUBSEQ_ALG, NAIVE_SUBSEQ_ALG],
     # Query
-    QUERY_LIST: [Q_PLAY, Q_MOVE],
+    QUERY_LIST: [Q_MOVE, Q_PLACE],
     # Main directory
     DIRECTORY: CONSEQ_MAIN_DIR,
     # Parameters
@@ -79,7 +78,7 @@ def main():
     '''
     args = get_arguments()
     print 'Getting list of matches'
-    match_list = get_match_list()[-MATCH_COUNT:]
+    match_list = get_match_id_list()[-MATCH_COUNT:]
     exp_list = gen_experiment_list(CONSEQ_CONF, match_list)
     if args.gen:
         create_experiment_directories(CONSEQ_CONF, exp_list)
