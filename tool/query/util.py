@@ -3,9 +3,9 @@
 Queries for experiments with statistics operators
 '''
 
-from tool.io import get_query_stats_file, write_to_txt, get_env_stats_file
+from tool.io import get_query_util_file, write_to_txt, get_env_util_file
 from tool.experiment import QUERY, Q_MOVE, Q_PLACE, OPERATOR_LIST, RAN,\
-    CONSEQ, ENDSEQ, MINSEQ, MAXSEQ, MAX, MIN
+    CONSEQ, ENDSEQ, MINSEQ, MAXSEQ, MAX, MIN, Q_MOVE2
 from tool.query.stream import get_register_stream, REG_Q_STR
 
 
@@ -45,6 +45,36 @@ IF ALL PREVIOUS (place = 'mf') THEN
 ;
 '''
 
+# Move 2
+Q_MOVE2_BESTSEQ = '''
+\nACCORDING TO TEMPORAL PREFERENCES
+IF FIRST THEN (move = 'rec') BETTER (move = 'lbal')
+AND
+IF PREVIOUS (move = 'cond') THEN
+    (move = 'drib') BETTER (move = 'pass') [place]
+AND
+    (move = 'pass') BETTER (move = 'bpas') [place]
+AND
+IF ALL PREVIOUS (place = 'oi' ) THEN
+    (place = 'oi' ) BETTER (place = 'mf')
+;
+'''
+
+# # Move 3
+# Q_MOVE3_BESTSEQ = '''
+# \nACCORDING TO TEMPORAL PREFERENCES
+# IF FIRST THEN (move = 'rec') BETTER (move = 'lbal')
+# AND
+# IF PREVIOUS (move = 'cond') THEN
+#     (move = 'drib') BETTER (move = 'pass') [place]
+# AND
+#     (move = 'pass') BETTER (move = 'bpas') [place]
+# AND
+# IF ALL PREVIOUS (place = 'mf' ) THEN
+#     (place = 'mf' ) BETTER (place = 'di')
+# ;
+# '''
+
 # Place
 Q_PLACE_BESTSEQ = '''
 ACCORDING TO TEMPORAL PREFERENCES
@@ -59,7 +89,7 @@ AND
 '''
 
 
-def gen_stats_query(configuration, experiment_conf):
+def gen_util_query(configuration, experiment_conf):
     '''
     Generate single query
     '''
@@ -85,10 +115,14 @@ def gen_stats_query(configuration, experiment_conf):
     # Select correct query
     if experiment_conf[QUERY] == Q_MOVE:
         query += Q_MOVE_BESTSEQ
+    elif experiment_conf[QUERY] == Q_MOVE2:
+        query += Q_MOVE2_BESTSEQ
+#     elif experiment_conf[QUERY] == Q_MOVE3:
+#         query += Q_MOVE3_BESTSEQ
     elif experiment_conf[QUERY] == Q_PLACE:
         query += Q_PLACE_BESTSEQ
     # Store query code
-    filename = get_query_stats_file(configuration, experiment_conf)
+    filename = get_query_util_file(configuration, experiment_conf)
     write_to_txt(filename, query)
 
 
@@ -99,20 +133,20 @@ def gen_all_queries(configuration, experiment_list):
     # For every experiment
     for exp_conf in experiment_list:
         # Generate appropriate queries
-        gen_stats_query(configuration, exp_conf)
+        gen_util_query(configuration, exp_conf)
 
 
-def gen_stats_env(configuration, experiment_conf):
+def gen_util_env(configuration, experiment_conf):
     '''
     Generate environment
     '''
     text = get_register_stream(experiment_conf)
     # Get query filename
-    filename = get_query_stats_file(configuration, experiment_conf)
+    filename = get_query_util_file(configuration, experiment_conf)
     # Register query
-    text += REG_Q_STR.format(qname='stats', qfile=filename)
+    text += REG_Q_STR.format(qname='util', qfile=filename)
     # Get environment filename
-    filename = get_env_stats_file(configuration, experiment_conf)
+    filename = get_env_util_file(configuration, experiment_conf)
     write_to_txt(filename, text)
 
 
@@ -121,4 +155,4 @@ def gen_all_env(configuration, experiment_list):
     Generate all environments
     '''
     for exp_conf in experiment_list:
-        gen_stats_env(configuration, exp_conf)
+        gen_util_env(configuration, exp_conf)

@@ -4,13 +4,13 @@
 '''
 Module for statistical experiments with operators
 '''
-from tool.experiment import RAN, VAR, DEF, Q_STATS_LIST, OPERATOR_LIST,\
+from tool.experiment import RAN, VAR, DEF, Q_UTIL_LIST, OPERATOR_LIST,\
     QUERY_LIST, Q_MOVE, Q_PLACE, DIRECTORY, PARAMETER, MIN, MAX, \
-    gen_stats_experiment_list
-from tool.io import STATS_MAIN_DIR, create_stat_exp_directories,\
+    gen_util_experiment_list, Q_MOVE2
+from tool.io import UTIL_MAIN_DIR, create_util_exp_directories,\
     get_match_id_list
-from tool.query.stats import gen_all_queries, gen_all_env
-from tool.run import run_experiments_stats, summarize_all_stats
+from tool.query.util import gen_all_queries, gen_all_env
+from tool.run import run_experiments_util, summarize_all_util
 
 # =============================================================================
 # Experiment execution
@@ -19,7 +19,7 @@ from tool.run import run_experiments_stats, summarize_all_stats
 MATCH_COUNT = 1
 
 # Parameters configuration
-STATS_PAR = {
+UTIL_PAR = {
     # Range
     RAN: {
         VAR: [60, 120, 180, 240, 300],
@@ -37,15 +37,15 @@ STATS_PAR = {
         }
     }
 
-STATS_CONF = {
+UTIL_CONF = {
     # Algorithms
-    OPERATOR_LIST: Q_STATS_LIST,
+    OPERATOR_LIST: Q_UTIL_LIST,
     # Query
-    QUERY_LIST: [Q_MOVE, Q_PLACE],
+    QUERY_LIST: [Q_MOVE, Q_MOVE2, Q_PLACE],
     # Main directory
-    DIRECTORY: STATS_MAIN_DIR,
+    DIRECTORY: UTIL_MAIN_DIR,
     # Parameters
-    PARAMETER: STATS_PAR
+    PARAMETER: UTIL_PAR
     }
 
 
@@ -54,7 +54,7 @@ def get_arguments(print_help=False):
     Get arguments
     '''
     import argparse
-    parser = argparse.ArgumentParser('STATSGen')
+    parser = argparse.ArgumentParser('UTILGen')
     parser.add_argument('-g', '--gen', action="store_true",
                         default=False,
                         help='Generate files')
@@ -77,19 +77,19 @@ def main():
     args = get_arguments()
     print 'Getting list of matches'
     match_list = get_match_id_list()[-MATCH_COUNT:]
-    exp_list = gen_stats_experiment_list(STATS_CONF, match_list)
+    exp_list = gen_util_experiment_list(UTIL_CONF, match_list)
     if args.gen:
-        create_stat_exp_directories(STATS_CONF)
+        create_util_exp_directories(UTIL_CONF)
         print 'Generating queries'
-        gen_all_queries(STATS_CONF, exp_list)
+        gen_all_queries(UTIL_CONF, exp_list)
         print 'Generating environments'
-        gen_all_env(STATS_CONF, exp_list)
+        gen_all_env(UTIL_CONF, exp_list)
     elif args.run:
         print 'Running experiments'
-        run_experiments_stats(STATS_CONF, exp_list)
+        run_experiments_util(UTIL_CONF, exp_list)
     elif args.summarize:
         print 'Summarizing results'
-        summarize_all_stats(STATS_CONF, match_list)
+        summarize_all_util(UTIL_CONF, match_list)
     else:
         get_arguments(True)
 
