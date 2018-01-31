@@ -12,7 +12,7 @@ from tool.attributes import TS_ATT, get_event_attribute_list, \
     get_place_attribute_list, get_move_attribute_list, \
     get_player_attribute_list, get_team_attribute_list, ID, MATCH_ATT_LIST
 from tool.experiment import QUERY_LIST, DIRECTORY, ALGORITHM, \
-    QUERY, ALGORITHM_LIST, get_id, get_stats_id
+    QUERY, ALGORITHM_LIST, get_id, get_util_id
 
 
 # =============================================================================
@@ -73,7 +73,7 @@ MINSEQ_MAIN_DIR = 'exp_minseq'
 # MAXSEQ operator
 MAXSEQ_MAIN_DIR = 'exp_maxseq'
 # Statistics experiments
-STATS_MAIN_DIR = 'exp_stats'
+UTIL_MAIN_DIR = 'exp_util'
 
 # =============================================================================
 # Files
@@ -199,7 +199,7 @@ def create_experiment_directories(configuration, experiment_list):
     _create_directories(dir_list)
 
 
-def create_stat_exp_directories(configuration):
+def create_util_exp_directories(configuration):
     '''
     Create directories for statistical experiments
     '''
@@ -530,20 +530,20 @@ def get_query_dir(configuration, experiment_conf):
         os.sep + exp_id
 
 
-def get_query_stats_file(configuration, experiment_conf):
+def get_query_util_file(configuration, experiment_conf):
     '''
     Return query filename for statistics query
     '''
-    exp_id = get_stats_id(configuration, experiment_conf)
+    exp_id = get_util_id(configuration, experiment_conf)
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
         os.sep + QUERY_DIR + os.sep + exp_id + '.cql'
 
 
-def get_env_stats_file(configuration, experiment_conf):
+def get_env_util_file(configuration, experiment_conf):
     '''
     Return environment filename for statistics query
     '''
-    exp_id = get_stats_id(configuration, experiment_conf)
+    exp_id = get_util_id(configuration, experiment_conf)
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
         os.sep + ENV_DIR + os.sep + exp_id + '.env'
 
@@ -606,11 +606,11 @@ def get_detail_file(configuration, experiment_conf, count):
         os.sep + exp_id + ':' + str(count) + '.csv'
 
 
-def get_detail_stats_file(configuration, experiment_conf):
+def get_detail_util_file(configuration, experiment_conf):
     '''
     Return statistics detail file
     '''
-    exp_id = get_stats_id(configuration, experiment_conf)
+    exp_id = get_util_id(configuration, experiment_conf)
     return configuration[DIRECTORY] + os.sep + experiment_conf[QUERY] + \
         os.sep + DETAIL_DIR + os.sep + exp_id + '.csv'
 

@@ -8,7 +8,7 @@ import os
 
 from tool.io import get_detail_file, get_env_file, write_result_file, \
     get_summary_file, get_result_file, get_max_move_ts, get_max_place_ts,\
-    get_env_stats_file, get_detail_stats_file
+    get_env_util_file, get_detail_util_file
 from tool.experiment import ALGORITHM, PARAMETER, VAR, CQL_ALG, \
     SEQ_ALG, RUNTIME, MEMORY, SUM_RUN, SUM_MEM, BNL_SEARCH, \
     INC_PARTITION_SEQTREE_ALG, INC_PARTITIONLIST_SEQTREE_ALG, \
@@ -16,7 +16,7 @@ from tool.experiment import ALGORITHM, PARAMETER, VAR, CQL_ALG, \
     get_default_experiment, MATCH, QUERY, QUERY_LIST,\
     Q_MOVE, Q_PLACE, ALGORITHM_LIST, NAIVE_SUBSEQ_ALG, INC_SUBSEQ_ALG, \
     MINSEQ_ALG, MAXSEQ_ALG, get_variated_parameters, OPERATOR_LIST,\
-    STATS_ATT_LIST, STATS_IN
+    UTIL_ATT_LIST, UTIL_IN, Q_MOVE2
 
 
 # Command for experiment run
@@ -26,7 +26,7 @@ BESTSEQ_RUN_COMMAND = "streampref -r'|' -e {env} -d {det} -m {max} -t {alg}"
 # Command for experiment run with subsequence algorithm option
 SUBSEQ_RUN_COMMAND = "streampref -r'|' -e {env} -d {det} -m {max} -s {alg}"
 # Command for experiment run with statistics output
-STATS_RUN_COMMAND = "streampref -r'|' -e {env} -o {det} -m {max}"
+UTIL_RUN_COMMAND = "streampref -r'|' -e {env} -o {det} -m {max}"
 # Command for calculation of confidence interval
 CONFINTERVAL_COMMAND = "confinterval -d'|' -i {inf} -o {outf} -k {keyf}"
 
@@ -51,7 +51,7 @@ def get_iterations(experiment_conf):
     '''
     Return the number of iterations
     '''
-    if experiment_conf[QUERY] == Q_MOVE:
+    if experiment_conf[QUERY] in [Q_MOVE, Q_MOVE2]:
         return get_max_move_ts(experiment_conf[MATCH])
     elif experiment_conf[QUERY] == Q_PLACE:
         return get_max_place_ts(experiment_conf[MATCH])
@@ -83,19 +83,19 @@ def run(configuration, experiment_conf, count):
             print "Check if 'streampref' is in path"
 
 
-def run_stats(configuration, experiment_conf):
+def run_util(configuration, experiment_conf):
     '''
     Run statistical experiment
     '''
     # Get iteration number
     iterations = get_iterations(experiment_conf)
     # Get environment file
-    env_file = get_env_stats_file(configuration, experiment_conf)
-    detail_file = get_detail_stats_file(configuration, experiment_conf)
+    env_file = get_env_util_file(configuration, experiment_conf)
+    detail_file = get_detail_util_file(configuration, experiment_conf)
     detail_tmp = detail_file + '.tmp'
     if not os.path.isfile(detail_file):
-        command = STATS_RUN_COMMAND.format(env=env_file, det=detail_tmp,
-                                           max=iterations)
+        command = UTIL_RUN_COMMAND.format(env=env_file, det=detail_tmp,
+                                          max=iterations)
         print command
         os.system(command)
         os.rename(detail_tmp, detail_file)
@@ -113,12 +113,12 @@ def run_experiments(configuration, experiment_list, run_count):
             run(configuration, exp_conf, count)
 
 
-def run_experiments_stats(configuration, experiment_list):
+def run_experiments_util(configuration, experiment_list):
     '''
     Run all experiments with statistics output
     '''
     for exp_conf in experiment_list:
-        run_stats(configuration, exp_conf)
+        run_util(configuration, exp_conf)
 
 
 def get_summaries(detail_file):
@@ -143,42 +143,42 @@ def get_summaries(detail_file):
     return (sum_time, sum_memory / count)
 
 
-def get_stats_summaries(detail_file):
+def get_run_summaries(detail_file):
     '''
     Read statistical results from a detail file
     '''
     # Check if file exists
     if not os.path.isfile(detail_file):
         print 'File does not exists: ' + detail_file
-        return {att: float('NaN') for att in STATS_ATT_LIST}
-    rec_out = {att: 0.0 for att in STATS_ATT_LIST}
+        return {att: float('NaN') for att in UTIL_ATT_LIST}
+    rec_out = {att: 0.0 for att in UTIL_ATT_LIST}
     in_file = open(detail_file, 'r')
     reader = csv.DictReader(in_file, skipinitialspace=True)
     count = 0
     for rec in reader:
-        if rec[STATS_IN] > 0:
-            for att in STATS_ATT_LIST:
+        if rec[UTIL_IN] > 0:
+            for att in UTIL_ATT_LIST:
                 rec_out[att] += float(rec[att])
         count += 1
     in_file.close()
-    for att in STATS_ATT_LIST:
+    for att in UTIL_ATT_LIST:
         rec_out[att] /= count
     return rec_out
 
 
-def get_match_stats_summaries(configuration, match_list, exp_conf):
+def get_match_util_summaries(configuration, match_list, exp_conf):
     '''
     Get math statistical summaries
     '''
-    rec_out = {att: 0.0 for att in STATS_ATT_LIST}
+    rec_out = {att: 0.0 for att in UTIL_ATT_LIST}
     for match in match_list:
         exp_copy = exp_conf.copy()
         exp_copy[MATCH] = match
-        dfile = get_detail_stats_file(configuration, exp_copy)
-        rec = get_stats_summaries(dfile)
-        for att in STATS_ATT_LIST:
+        dfile = get_detail_util_file(configuration, exp_copy)
+        rec = get_run_summaries(dfile)
+        for att in UTIL_ATT_LIST:
             rec_out[att] += rec[att]
-    for att in STATS_ATT_LIST:
+    for att in UTIL_ATT_LIST:
         rec_out[att] = rec_out[att] / len(match_list)
     return rec_out
 
@@ -237,7 +237,7 @@ def summarize(configuration, match_list, query, parameter, run_count):
     write_result_file(filename, mem_list, parameter)
 
 
-def summarize_stats(configuration, match_list, query, parameter):
+def summarize_util(configuration, match_list, query, parameter):
     '''
     Summarize statistical experiments
     '''
@@ -255,18 +255,18 @@ def summarize_stats(configuration, match_list, query, parameter):
         exp_conf[parameter] = value
         for op_list in configuration[OPERATOR_LIST]:
             exp_conf[OPERATOR_LIST] = op_list
-            rec_stats = get_match_stats_summaries(configuration, match_list,
-                                                  exp_conf)
+            rec_util = get_match_util_summaries(configuration, match_list,
+                                                exp_conf)
             ope = op_list[-1]
-            for att in rec_stats:
-                rec[ope+att] = rec_stats[att]
+            for att in rec_util:
+                rec[ope+att] = rec_util[att]
         rec_list.append(rec)
     # Store summarized results
     filename = get_summary_file(configuration, query, '', parameter)
     write_result_file(filename, rec_list, parameter)
 
 
-def summarize_stats_operators(configuration, match_list, query):
+def summarize_util_operators(configuration, match_list, query):
     '''
     Summarize statistical experiments of operators
     '''
@@ -276,10 +276,10 @@ def summarize_stats_operators(configuration, match_list, query):
         exp_conf = get_default_experiment(configuration[PARAMETER])
         exp_conf[QUERY] = query
         exp_conf[OPERATOR_LIST] = op_list
-        rec_stats = get_match_stats_summaries(configuration, match_list,
-                                              exp_conf)
-        rec_stats['operators'] = str(len(op_list))
-        rec_list.append(rec_stats)
+        rec_util = get_match_util_summaries(configuration, match_list,
+                                            exp_conf)
+        rec_util['operators'] = str(len(op_list))
+        rec_list.append(rec_util)
     # Store summarized results
     filename = get_summary_file(configuration, query, '', 'operators')
     write_result_file(filename, rec_list, 'operators')
@@ -295,16 +295,16 @@ def summarize_all(configuration, match_list, run_count):
             summarize(configuration, match_list, query, par, run_count)
 
 
-def summarize_all_stats(configuration, match_list):
+def summarize_all_util(configuration, match_list):
     '''
     Summarize all statistical results
     '''
     # Get parameter having variation
     for par in get_variated_parameters(configuration):
         for query in configuration[QUERY_LIST]:
-            summarize_stats(configuration, match_list, query, par)
+            summarize_util(configuration, match_list, query, par)
         for query in configuration[QUERY_LIST]:
-            summarize_stats_operators(configuration, match_list, query)
+            summarize_util_operators(configuration, match_list, query)
 
 
 def confidence_interval(parameter, in_file, out_file):

@@ -7,6 +7,7 @@ Experiments
 # Query identifiers
 # =============================================================================
 Q_MOVE = 'move'
+Q_MOVE2 = 'move2'
 Q_PLACE = 'place'
 
 # =============================================================================
@@ -73,7 +74,7 @@ INC_SUBSEQ_ALG = "incremental"
 # =============================================================================
 # Algorithms for MINSEQ and MAXSEQ operator
 MINSEQ_ALG = "minseq"
-MAXSEQ_ALG = "minseq"
+MAXSEQ_ALG = "maxseq"
 
 # =============================================================================
 # Experiment measures
@@ -114,24 +115,25 @@ Q_SEQ_ENDSEQ_MINSEQ_MAXSEQ = [SEQ, ENDSEQ, MINSEQ, MAXSEQ]
 Q_SEQ_CONSEQ_ENDSEQ_MINSEQ = [SEQ, CONSEQ, ENDSEQ, MINSEQ]
 Q_SEQ_CONSEQ_ENDSEQ_MAXSEQ = [SEQ, CONSEQ, ENDSEQ, MAXSEQ]
 Q_SEQ_CONSEQ_ENDSEQ_MINSEQ_MAXSEQ = [SEQ, CONSEQ, ENDSEQ, MINSEQ, MAXSEQ]
-Q_STATS_LIST = [Q_SEQ, Q_SEQ_CONSEQ,
-                Q_SEQ_CONSEQ_ENDSEQ,
-                Q_SEQ_CONSEQ_ENDSEQ_MINSEQ_MAXSEQ]
+Q_UTIL_LIST = [Q_SEQ, Q_SEQ_CONSEQ,
+               Q_SEQ_CONSEQ_ENDSEQ,
+               Q_SEQ_CONSEQ_ENDSEQ_MINSEQ_MAXSEQ]
 
 # =============================================================================
 # statistics
 # =============================================================================
-STATS_IN = 'in'
-STATS_IN_MIN = 'in_min'
-STATS_IN_MAX = 'in_max'
-STATS_IN_AVG = 'in_avg'
-STATS_COMP = 'comp'
-STATS_OUT = 'out'
-STATS_OUT_MIN = 'out_min'
-STATS_OUT_MAX = 'out_max'
-STATS_OUT_AVG = 'out_avg'
-STATS_ATT_LIST = [STATS_IN, STATS_IN_MIN, STATS_IN_MAX, STATS_IN_AVG, STATS_COMP,
-                 STATS_OUT, STATS_OUT_MIN, STATS_OUT_MAX, STATS_OUT_AVG]
+UTIL_IN = 'in'
+UTIL_IN_MIN = 'in_min'
+UTIL_IN_MAX = 'in_max'
+UTIL_IN_AVG = 'in_avg'
+UTIL_COMP = 'comp'
+UTIL_OUT = 'out'
+UTIL_OUT_MIN = 'out_min'
+UTIL_OUT_MAX = 'out_max'
+UTIL_OUT_AVG = 'out_avg'
+UTIL_ATT_LIST = [UTIL_IN, UTIL_IN_MIN, UTIL_IN_MAX, UTIL_IN_AVG,
+                 UTIL_COMP, UTIL_OUT, UTIL_OUT_MIN, UTIL_OUT_MAX,
+                 UTIL_OUT_AVG]
 # =============================================================================
 
 
@@ -189,7 +191,7 @@ def gen_experiment_list(configuration, match_list):
     return exp_list
 
 
-def gen_stats_experiment_list(configuration, match_list):
+def gen_util_experiment_list(configuration, match_list):
     '''
     Generate the list of statistical experiments
     '''
@@ -246,7 +248,7 @@ def get_id(configuration, experiment_conf):
     return id_str
 
 
-def get_stats_id(configuration, experiment_conf):
+def get_util_id(configuration, experiment_conf):
     '''
     Return experiment identifier with statistics output
     '''

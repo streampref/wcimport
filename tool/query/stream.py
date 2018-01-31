@@ -4,7 +4,7 @@ Routines related to streams
 '''
 from tool.attributes import get_move_attributes_and_types, \
     get_place_attributes_and_types
-from tool.experiment import QUERY, MATCH, Q_MOVE, Q_PLACE
+from tool.experiment import QUERY, MATCH, Q_MOVE, Q_PLACE, Q_MOVE2
 from tool.io import get_move_data_file, get_place_data_file, get_tup_file
 
 
@@ -25,7 +25,7 @@ def get_register_stream(experiment_conf, tup=False):
     query = experiment_conf[QUERY]
     match = experiment_conf[MATCH]
     # Select correct query
-    if query == Q_MOVE:
+    if query in [Q_MOVE, Q_MOVE2]:
         att_list = get_move_attributes_and_types()
         filename = get_move_data_file(match)
         tup_filename = get_tup_file(query)
